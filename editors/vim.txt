@@ -1,5 +1,7 @@
 ##############################################################################
 # VIM CHEATSHEET (http://www.vim.org)
+# Version: 1
+# Last Modified: 2018/02/18 00:06
 # https://github.com/skywind3000/awesome-cheatsheets/editors/vim.txt
 ##############################################################################
 
