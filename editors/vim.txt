@@ -2,8 +2,8 @@
 # 
 # VIM CHEATSHEET (中文命令速记)
 # 
-# Version: 9
-# Last Modified: 2018/02/23 02:48
+# Version: 10
+# Last Modified: 2018/02/23 02:59
 #
 # 项目地址：https://github.com/vim/vim
 # 中文帮助：http://vimcdoc.sourceforge.net/doc/help.html
