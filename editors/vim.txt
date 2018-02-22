@@ -2,8 +2,8 @@
 # 
 # VIM CHEATSHEET (中文速查表)
 # 
-# Version: 10
-# Last Modified: 2018/02/23 02:59
+# Version: 11
+# Last Modified: 2018/02/23 05:20
 #
 # 项目地址：https://github.com/vim/vim
 # 中文帮助：http://vimcdoc.sourceforge.net/doc/help.html
@@ -569,7 +569,7 @@ yaa    复制函数参数（包括逗号分隔）
 
 
 ##############################################################################
-# Reference
+# References
 ##############################################################################
 
 https://github.com/groenewege/vimrc/blob/master/vim_cheat_sheet.txt
