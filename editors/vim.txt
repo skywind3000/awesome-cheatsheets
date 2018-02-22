@@ -3,7 +3,7 @@
 # VIM CHEATSHEET (http://www.vim.org)
 # 
 # Version: 2
-# Last Modified: 2018/02/22 22:53
+# Last Modified: 2018/02/22 23:09
 #
 # 项目地址：https://github.com/vim/vim
 # 中文文档：http://vimcdoc.sourceforge.net/doc/help.html
@@ -123,6 +123,9 @@ yy                  复制当前行
 "?p                 将寄存器 ? 的内容粘贴到光标后
 "?P                 将寄存器 ? 的内容粘贴到光标前
 :registers          显示所有寄存器内容
+:[range]y           复制范围，比如 :20,30y 是复制20到30行，:10y 是复制第十行
+:[range]d           删除范围，比如 :20,30d 是删除20到30行，:10d 是删除第十行
+ddp                 交换两行内容：先删除当前行复制到寄存器，并粘贴
 
 
 ##############################################################################
