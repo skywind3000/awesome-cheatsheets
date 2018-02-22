@@ -1,12 +1,12 @@
 ##############################################################################
 # 
-# VIM CHEATSHEET (http://www.vim.org)
+# VIM CHEATSHEET (中文命令速记)
 # 
-# Version: 8
-# Last Modified: 2018/02/23 02:41
+# Version: 9
+# Last Modified: 2018/02/23 02:48
 #
 # 项目地址：https://github.com/vim/vim
-# 中文文档：http://vimcdoc.sourceforge.net/doc/help.html
+# 中文帮助：http://vimcdoc.sourceforge.net/doc/help.html
 #
 # 本文地址：https://github.com/skywind3000/awesome-cheatsheets
 # 
@@ -565,6 +565,7 @@ http://jmcpherson.org/editing.html
 http://www.fprintf.net/vimCheatSheet.html
 http://www.ouyaoxiazai.com/article/24/654.html
 http://bbs.it-home.org/thread-80794-1-1.html
+http://www.lpfrx.com/wp-content/uploads/2008/09/vi.jpg
 http://michael.peopleofhonoronly.com/vim/
 
 
