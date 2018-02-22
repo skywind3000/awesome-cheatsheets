@@ -100,8 +100,14 @@ CTRL-\ CTRL-o       临时退出插入模式（光标保持），执行单条命
 CTRL-r              插入寄存器（内部剪贴板编号）内容
 CTRL-r =            插入表达式计算结果
 CTRL-f              自动缩进
+CTRL-u              删除当前行所有字符
 CTRL-v {char}       插入非数字的字面量
-CTRL-v {number}     插入三个数字代表的 ascii 字节
+CTRL-v {number}     插入三个数字代表的 ascii/unicode 字符
+CTRL-v 065          插入 10进制 ascii 字符（两数字） 065 即 A字符
+CTRL-v x41          插入 16进制 ascii 字符（三数字） x41 即 A字符
+CTRL-v o101         插入  8进制 ascii 字符（三数字） o101 即 A字符
+CTRL-v u1234        插入 16进制 unicode 字符（四数字）
+CTRL-v U12345678    插入 16进制 unicode 字符（八数字）
 CTRL-k {ch1} {ch2}  插入 digraph（见 :h digraph），快速输入日文或符号等
 
 
@@ -364,6 +370,8 @@ ma                  保存当前位置到书签 a ，书签名可以用 a-z 26�
 :set nopaste        结束粘贴模式
 :set spell          允许拼写检查
 :set hlsearch       设置高亮查找
+:set ruler          总是显示光标位置
+:set incsearch      查找输入时动态增量显示查找结果
 :set insertmode     Vim 始终处于插入模式下，使用 ctrl-o 临时执行命令
 :set all            列出所有选项设置情况
 
@@ -455,6 +463,7 @@ CTRL-E              向上卷屏
 CTRL-Y              向下卷屏
 zz                  将光标所在行滚屏到屏幕中央
 ga                  显示光标下字符的 ascii 码或者 unicode 编码
+:set nohl           清除搜索高亮
 
 
 
