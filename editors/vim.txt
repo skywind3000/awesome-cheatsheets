@@ -554,5 +554,19 @@ gc                  在 Visual Mode 下面按 gc 注释选中区域
 :AsyncRun -raw ls   异步运行命令 ls 结果不匹配 errorformat
 
 
+##############################################################################
+# Reference
+##############################################################################
+
+https://github.com/groenewege/vimrc/blob/master/vim_cheat_sheet.txt
+http://blog.g-design.net/post/4789778607/vim-cheat-sheet
+http://www.keyxl.com/aaa8263/290/VIM-keyboard-shortcuts.htm
+http://jmcpherson.org/editing.html
+http://www.fprintf.net/vimCheatSheet.html
+http://www.ouyaoxiazai.com/article/24/654.html
+http://bbs.it-home.org/thread-80794-1-1.html
+http://michael.peopleofhonoronly.com/vim/
+
+
 # vim: set ts=4 sw=4 tw=0 noet noautoindent :
 
