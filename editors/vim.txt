@@ -616,7 +616,7 @@ yaa                 复制函数参数（包括逗号分隔）
 
 最新版本            https://github.com/vim/vim   
 Windows 最新版      https://github.com/vim/vim-win32-installer/releases
-插件浏览            http://www.vimawesome.com
+插件浏览            http://vimawesome.com
 reddit              https://www.reddit.com/r/vim/
 正确设置 ALT/BS 键  http://www.skywind.me/blog/archives/2021
 视频教程            http://vimcasts.org/
