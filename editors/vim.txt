@@ -2,8 +2,8 @@
 # 
 # VIM CHEATSHEET (中文速查表)
 # 
-# Version: 11
-# Last Modified: 2018/02/23 11:52
+# Version: 13
+# Last Modified: 2018/02/23 12:16
 #
 # 项目地址：https://github.com/vim/vim
 # 中文帮助：http://vimcdoc.sourceforge.net/doc/help.html
@@ -544,16 +544,43 @@ gc                  在 Visual Mode 下面按 gc 注释选中区域
 # Plugin - https://github.com/godlygeek/tabular
 ##############################################################################
 
+:Tabularize /,      按逗号对齐
+:Tabularize /=      按等于号对齐
+:Tabularize /\|     按竖线对齐
+:Tabularize /\|/r0  按竖线靠右对齐
+
+
+##############################################################################
+# Plugin - https://github.com/tpope/vim-unimpaired
+##############################################################################
+
 [space              向上插入空行
 ]space              向下插入空行
 [e                  替换当前行和上一行
 ]e                  替换当前行和下一行
 [x                  XML 编码
 ]x                  XML 解码
+[u                  URL 编码
+]u                  URL 解码
+[y                  C 字符串编码
+]y                  C 字符串解码
 [q                  上一个 quickfix 错误
 ]q                  下一个 quickfix 错误
 [Q                  第一个 quickfix 错误
 ]Q                  最后一个 quickfix 错误
+[f                  切换同目录里上一个文件
+]f                  切换同目录里下一个文件
+[os                 设置 :set spell
+]os                 设置 :set nospell
+=os                 设置 :set invspell
+[on                 显示行号
+]on                 关闭行号
+[ol                 显示回车和制表符 :set list
+]ol                 不显示回车和制表符 :set nolist
+[b                  缓存切换到上一个文件，即 :bp
+]b                  缓存切换到下一个文件，即 :bn
+[B                  缓存切换到第一个文件，即 :bfirst
+]B                  缓存切换到最后一个文件，即 :blast
 
 
 ##############################################################################
