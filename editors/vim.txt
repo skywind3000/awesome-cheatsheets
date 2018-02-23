@@ -1,15 +1,7 @@
 ##############################################################################
-# 
-# VIM CHEATSHEET (中文速查表)
-# 
-# Created by skywind on 2017/10/12 21:15
-# Version: 17, Last Modified: 2018/02/23 16:03
-#
-# 项目地址：https://github.com/vim/vim
-# 中文帮助：http://vimcdoc.sourceforge.net/doc/help.html
-#
-# 本文地址：https://github.com/skywind3000/awesome-cheatsheets
-# 
+# VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
+# Version: 17, Last Modified: 2018/02/23 16:08
+# https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
 
@@ -624,9 +616,9 @@ yaa    复制函数参数（包括逗号分隔）
 Windows 最新版      https://github.com/vim/vim-win32-installer/releases
 插件浏览            http://www.vimawesome.com
 reddit              https://www.reddit.com/r/vim/
-v2ex                https://www.v2ex.com/go/vim
 正确设置 ALT/BS 键  http://www.skywind.me/blog/archives/2021
 视频教程            http://vimcasts.org/
+中文帮助            http://vimcdoc.sourceforge.net/doc/help.html
 
 
 ##############################################################################
