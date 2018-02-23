@@ -11,7 +11,7 @@
 
 ### :pencil:文本编辑 
 
-- [Vim](editors/vim.txt)
+- [VIM](editors/vim.txt)
 - [nano](editors/nano.txt)
 
 ## :pray:欢迎贡献
