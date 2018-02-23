@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 17, Last Modified: 2018/02/23 16:09
+# Version: 19, Last Modified: 2018/02/23 16:09
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -611,7 +611,7 @@ yaa                 复制函数参数（包括逗号分隔）
 
 
 ##############################################################################
-# Useful links
+# 网络资源
 ##############################################################################
 
 最新版本            https://github.com/vim/vim   
@@ -621,6 +621,9 @@ reddit              https://www.reddit.com/r/vim/
 正确设置 ALT/BS 键  http://www.skywind.me/blog/archives/2021
 视频教程            http://vimcasts.org/
 中文帮助            http://vimcdoc.sourceforge.net/doc/help.html
+五分钟脚本入门      http://andrewscala.com/vimscript/
+脚本精通            http://learnvimscriptthehardway.stevelosh.com/
+中文脚本帮助        vimcdoc.sourceforge.net/doc/eval.html
 
 
 ##############################################################################
