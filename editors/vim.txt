@@ -2,8 +2,8 @@
 # 
 # VIM CHEATSHEET (中文速查表)
 # 
-# Version: 16
-# Last Modified: 2018/02/23 12:31
+# Version: 17
+# Last Modified: 2018/02/23 15:55
 #
 # 项目地址：https://github.com/vim/vim
 # 中文帮助：http://vimcdoc.sourceforge.net/doc/help.html
@@ -442,7 +442,7 @@ ma                  保存当前位置到书签 a ，书签名可以用 a-z 26�
 :h tabpage.txt      标签页使用帮助
 :h +timers          显示对 +timers 特性的帮助
 :h :!               查看如何运行外部命令
-:h set-termcaps     查看如何设置按键扫描码
+:h set-termcap      查看如何设置按键扫描码
 :version            显示当前 Vim 的版本号和特性
 
 
@@ -614,6 +614,19 @@ via    选取函数参数
 vaa    选取函数参数（包括逗号分隔）
 yia    复制函数参数
 yaa    复制函数参数（包括逗号分隔）
+
+
+##############################################################################
+# Useful links
+##############################################################################
+
+最新版本            https://github.com/vim/vim   
+Windows 最新版      https://github.com/vim/vim-win32-installer/releases
+插件浏览            http://www.vimawesome.com
+reddit              https://www.reddit.com/r/vim/
+v2ex                https://www.v2ex.com/go/vim
+正确设置 ALT/BS 键  http://www.skywind.me/blog/archives/2021
+视频教程            http://vimcasts.org/
 
 
 ##############################################################################
