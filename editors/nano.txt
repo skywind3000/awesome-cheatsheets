@@ -1,6 +1,6 @@
 ##############################################################################
 # NANO CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/13)
-# Version: 3, Last Modified: 2018/02/23 22:49
+# Version: 3, Last Modified: 2018/02/24 00:55
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
