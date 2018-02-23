@@ -3,7 +3,7 @@
 # VIM CHEATSHEET (中文速查表)
 # 
 # Version: 16
-# Last Modified: 2018/02/23 12:22
+# Last Modified: 2018/02/23 12:31
 #
 # 项目地址：https://github.com/vim/vim
 # 中文帮助：http://vimcdoc.sourceforge.net/doc/help.html
@@ -523,6 +523,7 @@ q                   结束录制宏
 
 CTRL-E              向上卷屏
 CTRL-Y              向下卷屏
+CTRL-G              显示正在编辑的文件名，以及大小和位置信息
 zz                  调整光标所在行到屏幕中央
 zt                  调整光标所在行到屏幕上部
 zb                  调整光标所在行到屏幕下部
