@@ -2,8 +2,8 @@
 # 
 # VIM CHEATSHEET (中文速查表)
 # 
-# Version: 17
-# Last Modified: 2018/02/23 15:55
+# Create by skywind on 2017/10/12 21:15
+# Version: 17, Last Modified: 2018/02/23 16:03
 #
 # 项目地址：https://github.com/vim/vim
 # 中文帮助：http://vimcdoc.sourceforge.net/doc/help.html
