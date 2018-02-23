@@ -9,7 +9,7 @@
 
 ## 内容索引
 
-### 文本编辑
+### :pencil:文本编辑 
 
 - [Vim](editors/vim.txt)
 - [nano](editors/nano.txt)
