@@ -1,6 +1,6 @@
 ##############################################################################
 # NANO CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/13)
-# Version: 2, Last Modified: 2018/02/23 22:49
+# Version: 3, Last Modified: 2018/02/23 22:49
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -41,6 +41,8 @@ ALT-)               跳转到下一个段落
 CTRL-d              删除光标下字符
 CTRL-h              删除光标左边字符
 CTRL-j              调整段落
+CTRL-Left           向左跳一个单词（v2.7.4 至少）
+CTRL-Right          向右跳一个单词（v2.7.4 至少）
 
 
 ##############################################################################
@@ -54,6 +56,7 @@ ALT-a ALT-k         剪贴高亮的选中文本到剪贴板
 ALT-^               复制当前行到剪贴板
 CTRL-k              剪贴从光标处到行末的文本
 CTRL-u              粘贴剪贴板里的文本到光标处
+SHIFT-方向键        另外一种标记法（v2.7.4）
 
 
 ##############################################################################
@@ -100,6 +103,8 @@ ALT-l               是否允许硬性自动换行
 ALT-q               是否允许展开制表符为空格
 ALT-b               是否允许备份文件
 ALT-f               是否允许加载文件到新的缓存
+ALT-m               是否允许鼠标
+ALT-#               是否显示行号（需要较新版本）
 
 
 ##############################################################################
@@ -110,14 +115,20 @@ set tabsize 4       设置制表符宽度
 set autoindent      允许自动缩进
 set cut             设置 CTRL-K 可以剪贴到行末
 set noconvert       不要转换 DOS/UNIX 换行符
-set nohelp          不显示下面两行帮助
 set nowrap          不要自动换行
+set nohelp          不显示下面两行帮助
+set morespace       隐藏标题下的空白行，换取更多编辑空间
 set smooth          平滑卷屏
 set suspend         允许 ctrl-z 将 nano 置于后台
+set smarthome       第一次 Home 跳到行首非空字符，第二次到行首
 set tabstospaces    展开制表符为空格（如果需要的话）
 set mouse           允许鼠标
-set smarthome       第一次 Home 跳到行首非空字符，第二次到行首
 set linenumbers     显示行号（可以在编辑时 ALT-# 切换）
+set backupdir path  设置备份路径
+set backup          允许保存备份
+set casesensitive   搜索使用大小写敏感
+set multibuffer     使用 CTRL-r 读取文件时，默认读取到新缓存
+set nonewlines      不在文件末尾添加新行
 
 include /usr/share/nano/sh.nanorc     加载 shell 脚本语法
 include /usr/share/nano/c.nanorc      加载 C 代码语法
@@ -127,11 +138,24 @@ include "/usr/share/nano/*.nanorc"    加载所有语法文件
 
 
 ##############################################################################
+# 网络资源
+##############################################################################
+
+最新下载            https://www.nano-editor.org/
+官方手册            https://www.nano-editor.org/dist/v2.9/nano.html
+nano-win            https://github.com/lhmouse/nano-win
+中文帮助            http://blog.sina.com.cn/s/blog_5d9f545101010b1y.html
+正确设置 ALT 键     http://www.skywind.me/blog/archives/2021
+
+
+##############################################################################
 # References
 ##############################################################################
 
 https://www.cheatography.com/bipinthite/cheat-sheets/nano-editor/
 http://www.codexpedia.com/text-editor/nano-text-editor-command-cheatsheet/
-
+https://thecustomizewindows.com/2015/02/nano-text-editor-tips-tricks/
+https://www.lifewire.com/beginners-guide-to-nano-editor-3859002
+https://www.geoffreybrown.com/blog/nano-keystroke-configuration/
 
 
