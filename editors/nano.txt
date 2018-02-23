@@ -1,6 +1,6 @@
 ##############################################################################
 # NANO CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/13)
-# Version: 3, Last Modified: 2018/02/24 00:55
+# Version: 6, Last Modified: 2018/02/24 02:15
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -121,12 +121,7 @@ set backup          允许保存备份
 set casesensitive   搜索使用大小写敏感
 set multibuffer     使用 CTRL-r 读取文件时，默认读取到新缓存
 set nonewlines      不在文件末尾添加新行
-
-include /usr/share/nano/sh.nanorc     加载 shell 脚本语法
-include /usr/share/nano/c.nanorc      加载 C 代码语法
-include /usr/share/nano/php.nanorc    加载 php 语法
-
-include "/usr/share/nano/*.nanorc"    加载所有语法文件
+include <filename>  加载额外配置，通常是 /usr/share/nano 下的各种语法文件
 
 
 ##############################################################################
