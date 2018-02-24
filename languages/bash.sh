@@ -200,6 +200,51 @@ rz                        # 接收终端发送过来的文件
 
 
 ##############################################################################
+# 变量操作
+##############################################################################
+
+varname=value             # 定义变量
+varname=value command     # 定义子进程变量并执行子进程
+echo $varname             # 查看变量内容
+echo $$                   # 查看当前 shell 的进程号
+echo $!                   # 查看最近调用的后台任务进程号
+echo $?                   # 查看最近一条命令的返回码
+export VARNAME=value      # 设置环境变量（将会影响到子进程）
+
+array[0]=valA             # 定义数组
+array[1]=valB
+array[2]=valC
+array=([0]=valA [1]=valB [2]=valC)   # 另一种方式
+array=(valA valB valC)               # 另一种方式
+
+${array[i]}               # 取得数组中的元素
+${#array[@]}              # 取得数组的长度
+${#array[i]}              # 取得数组中某个变量的长度
+
+declare -a                # 查看所有数组
+declare -f                # 查看所有函数
+declare -F                # 查看所有函数，仅显示函数名
+declare -i                # 查看所有整数
+declare -r                # 查看所有只读变量
+declare -x                # 查看所有被导出成环境变量的东西
+
+${varname:-word}          # 如果变量不为空则返回变量，否则返回 word
+${varname:=word}          # 如果变量不为空则返回变量，否则赋值成 word 并返回
+${varname:?message}       # 如果变量不为空则返回变量，否则打印错误信息并退出
+${varname:+word}          # 如果变量不为空则返回 word，否则返回 null
+${varname:offset:len}     # 取得字符串的子字符串
+
+${variable#pattern}       # 如果变量头部匹配 pattern，则删除最小匹配部分返回剩下的
+${variable##pattern}      # 如果变量头部匹配 pattern，则删除最大匹配部分返回剩下的
+${variable%pattern}       # 如果变量尾部匹配 pattern，则删除最小匹配部分返回剩下的
+${variable%%pattern}      # 如果变量尾部匹配 pattern，则删除最大匹配部分返回剩下的
+${variable/pattern/str}   # 将变量中第一个匹配 pattern 的替换成 str，并返回
+${variable//pattern/str}  # 将变量中所有匹配 pattern 的地方替换成 str 并返回
+
+${#varname}               # 返回字符串长度
+
+
+##############################################################################
 # References
 ##############################################################################
 
