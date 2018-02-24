@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 4, Last Modified: 2018/02/24 17:41
+# Version: 6, Last Modified: 2018/02/24 18:37
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -173,24 +173,30 @@ scp user@host:path dest   # 从远程主机拷贝文件回来
 scp -P {port} ...         # 指定端口远程拷贝文件
 
 uname -a                  # 查看内核版本等信息
-vmstat                    # 显示内存和 CPU 使用情况
-vmstat 10                 # 每 10 秒打印一行内存和 CPU情况，CTRL+C 退出
 man {help}                # 查看帮助
 info {help}               # 查看帮助，info pages，比 man 更强的帮助系统
 uptime                    # 查看系统启动时间
 date                      # 显示日期
 cal                       # 显示日历
+vmstat                    # 显示内存和 CPU 使用情况
+vmstat 10                 # 每 10 秒打印一行内存和 CPU情况，CTRL+C 退出
 df                        # 显示磁盘使用情况
 du                        # 显示当前目录占用，du . --max-depth=2 可以指定深度
+showkey -a                # 查看终端发送的按键编码
 
 ping {host}               # ping 远程主机并显示结果，CTRL+C 退出
 ping -c N {host}          # ping 远程主机 N 次
+traceroute {host}         # 侦测路由连通情况
+mtr {host}                # 高级版本 traceroute
 whois {domain}            # 取得域名 whois 信息
 dig {domain}              # 取得域名 dns 信息
 
 wget {url}                # 下载文件，可加 --no-check-certificate 忽略 ssl 验证
 wget -qO- {url}           # 下载文件并输出到标准输出（不保存）
 curl -sL {url}            # 同 wget -qO- {url} 没有 wget 的时候使用
+
+sz {file}                 # 发送文件到终端，zmodem 协议
+rz                        # 接收终端发送过来的文件
 
 
 ##############################################################################
