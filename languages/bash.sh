@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 15, Last Modified: 2018/02/25 04:00
+# Version: 16, Last Modified: 2018/02/25 04:16
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -183,6 +183,7 @@ date                      # 显示日期
 cal                       # 显示日历
 vmstat                    # 显示内存和 CPU 使用情况
 vmstat 10                 # 每 10 秒打印一行内存和 CPU情况，CTRL+C 退出
+free                      # 显示内存和交换区使用情况
 df                        # 显示磁盘使用情况
 du                        # 显示当前目录占用，du . --max-depth=2 可以指定深度
 showkey -a                # 查看终端发送的按键编码
@@ -261,7 +262,7 @@ text=$(IFS=/; echo "${array[*]}")  # 用斜杠链接数组并赋值给变量
 $(UNIX command)           # 运行命令，并将标准输出内容捕获并返回
 varname=$(id -u user)     # 将用户名为 user 的 uid 赋值给 varname 变量
 
-num=$(expr 1 + 2)         # 兼容 posix sh 的计算
+num=$(expr 1 + 2)         # 兼容 posix sh 的计算，使用 expr 命令计算结果
 num=$(expr $num + 1)      # 数字自增
 expr 2 \* \( 2 + 3 \)     # 兼容 posix sh 的复杂计算，输出 10
 
@@ -535,6 +536,19 @@ sort -u file                       # 去重排序
 
 
 ##############################################################################
+# 快速跳转 - https://github.com/rupa/z
+##############################################################################
+
+source /path/to/z.sh               # .bashrc 中初始化 z.sh
+z                                  # 列出所有历史路径以及他们的权重
+z foo                              # 跳到历史路径中匹配 foo 的权重最大的目录
+z foo bar                          # 跳到历史路径中匹配 foo 和 bar 权重最大的目录
+z -l foo                           # 列出所有历史路径中匹配 foo 的目录
+z -r foo                           # 按照最高访问次数优先进行匹配跳转
+z -t foo                           # 按照最近访问优先进行匹配跳转
+
+
+##############################################################################
 # 键盘绑定
 ##############################################################################
 
@@ -577,6 +591,52 @@ bind -x '"\C-;":ls -l'             # 设置 CTRL+C 为执行 ls -l 命令
 find / -type f -size +5M           # 查找大于 5M 的文件
 chmod --reference f1 f2            # 将 f2 的权限设置成 f1 一模一样的
 
+
+##############################################################################
+# 常用技巧
+##############################################################################
+
+# 列出最常使用的命令
+history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+
+# 通过 SSH 来 mount 文件系统
+sshfs name@server:/path/to/folder /path/to/mount/point
+
+# 显示前十个运行的进程并按内存使用量排序
+ps aux | sort -nk +4 | tail
+
+# 在右上角显示时钟
+while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done&
+
+# 从网络上的压缩文件中解出一个文件来，并避免保存中间文件
+wget -qO - "http://www.tarball.com/tarball.gz" | tar zxvf -
+
+# 性能测试：测试处理器性能
+python -c "import test.pystone;print(test.pystone.pystones())"
+
+# 性能测试：测试内存带宽
+dd if=/dev/zero of=/dev/null bs=1M count=32768
+
+# Linux 下挂载一个 iso 文件
+mount /path/to/file.iso /mnt/cdrom -oloop
+
+# 通过主机 A 直接 ssh 到主机 B
+ssh -t hostA ssh hostB
+
+# 下载一个网站的所有图片
+wget -r -l1 --no-parent -nH -nd -P/tmp -A".gif,.jpg" http://example.com/images
+
+# 快速创建项目目录
+mkdir -p work/{d1,d2}/{src,bin,bak}
+
+# 按日期范围查找文件
+find . -type f -newermt "2010-01-01" ! -newermt "2010-06-01"
+
+# 显示当前正在使用网络的进程
+lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2
+
+# Vim 中保存一个没有权限的文件
+:w !sudo tee > /dev/null %
 
 
 ##############################################################################
