@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 2, Last Modified: 2018/02/24 02:34
+# Version: 3, Last Modified: 2018/02/24 17:25
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -124,13 +124,16 @@ write {user}        # 向某用户发送一句消息
 
 ps                        # 查看当前会话进程
 ps aux                    # 查看所有进程
+ps auxww                  # 查看所有进程，并且显示进程的完整启动命令
 ps -u {user}              # 查看某用户进程
 ps axjf                   # 列出进程树
 ps -eo pid,user,command   # 按用户指定的格式查看进程
 ps aux | grep httpd       # 查看名为 httpd 的所有进程
+ps --ppid {pid}           # 查看父进程为 pid 的所有进程
 
 kill {pid}                # 结束进程
-kill -9 {pid}             # 强制结束进程
+kill -9 {pid}             # 强制结束进程，9/SIGKILL 是强制不可捕获结束信号
+kill -KILL {pid}          # 强制执行进程，kill -9 的另外一种写法
 kill -l                   # 查看所有信号
 kill -l TERM              # 查看 TERM 信号的编号
 killall {procname}        # 按名称结束进程
