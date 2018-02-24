@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 13, Last Modified: 2018/02/25 03:24
+# Version: 14, Last Modified: 2018/02/25 03:51
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -486,14 +486,14 @@ n<&-                      # 关闭作为输入的文件描述符 n
 # 文本处理 - cut
 ##############################################################################
 
-cut -c 1-16               # 截取每行头16个字符
-cut -c 1-16 file          # 截取指定文件中每行头 16个字符
-cut -c3-                  # 截取每行从第三个字符开始到行末的内容
-cut -d':' -f5             # 截取用冒号分隔的第五列内容
-cut -d';' -f2,10          # 截取用分号分隔的第二和第十列内容
-cut -d' ' -f3-7           # 截取空格分隔的三到七列
-echo "hello" | cut -c1-3  # 显示 hel
-echo "hello sir" | cut -d' ' -f2      # 显示 sir
+cut -c 1-16                        # 截取每行头16个字符
+cut -c 1-16 file                   # 截取指定文件中每行头 16个字符
+cut -c3-                           # 截取每行从第三个字符开始到行末的内容
+cut -d':' -f5                      # 截取用冒号分隔的第五列内容
+cut -d';' -f2,10                   # 截取用分号分隔的第二和第十列内容
+cut -d' ' -f3-7                    # 截取空格分隔的三到七列
+echo "hello" | cut -c1-3           # 显示 hel
+echo "hello sir" | cut -d' ' -f2   # 显示 sir
 ps | tr -s " " | cut -d " " -f 2,3,4  # cut 搭配 tr 压缩字符
 
 
@@ -534,44 +534,44 @@ sort -u file                       # 去重排序
 # 键盘绑定
 ##############################################################################
 
-bind '"\eh":"\C-b"'       # 绑定 ALT+h 为光标左移，同 CTRL+b / <Left>
-bind '"\el":"\C-f"'       # 绑定 ALT+l 为光标右移，同 CTRL+f / <Right>
-bind '"\ej":"\C-n"'       # 绑定 ALT+j 为下条历史，同 CTRL+n / <Down>
-bind '"\ek":"\C-p"'       # 绑定 ALT+k 为上调历史，同 CTRL+p / <Up>
-bind '"\eH":"\eb"'        # 绑定 ALT+H 为光标左移一个单词，同 ALT-b 
-bind '"\eL":"\ef"'        # 绑定 ALT+L 为光标右移一个单词，同 ALT-f 
-bind '"\eJ":"\C-a"'       # 绑定 ALT+J 为移动到行首，同 CTRL+a / <Home>
-bind '"\eK":"\C-e"'       # 绑定 ALT+K 为移动到行末，同 CTRL+e / <End>
-bind '"\e;":"ls -l\n"'    # 绑定 ALT+; 为执行 ls -l 命令
+bind '"\eh":"\C-b"'                # 绑定 ALT+h 为光标左移，同 CTRL+b / <Left>
+bind '"\el":"\C-f"'                # 绑定 ALT+l 为光标右移，同 CTRL+f / <Right>
+bind '"\ej":"\C-n"'                # 绑定 ALT+j 为下条历史，同 CTRL+n / <Down>
+bind '"\ek":"\C-p"'                # 绑定 ALT+k 为上调历史，同 CTRL+p / <Up>
+bind '"\eH":"\eb"'                 # 绑定 ALT+H 为光标左移一个单词，同 ALT-b 
+bind '"\eL":"\ef"'                 # 绑定 ALT+L 为光标右移一个单词，同 ALT-f 
+bind '"\eJ":"\C-a"'                # 绑定 ALT+J 为移动到行首，同 CTRL+a / <Home>
+bind '"\eK":"\C-e"'                # 绑定 ALT+K 为移动到行末，同 CTRL+e / <End>
+bind '"\e;":"ls -l\n"'             # 绑定 ALT+; 为执行 ls -l 命令
 
 
 ##############################################################################
 # 有趣的命令
 ##############################################################################
 
-man hier                  # 查看文件系统的结构和含义
-man test                  # 查看 posix sh 的条件判断帮助
-man ascii                 # 显示 ascii 表
-getconf LONG_BIT          # 查看 32 位还是 64 位
-bind -P                   # 列出所有 bash 的快捷键
-mount | column -t         # 漂亮的列出当前加载的文件系统
-curl if.cn                # 取得外网 ip 地址和服务商信息
-disown -a && exit         # 关闭所有后台任务并退出
-cat /etc/issue            # 查看 Linux 发行版信息
-lsof -i port:80           # 哪个程序在使用 80 端口？
-showkey -a                # 取得按键的 ASCII 码
-svn diff | view -         # 使用 Vim 来显示带色彩的 diff 输出
-mv filename.{old,new}     # 快速文件改名
-time read                 # 使用 CTRL-D 停止，最简单的计时功能
-cp file.txt{,.bak}        # 快速备份文件
-sudo touch /forcefsck     # 强制在下次重启时扫描磁盘
-find ~ -mmin 60 -type f   # 查找 $HOME 目录中，过去 60 分钟内修改过的文件
-curl wttr.in/~beijing     # 查看北京的天气预报
-echo ${SSH_CLIENT%% *}    # 取得你是从什么 IP 链接到当前主机上的
-echo $[RANDOM%X+1]        # 取得 1 到 X 之间的随机数
-bind -x '"\C-;":ls -l'    # 设置 CTRL+C 为执行 ls -l 命令
-find / -type f -size +5M  # 查找大于 5M 的文件
-chmod --reference f1 f2   # 将 f2 的权限设置成 f1 一模一样的
+man hier                           # 查看文件系统的结构和含义
+man test                           # 查看 posix sh 的条件判断帮助
+man ascii                          # 显示 ascii 表
+getconf LONG_BIT                   # 查看 32 位还是 64 位
+bind -P                            # 列出所有 bash 的快捷键
+mount | column -t                  # 漂亮的列出当前加载的文件系统
+curl if.cn                         # 取得外网 ip 地址和服务商信息
+disown -a && exit                  # 关闭所有后台任务并退出
+cat /etc/issue                     # 查看 Linux 发行版信息
+lsof -i port:80                    # 哪个程序在使用 80 端口？
+showkey -a                         # 取得按键的 ASCII 码
+svn diff | view -                  # 使用 Vim 来显示带色彩的 diff 输出
+mv filename.{old,new}              # 快速文件改名
+time read                          # 使用 CTRL-D 停止，最简单的计时功能
+cp file.txt{,.bak}                 # 快速备份文件
+sudo touch /forcefsck              # 强制在下次重启时扫描磁盘
+find ~ -mmin 60 -type f            # 查找 $HOME 目录中，60 分钟内修改过的文件
+curl wttr.in/~beijing              # 查看北京的天气预报
+echo ${SSH_CLIENT%% *}             # 取得你是从什么 IP 链接到当前主机上的
+echo $[RANDOM%X+1]                 # 取得 1 到 X 之间的随机数
+bind -x '"\C-;":ls -l'             # 设置 CTRL+C 为执行 ls -l 命令
+find / -type f -size +5M           # 查找大于 5M 的文件
+chmod --reference f1 f2            # 将 f2 的权限设置成 f1 一模一样的
 
 
 
