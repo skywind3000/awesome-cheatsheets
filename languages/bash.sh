@@ -20,5 +20,8 @@ CTRL+G              # 退出当前编辑，并响铃
 CTRL+H              # 向后删除字符，同 <Backspace>
 CTRL+K              # 向前删除到行末
 CTRL+L              # 清屏并重新显示
-CTRL+N              #
+CTRL+N              # 移动到命令历史的下一行，同 <Down>
+CTRL+O              
+CTRL+P              # 移动到命令历史的上一行，同 <Up>
+
 
