@@ -9,7 +9,7 @@
 
 ## :zap:内容索引
 
-### 编程语言
+### :page_with_curl:编程语言
 
 - [Bash](languages/bash.sh)
 
