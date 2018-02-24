@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 6, Last Modified: 2018/02/24 18:37
+# Version: 8, Last Modified: 2018/02/24 22:06
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -243,11 +243,30 @@ ${variable//pattern/str}  # 将变量中所有匹配 pattern 的地方替换成 
 
 ${#varname}               # 返回字符串长度
 
+*(patternlist)            # 零次或者多次匹配
++(patternlist)            # 一次或者多次匹配
+?(patternlist)            # 零次或者一次匹配
+@(patternlist)            # 单词匹配
+!(patternlist)            # 不匹配
+
+array=($text)             # 按空格分隔 text 成数组，并赋值给变量
+IFS="/" array=($text)     # 按斜杆分隔字符串 text 成数组，并赋值给变量
+text="${array[*]}"        # 用空格链接数组并赋值给变量
+text=$(IFS=/; echo "${array[*]}")  # 用斜杠链接数组并赋值给变量
+
+num=$((1 + 2))            # 计算 1+2 赋值给 num
+num=$(($num + 1))         # 变量递增
+num=$((1 + (2 + 3) * 2))  # 复杂计算
+
+$(UNIX command)           # 运行命令，并将标准输出内容捕获并返回
+
+
 
 ##############################################################################
 # References
 ##############################################################################
 
+https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
 https://ss64.com/bash/syntax-keyboard.html
 
 

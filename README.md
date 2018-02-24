@@ -1,4 +1,4 @@
-> 速查表大全 - 编程语言、框架和开发工具的速查表，单个文件包含一切你需要知道的东西 :zap:
+> 超级速查表 - 编程语言、框架和开发工具的速查表，单个文件包含一切你需要知道的东西 :zap:
 
 ## 最好用的中文速查表（Cheatsheet）
 
@@ -9,10 +9,14 @@
 
 ## :zap:内容索引
 
+### 编程语言
+
+- [Bash](languages/bash.sh)
+
 ### :pencil:文本编辑 
 
 - [VIM](editors/vim.txt)
-- [nano](editors/nano.txt)
+- [Nano](editors/nano.txt)
 
 ## :pray:欢迎贡献
 
