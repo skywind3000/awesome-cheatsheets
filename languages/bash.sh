@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 9, Last Modified: 2018/02/25 00:24
+# Version: 10, Last Modified: 2018/02/25 01:03
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -329,18 +329,21 @@ num1 -ge num2             # 数字判断：num1 >= num2
 
 
 ##############################################################################
-# 流程控制：if 和经典 test，兼容 posix sh 的条件判断语句
+# 分支控制：if 和经典 test，兼容 posix sh 的条件判断语句
 ##############################################################################
 
 test {expression}         # 判断条件为真的话 test 程序返回0 否则非零
 [ expression ]            # 判断条件为真的话返回0 否则非零
 
-test cond && cmd1         # 判断条件为真时执行 cmd1
-[ cond ] && cmd1          # 和上面完全等价
-[ cond ] && cmd1 || cmd2  # 条件为真执行 cmd1 否则执行 cmd2
+test "abc" = "def"        # 查看返回值 echo $? 显示 1，因为条件为假
+test "abc" != "def"       # 查看返回值 echo $? 显示 0，因为条件为真
 
 test -e /tmp; echo $?     # 调用 test 判断 /tmp 是否存在，并打印 test 的返回值
 [ -f /tmp ]; echo $?      # 和上面完全等价，/tmp 肯定是存在的，所以输出是 0
+
+test cond && cmd1         # 判断条件为真时执行 cmd1
+[ cond ] && cmd1          # 和上面完全等价
+[ cond ] && cmd1 || cmd2  # 条件为真执行 cmd1 否则执行 cmd2
 
 # 判断 /etc/passwd 文件是否存在
 # 经典的 if 语句就是判断后面的命令返回值为0的话，认为条件为真，否则为假
@@ -357,6 +360,9 @@ if [ -e /etc/passwd ]; then
 else
 	echo "it doesn't exist ... "
 fi
+
+# 和上面两个完全等价
+[ -e /etc/passwd ] && echo "alright it exists" || echo "it doesn't exist"
 
 # 判断变量的值
 if [ "$varname" = "foo" ]; then
@@ -378,6 +384,67 @@ fi
 # 判断程序存在的话就执行
 [ -x /bin/ls ] && /bin/ls -l
 
+# 如果不考虑兼容 posix sh 和 dash 这些的话，可用 bash 独有的 ((..)) 和 [[..]]:
+https://www.ibm.com/developerworks/library/l-bash-test/index.html
+
+
+##############################################################################
+# 流程控制：while / for / case / until 
+##############################################################################
+
+# while 循环
+while condition; do
+	statements
+done
+
+i=1
+while [ $i -le 10 ]; do
+	echo $i; 
+	i=$(expr $i + 1)
+done
+
+# for 循环：上面的 while 语句等价于
+for i in {1..10}; do
+	echo $i
+done
+
+for name [in list]; do
+	statements
+done
+
+# for 列举某目录下面的所有文件
+for f in /home/*; do 
+	echo $f
+done
+
+# bash 独有的 (( .. )) 语句，更接近 C 语言，但是不兼容 posix sh
+for (( initialisation ; ending condition ; update )); do
+	statements
+done
+
+# 和上面的写法等价
+for ((i = 0; i < 10; i++)); do echo $i; done
+
+# case 判断
+case expression in 
+	pattern1 )
+		statements ;;
+	pattern2 )
+		statements ;;
+	* )
+		otherwise ;;
+esac
+
+# until 语句
+until condition; do
+	statements
+done
+
+# select 语句
+select name [in list]; do
+  statements that can use $name
+done
+
 
 ##############################################################################
 # References
@@ -386,6 +453,7 @@ fi
 https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
 https://ss64.com/bash/syntax-keyboard.html
 http://wiki.bash-hackers.org/commands/classictest
+https://www.ibm.com/developerworks/library/l-bash-test/index.html
 
 
 
