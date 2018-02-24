@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 17, Last Modified: 2018/02/25 04:26
+# Version: 18, Last Modified: 2018/02/25 04:45
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -688,11 +688,14 @@ function q-compress() {
 # References
 ##############################################################################
 
+http://www.linuxstall.com/linux-command-line-tips-that-every-linux-user-should-know/
 https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
 https://ss64.com/bash/syntax-keyboard.html
 http://wiki.bash-hackers.org/commands/classictest
 https://www.ibm.com/developerworks/library/l-bash-test/index.html
 https://www.cyberciti.biz/faq/bash-loop-over-file/
+https://linuxconfig.org/bash-scripting-tutorial
+https://devhints.io/bash
 
 
 
