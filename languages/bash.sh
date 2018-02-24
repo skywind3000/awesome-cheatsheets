@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 3, Last Modified: 2018/02/24 17:25
+# Version: 4, Last Modified: 2018/02/24 17:41
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -115,6 +115,10 @@ adduser {user}      # 添加用户
 deluser {user}      # 删除用户
 last {user}         # 显示登陆记录
 w                   # 查看谁在线
+su                  # 切换到 root 用户
+su -                # 切换到 root 用户并登陆（执行登陆脚本）
+su {user}           # 切换到某用户
+su -{user}          # 切换到某用户并登陆（执行登陆脚本）
 write {user}        # 向某用户发送一句消息
 
 
@@ -123,7 +127,8 @@ write {user}        # 向某用户发送一句消息
 ##############################################################################
 
 ps                        # 查看当前会话进程
-ps aux                    # 查看所有进程
+ps ax                     # 查看所有进程，类似 ps -e
+ps aux                    # 查看所有进程详细信息，类似 ps -ef
 ps auxww                  # 查看所有进程，并且显示进程的完整启动命令
 ps -u {user}              # 查看某用户进程
 ps axjf                   # 列出进程树
@@ -154,6 +159,38 @@ trap - sig1 sig2          # 恢复默认信号处理行为
 disown {PID|JID}          # 将进程从后台任务列表（jobs）移除
 
 wait                      # 等待所有后台进程任务结束
+
+
+##############################################################################
+# 常用命令：SSH / 系统信息 / 网络
+##############################################################################
+
+ssh user@host             # 以用户 user 登陆到远程主机 host
+ssh -p {port} user@host   # 指定端口登陆主机
+ssh-copy-id user@host     # 拷贝你的 ssh key 到远程主机，避免重复输入密码
+scp {fn} user@host:path   # 拷贝文件到远程主机
+scp user@host:path dest   # 从远程主机拷贝文件回来
+scp -P {port} ...         # 指定端口远程拷贝文件
+
+uname -a                  # 查看内核版本等信息
+vmstat                    # 显示内存和 CPU 使用情况
+vmstat 10                 # 每 10 秒打印一行内存和 CPU情况，CTRL+C 退出
+man {help}                # 查看帮助
+info {help}               # 查看帮助，info pages，比 man 更强的帮助系统
+uptime                    # 查看系统启动时间
+date                      # 显示日期
+cal                       # 显示日历
+df                        # 显示磁盘使用情况
+du                        # 显示当前目录占用，du . --max-depth=2 可以指定深度
+
+ping {host}               # ping 远程主机并显示结果，CTRL+C 退出
+ping -c N {host}          # ping 远程主机 N 次
+whois {domain}            # 取得域名 whois 信息
+dig {domain}              # 取得域名 dns 信息
+
+wget {url}                # 下载文件，可加 --no-check-certificate 忽略 ssl 验证
+wget -qO- {url}           # 下载文件并输出到标准输出（不保存）
+curl -sL {url}            # 同 wget -qO- {url} 没有 wget 的时候使用
 
 
 ##############################################################################
