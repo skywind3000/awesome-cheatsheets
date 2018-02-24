@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 18, Last Modified: 2018/02/25 04:45
+# Version: 19, Last Modified: 2018/02/25 04:49
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -71,6 +71,7 @@ mkdir -p {dirname}  # 递归创建目录
 pushd {dirname}     # 目录压栈并进入新目录
 popd                # 弹出并进入栈顶的目录
 dirs -v             # 列出当前目录栈
+cd -                # 回到之前的目录
 cd -{N}             # 切换到目录栈中的第 N个目录，比如 cd -2 将切换到第二个
 
 
