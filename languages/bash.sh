@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 19, Last Modified: 2018/02/25 04:49
+# Version: 20, Last Modified: 2018/02/25 07:20
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -408,7 +408,7 @@ while [ $i -le 10 ]; do
 	i=$(expr $i + 1)
 done
 
-# for 循环：上面的 while 语句等价于
+# for 循环：上面的 while 语句等价
 for i in {1..10}; do
 	echo $i
 done
@@ -503,7 +503,7 @@ ps | tr -s " " | cut -d " " -f 2,3,4  # cut 搭配 tr 压缩字符
 
 
 ##############################################################################
-# 文本处理 - awk / sed / sort
+# 文本处理 - awk / sed 
 ##############################################################################
 
 awk '{print $5}' file              # 打印文件中以空格分隔的第五列
@@ -627,7 +627,7 @@ ssh -t hostA ssh hostB
 wget -r -l1 --no-parent -nH -nd -P/tmp -A".gif,.jpg" http://example.com/images
 
 # 快速创建项目目录
-mkdir -p work/{d1,d2}/{src,bin,bak}
+mkdir -p work/{project1,project2}/{src,bin,bak}
 
 # 按日期范围查找文件
 find . -type f -newermt "2010-01-01" ! -newermt "2010-06-01"
