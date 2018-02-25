@@ -697,6 +697,7 @@ https://www.ibm.com/developerworks/library/l-bash-test/index.html
 https://www.cyberciti.biz/faq/bash-loop-over-file/
 https://linuxconfig.org/bash-scripting-tutorial
 https://devhints.io/bash
+https://github.com/jlevy/the-art-of-command-line
 
 
 
