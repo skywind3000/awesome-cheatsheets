@@ -366,7 +366,7 @@ else
 	echo "it doesn't exist ... "
 fi
 
-# 和上面两个完全等价
+# 和上面两个完全等价，其实到 bash 时代 [ 已经是内部命令了，用 enable 可以看到
 [ -e /etc/passwd ] && echo "alright it exists" || echo "it doesn't exist"
 
 # 判断变量的值
