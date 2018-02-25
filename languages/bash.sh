@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 26, Last Modified: 2018/02/25 20:56
+# Version: 27, Last Modified: 2018/02/26 01:27
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -52,8 +52,9 @@ env                 # 显示环境变量
 echo $SHELL         # 显示你在使用什么 SHELL
 
 bash                # 使用 bash，用 exit 返回
-whereis bash        # 查找 bash 在哪里
-which bash          # 查找哪个程序对应命令 bash
+which bash          # 搜索 $PATH，查找哪个程序对应命令 bash
+whereis bash        # 搜索可执行，头文件和帮助信息的位置，使用系统内建数据库
+whatis bash         # 查看某个命令的解释，一句话告诉你这是干什么的
 
 clear               # 清初屏幕内容
 reset               # 重置终端（当你不小心 cat 了一个二进制，终端状态乱掉时使用）
@@ -100,6 +101,7 @@ diff {f1} {f2}      # 比较两个文件的内容
 wc {fn}             # 统计文件有多少行，多少个单词
 chmod 644 {fn}      # 修改文件权限为 644，可以接 -R 对目录循环改权限
 chown user1 {fn}    # 修改文件所有人为 user1, chown user1:group1 fn 可以修改组
+file {fn}           # 检测文件的类型和编码
 grep {pat} {fn}     # 在文件中查找出现过 pat 的内容
 grep -r {pat} .     # 在当前目录下递归查找所有出现过 pat 的文件内容
 
@@ -159,6 +161,8 @@ trap cmd sig1 sig2        # 在脚本中设置信号处理命令
 trap "" sig1 sig2         # 在脚本中屏蔽某信号
 trap - sig1 sig2          # 恢复默认信号处理行为
 
+nohup {command}           # 长期运行某程序，在你退出登陆都保持它运行
+nohup {command} &         # 在后台长期运行某程序
 disown {PID|JID}          # 将进程从后台任务列表（jobs）移除
 
 wait                      # 等待所有后台进程任务结束
@@ -177,7 +181,8 @@ scp -P {port} ...         # 指定端口远程拷贝文件
 
 uname -a                  # 查看内核版本等信息
 man {help}                # 查看帮助
-info {help}               # 查看帮助，info pages，比 man 更强的帮助系统
+man -k {keyword}          # 查看哪些帮助文档里包含了该关键字
+info {help}               # 查看 info pages，比 man 更强的帮助系统
 uptime                    # 查看系统启动时间
 date                      # 显示日期
 cal                       # 显示日历
@@ -689,13 +694,14 @@ function q-compress() {
 # References
 ##############################################################################
 
+https://github.com/Idnan/bash-guide
 http://www.linuxstall.com/linux-command-line-tips-that-every-linux-user-should-know/
-https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
 https://ss64.com/bash/syntax-keyboard.html
 http://wiki.bash-hackers.org/commands/classictest
 https://www.ibm.com/developerworks/library/l-bash-test/index.html
 https://www.cyberciti.biz/faq/bash-loop-over-file/
 https://linuxconfig.org/bash-scripting-tutorial
+https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
 https://devhints.io/bash
 https://github.com/jlevy/the-art-of-command-line
 
