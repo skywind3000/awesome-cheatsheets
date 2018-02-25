@@ -570,7 +570,7 @@ bind '"\e;":"ls -l\n"'             # 绑定 ALT+; 为执行 ls -l 命令
 man hier                           # 查看文件系统的结构和含义
 man test                           # 查看 posix sh 的条件判断帮助
 man ascii                          # 显示 ascii 表
-getconf LONG_BIT                   # 查看 32 位还是 64 位
+getconf LONG_BIT                   # 查看系统是 32 位还是 64 位
 bind -P                            # 列出所有 bash 的快捷键
 mount | column -t                  # 漂亮的列出当前加载的文件系统
 curl ip.cn                         # 取得外网 ip 地址和服务商信息
