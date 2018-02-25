@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 23, Last Modified: 2018/02/25 14:36
+# Version: 24, Last Modified: 2018/02/25 14:46
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -555,7 +555,7 @@ z -t foo                           # 按照最近访问优先进行匹配跳转
 bind '"\eh":"\C-b"'                # 绑定 ALT+h 为光标左移，同 CTRL+b / <Left>
 bind '"\el":"\C-f"'                # 绑定 ALT+l 为光标右移，同 CTRL+f / <Right>
 bind '"\ej":"\C-n"'                # 绑定 ALT+j 为下条历史，同 CTRL+n / <Down>
-bind '"\ek":"\C-p"'                # 绑定 ALT+k 为上调历史，同 CTRL+p / <Up>
+bind '"\ek":"\C-p"'                # 绑定 ALT+k 为上条历史，同 CTRL+p / <Up>
 bind '"\eH":"\eb"'                 # 绑定 ALT+H 为光标左移一个单词，同 ALT-b 
 bind '"\eL":"\ef"'                 # 绑定 ALT+L 为光标右移一个单词，同 ALT-f 
 bind '"\eJ":"\C-a"'                # 绑定 ALT+J 为移动到行首，同 CTRL+a / <Home>
