@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 20, Last Modified: 2018/02/25 07:20
+# Version: 21, Last Modified: 2018/02/25 13:32
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -543,7 +543,7 @@ source /path/to/z.sh               # .bashrc 中初始化 z.sh
 z                                  # 列出所有历史路径以及他们的权重
 z foo                              # 跳到历史路径中匹配 foo 的权重最大的目录
 z foo bar                          # 跳到历史路径中匹配 foo 和 bar 权重最大的目录
-z -l foo                           # 列出所有历史路径中匹配 foo 的目录
+z -l foo                           # 列出所有历史路径中匹配 foo 的目录及权重
 z -r foo                           # 按照最高访问次数优先进行匹配跳转
 z -t foo                           # 按照最近访问优先进行匹配跳转
 
