@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 21, Last Modified: 2018/02/25 13:32
+# Version: 22, Last Modified: 2018/02/25 14:00
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -573,7 +573,7 @@ man ascii                          # 显示 ascii 表
 getconf LONG_BIT                   # 查看 32 位还是 64 位
 bind -P                            # 列出所有 bash 的快捷键
 mount | column -t                  # 漂亮的列出当前加载的文件系统
-curl if.cn                         # 取得外网 ip 地址和服务商信息
+curl ip.cn                         # 取得外网 ip 地址和服务商信息
 disown -a && exit                  # 关闭所有后台任务并退出
 cat /etc/issue                     # 查看 Linux 发行版信息
 lsof -i port:80                    # 哪个程序在使用 80 端口？
