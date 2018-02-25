@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 27, Last Modified: 2018/02/26 01:27
+# Version: 28, Last Modified: 2018/02/26 04:08
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -592,7 +592,7 @@ find ~ -mmin 60 -type f            # 查找 $HOME 目录中，60 分钟内修改
 curl wttr.in/~beijing              # 查看北京的天气预报
 echo ${SSH_CLIENT%% *}             # 取得你是从什么 IP 链接到当前主机上的
 echo $[RANDOM%X+1]                 # 取得 1 到 X 之间的随机数
-bind -x '"\C-;":ls -l'             # 设置 CTRL+; 为执行 ls -l 命令
+bind -x '"\C-l":ls -l'             # 设置 CTRL+l 为执行 ls -l 命令
 find / -type f -size +5M           # 查找大于 5M 的文件
 chmod --reference f1 f2            # 将 f2 的权限设置成 f1 一模一样的
 
