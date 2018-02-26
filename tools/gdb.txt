@@ -1,6 +1,6 @@
 ##############################################################################
 # GDB CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/20)
-# Version: 6, Last Modified: 2018/02/27 05:16
+# Version: 7, Last Modified: 2018/02/27 05:35
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -241,9 +241,11 @@ gdbgui                    https://github.com/cs01/gdbgui
 # References
 ##############################################################################
 
+https://sourceware.org/gdb/current/onlinedocs/gdb/
 https://kapeli.com/cheat_sheets/GDB.docset/Contents/Resources/Documents/index
 http://www.yolinux.com/TUTORIALS/GDB-Commands.html
 https://gist.github.com/rkubik/b96c23bd8ed58333de37f2b8cd052c30
+http://security.cs.pub.ro/hexcellents/wiki/kb/toolset/gdb
 
 
 # vim: set ts=4 sw=4 tw=0 noet ft=gdb:
