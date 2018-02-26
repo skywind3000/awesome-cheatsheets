@@ -13,8 +13,8 @@ h                   光标左移，同 <Left> 键
 j                   光标下移，同 <Down> 键
 k                   光标上移，同 <Up> 键
 l                   光标右移，同 <Right> 键
-CTRL-F              下一页
-CTRL-B              上一页
+CTRL-F              下一页，同 <PageDown> 键
+CTRL-B              上一页，同 <PageUp> 键
 CTRL-U              上移半屏
 CTRL-D              下移半屏
 0                   跳到行首（是数字零，不是字母O），效用等同于 <Home> 键
