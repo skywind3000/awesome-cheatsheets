@@ -428,7 +428,7 @@ ma                  保存当前位置到书签 a ，书签名可以用 a-z（�
 :h tutor            入门文档
 :h quickref         快速帮助
 :h index            查询 Vim 所有键盘命令定义
-:h CTRL-H           查询正常模式下 CTRL-H 是干什么的
+:h CTRL-H           查询普通模式下 CTRL-H 是干什么的
 :h i_CTRL-H         查询插入模式下 CTRL-H 是干什么的
 :h i_<Up>           查询插入模式下方向键上是干什么的
 :h pattern.txt      正则表达式帮助
