@@ -1,6 +1,6 @@
 ##############################################################################
 # GDB CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/20)
-# Version: 4, Last Modified: 2018/02/26 23:59
+# Version: 5, Last Modified: 2018/02/27 00:17
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -13,7 +13,6 @@ gdb object                # 正常启动，加载可执行
 gdb object core           # 对可执行 + core 文件进行调试
 gdb object pid            # 对正在执行的进程进行调试
 gdb                       # 正常启动，启动后需要 file 命令手动加载
-gdb -tui                  # 用 tui 界面模式启动 gdb
 
 
 ##############################################################################
@@ -74,6 +73,8 @@ CTRL+C                    # 发送 SIGINT 信号，中止当前运行的程序
 attach {process-id}       # 链接上当前正在运行的进程，开始调试
 detach                    # 断开进程链接
 finish                    # 结束当前函数的运行
+until                     # 持续执行直到代码行号大于当前行号（跳出循环）
+until {line}              # 持续执行直到执行到某行
 kill                      # 杀死当前运行的函数
 
 
@@ -229,6 +230,7 @@ quit                      # 退出 gdb
 # References
 ##############################################################################
 
+http://www.yolinux.com/TUTORIALS/GDB-Commands.html
 https://gist.github.com/rkubik/b96c23bd8ed58333de37f2b8cd052c30
 
 
