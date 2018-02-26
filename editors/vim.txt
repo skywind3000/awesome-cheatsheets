@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 20, Last Modified: 2018/02/24 14:30
+# Version: 21, Last Modified: 2018/02/26 21:39
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -355,7 +355,7 @@ CTRL-W K            将当前窗口移动到最上边
 CTRL-W L            将当前窗口移动到最右边
 CTRL-W x            交换窗口
 CTRL-W f            在新窗口中打开名为光标下文件名的文件
-CTRL-W gf           在新窗口中打开名为光标下文件名的文件
+CTRL-W gf           在新标签页中打开名为光标下文件名的文件
 CTRL-W R            旋转窗口
 CTRL-W T            将当前窗口移到新的标签页中
 CTRL-W P            跳转到预览窗口
