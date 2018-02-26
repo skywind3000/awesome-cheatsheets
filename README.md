@@ -1,5 +1,7 @@
 > 超级速查表 - 编程语言、框架和开发工具的速查表，单个文件包含一切你需要知道的东西 :zap:
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/skywind3000/awesome-cheatsheets)
+
 ## 最好用的中文速查表（Cheatsheet）
 
 当年学习 Linux 时就是靠着一张常用命令小卡片，敲啥命令忘记了，经常拿起来看看，后来知道这玩意儿叫做速查表（Cheatsheet），于是开始有意识收集和整理各种常用的速查表。对于很多工具来说，看书和大篇大篇的文章都太浪费时间了，其实大部分时候，你只需要一张小巧的表格就够了。
@@ -17,6 +19,10 @@
 
 - [VIM](editors/vim.txt)
 - [Nano](editors/nano.txt)
+
+### :wrench:开发工具
+
+- [Gdb](tools/gdb.txt)
 
 ## :pray:欢迎贡献
 
