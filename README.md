@@ -15,14 +15,14 @@
 
 - [Bash](languages/bash.sh)
 
+### :wrench:开发工具
+
+- [Gdb](tools/gdb.txt)
+
 ### :pencil:文本编辑 
 
 - [VIM](editors/vim.txt)
 - [Nano](editors/nano.txt)
-
-### :wrench:开发工具
-
-- [Gdb](tools/gdb.txt)
 
 ## :pray:欢迎贡献
 
