@@ -52,7 +52,7 @@ tbreak function|line      # 临时断点
 ignore {id} {count}       # 忽略某断点 N-1 次
 condition {id} {expr}     # 条件断点，只有在条件生效时才发生
 condition 2 i == 20       # 2号断点只有在 i == 20 条件为真时才生效
-watch {expr}              # 对变量设置观察点
+watch {expr}              # 对变量设置监视点
 info watchpoints          # 显示所有观察点
 
 
