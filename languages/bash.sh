@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 28, Last Modified: 2018/02/26 04:08
+# Version: 29, Last Modified: 2018/02/26 14:07
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -283,16 +283,19 @@ num=$((1 + (2 + 3) * 2))  # 复杂计算
 
 # 定义一个新函数
 function myfunc() {
-	# $1 代表第一个参数，$N 代表第 N 个参数
-	# $# 代表参数个数
-	# $0 代表被调用者自身的名字
-	# $@ 代表所有参数，类型是个数组，想传递所有参数给其他命令用 cmd "$@" 
-	# $* 空格链接起来的所有参数，类型是字符串
-	{shell commands ...}
+    # $1 代表第一个参数，$N 代表第 N 个参数
+    # $# 代表参数个数
+    # $0 代表被调用者自身的名字
+    # $@ 代表所有参数，类型是个数组，想传递所有参数给其他命令用 cmd "$@" 
+    # $* 空格链接起来的所有参数，类型是字符串
+    {shell commands ...}
 }
 
 myfunc                    # 调用函数 myfunc 
 myfunc arg1 arg2 arg3     # 带参数的函数调用
+myfunc "$@"               # 将所有参数传递给函数
+shift                     # 参数左移
+
 unset -f myfunc           # 删除函数
 declare -f                # 列出函数定义
 
@@ -358,17 +361,17 @@ test cond && cmd1         # 判断条件为真时执行 cmd1
 # 判断 /etc/passwd 文件是否存在
 # 经典的 if 语句就是判断后面的命令返回值为0的话，认为条件为真，否则为假
 if test -e /etc/passwd; then
-	echo "alright it exists ... "
+    echo "alright it exists ... "
 else
-	echo "it doesn't exist ... "
+    echo "it doesn't exist ... "
 fi
 
 # 和上面完全等价，[ 是个和 test 一样的可执行程序，但最后一个参数必须为 ]
 # 这个名字为 "[" 的可执行程序一般就在 /bin 或 /usr/bin 下面，比 test 优雅些
 if [ -e /etc/passwd ]; then   
-	echo "alright it exists ... "
+    echo "alright it exists ... "
 else
-	echo "it doesn't exist ... "
+    echo "it doesn't exist ... "
 fi
 
 # 和上面两个完全等价，其实到 bash 时代 [ 已经是内部命令了，用 enable 可以看到
@@ -376,16 +379,16 @@ fi
 
 # 判断变量的值
 if [ "$varname" = "foo" ]; then
-	echo "this is foo"
+    echo "this is foo"
 elif [ "$varname" = "bar" ]; then
-	echo "this is bar"
+    echo "this is bar"
 else
-	echo "neither"
+    echo "neither"
 fi
 
 # 复杂条件判断，注意，小括号是字面量，实际输入时前面要加反斜杆
 if [ \( $x -gt 10 \) -a \( $x -lt 20 \) ]; then
-	echo "yes, between 10 and 20"
+    echo "yes, between 10 and 20"
 fi
 
 # 可以用 && 命令连接符来做和上面完全等价的事情
@@ -404,32 +407,32 @@ https://www.ibm.com/developerworks/library/l-bash-test/index.html
 
 # while 循环
 while condition; do
-	statements
+    statements
 done
 
 i=1
 while [ $i -le 10 ]; do
-	echo $i; 
-	i=$(expr $i + 1)
+    echo $i; 
+    i=$(expr $i + 1)
 done
 
 # for 循环：上面的 while 语句等价
 for i in {1..10}; do
-	echo $i
+    echo $i
 done
 
 for name [in list]; do
-	statements
+    statements
 done
 
 # for 列举某目录下面的所有文件
 for f in /home/*; do 
-	echo $f
+    echo $f
 done
 
 # bash 独有的 (( .. )) 语句，更接近 C 语言，但是不兼容 posix sh
 for (( initialisation ; ending condition ; update )); do
-	statements
+    statements
 done
 
 # 和上面的写法等价
@@ -437,17 +440,17 @@ for ((i = 0; i < 10; i++)); do echo $i; done
 
 # case 判断
 case expression in 
-	pattern1 )
-		statements ;;
-	pattern2 )
-		statements ;;
-	* )
-		otherwise ;;
+    pattern1 )
+        statements ;;
+    pattern2 )
+        statements ;;
+    * )
+        otherwise ;;
 esac
 
 # until 语句
 until condition; do
-	statements
+    statements
 done
 
 # select 语句
@@ -650,43 +653,43 @@ lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2
 
 # 自动解压：判断文件后缀名并调用相应解压命令
 function q-extract() {
-	if [ -f $1 ] ; then
-		case $1 in
-		*.tar.bz2)   tar -xvjf $1    ;;
-		*.tar.gz)    tar -xvzf $1    ;;
-		*.tar.xz)    tar -xvJf $1    ;;
-		*.bz2)       bunzip2 $1     ;;
-		*.rar)       rar x $1       ;;
-		*.gz)        gunzip $1      ;;
-		*.tar)       tar -xvf $1     ;;
-		*.tbz2)      tar -xvjf $1    ;;
-		*.tgz)       tar -xvzf $1    ;;
-		*.zip)       unzip $1       ;;
-		*.Z)         uncompress $1  ;;
-		*.7z)        7z x $1        ;;
-		*)           echo "don't know how to extract '$1'..." ;;
-		esac
-	else
-		echo "'$1' is not a valid file!"
-	fi
+    if [ -f $1 ] ; then
+        case $1 in
+        *.tar.bz2)   tar -xvjf $1    ;;
+        *.tar.gz)    tar -xvzf $1    ;;
+        *.tar.xz)    tar -xvJf $1    ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       rar x $1       ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar -xvf $1     ;;
+        *.tbz2)      tar -xvjf $1    ;;
+        *.tgz)       tar -xvzf $1    ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)           echo "don't know how to extract '$1'..." ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+    fi
 }
 
 # 自动压缩：判断后缀名并调用相应压缩程序
 function q-compress() {
-	if [ -n "$1" ] ; then
-		FILE=$1
-		case $FILE in
-		*.tar) shift && tar -cf $FILE $* ;;
-		*.tar.bz2) shift && tar -cjf $FILE $* ;;
-		*.tar.xz) shift && tar -cJf $FILE $* ;;
-		*.tar.gz) shift && tar -czf $FILE $* ;;
-		*.tgz) shift && tar -czf $FILE $* ;;
-		*.zip) shift && zip $FILE $* ;;
-		*.rar) shift && rar $FILE $* ;;
-		esac
-	else
-		echo "usage: q-compress <foo.tar.gz> ./foo ./bar"
-	fi
+    if [ -n "$1" ] ; then
+        FILE=$1
+        case $FILE in
+        *.tar) shift && tar -cf $FILE $* ;;
+        *.tar.bz2) shift && tar -cjf $FILE $* ;;
+        *.tar.xz) shift && tar -cJf $FILE $* ;;
+        *.tar.gz) shift && tar -czf $FILE $* ;;
+        *.tgz) shift && tar -czf $FILE $* ;;
+        *.zip) shift && zip $FILE $* ;;
+        *.rar) shift && rar $FILE $* ;;
+        esac
+    else
+        echo "usage: q-compress <foo.tar.gz> ./foo ./bar"
+    fi
 }
 
 
@@ -705,5 +708,5 @@ https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
 https://devhints.io/bash
 https://github.com/jlevy/the-art-of-command-line
 
-
+# vim: set ts=4 sw=4 tw=0 et :
 
