@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 29, Last Modified: 2018/02/26 14:07
+# Version: 30, Last Modified: 2018/02/28 17:24
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -689,6 +689,21 @@ function q-compress() {
         esac
     else
         echo "usage: q-compress <foo.tar.gz> ./foo ./bar"
+    fi
+}
+
+# 漂亮的带语法高亮的 cat ，需要先 pip install pygments
+function ccat() {
+    local style="monokai"
+    if [ $# -eq 0 ]; then
+        pygmentize -P style=$style -f terminal256 -g
+    else
+        lexer=$(pygmentize -N "$1")
+        if [ "$lexer" != "text" ]; then
+            pygmentize -P style=$style -f terminal256 -l $lexer "$1"
+        else
+            pygmentize -P style=$style -f terminal256 -g "$1"
+        fi
     fi
 }
 
