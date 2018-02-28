@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 31, Last Modified: 2018/02/28 17:49
+# Version: 32, Last Modified: 2018/02/28 22:09
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -695,7 +695,7 @@ function q-compress() {
     fi
 }
 
-# 漂亮的带语法高亮的 cat ，需要先 pip install pygments
+# 漂亮的带语法高亮的 color cat ，需要先 pip install pygments
 function ccat() {
     local style="monokai"
     if [ $# -eq 0 ]; then
