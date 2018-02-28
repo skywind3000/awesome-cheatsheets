@@ -14,12 +14,13 @@
 ### :page_with_curl:编程语言
 
 - [Bash](languages/bash.sh)
+- [Go](languages/golang.go)
 
 ### :wrench:开发工具
 
 - [Gdb](tools/gdb.txt)
 
-### :pencil:文本编辑 
+### :pencil:文本编辑
 
 - [VIM](editors/vim.txt)
 - [Nano](editors/nano.txt)
