@@ -1,6 +1,6 @@
 ##############################################################################
 # GDB CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/20)
-# Version: 7, Last Modified: 2018/02/27 05:35
+# Version: 8, Last Modified: 2018/02/28 17:13
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -235,6 +235,8 @@ gdb-tui                   使用 gdb -tui 启动
 cgdb                      http://cgdb.github.io/
 emacs                     http://gnu.org/software/emacs
 gdbgui                    https://github.com/cs01/gdbgui
+
+GDB 图形化前端评测        http://www.skywind.me/blog/archives/2036
 
 
 ##############################################################################
