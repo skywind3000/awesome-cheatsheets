@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 30, Last Modified: 2018/02/28 17:24
+# Version: 31, Last Modified: 2018/02/28 17:49
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -646,6 +646,9 @@ lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2
 # Vim 中保存一个没有权限的文件
 :w !sudo tee > /dev/null %
 
+# 终端下正确设置 ALT 键和 BackSpace 键
+http://www.skywind.me/blog/archives/2021
+
 
 ##############################################################################
 # 有用的函数
@@ -696,14 +699,11 @@ function q-compress() {
 function ccat() {
     local style="monokai"
     if [ $# -eq 0 ]; then
-        pygmentize -P style=$style -f terminal256 -g
+        pygmentize -P style=$style -P tabsize=4 -f terminal256 -g
     else
-        lexer=$(pygmentize -N "$1")
-        if [ "$lexer" != "text" ]; then
-            pygmentize -P style=$style -f terminal256 -l $lexer "$1"
-        else
-            pygmentize -P style=$style -f terminal256 -g "$1"
-        fi
+        for NAME in $@; do
+            pygmentize -P style=$style -P tabsize=4 -f terminal256 -g "$NAME"
+        done
     fi
 }
 
