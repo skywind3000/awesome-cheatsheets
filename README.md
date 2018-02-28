@@ -27,4 +27,6 @@
 
 ## :pray:欢迎贡献
 
+[![@chlins](https://avatars2.githubusercontent.com/u/31262637?s=64)](https://github.com/chlins)
+
 希望把你的名字和头像列在这里么？欢迎把你熟悉的编程语言、框架和工具的常用知识点做成 cheatsheet 用 PR 发过来。
