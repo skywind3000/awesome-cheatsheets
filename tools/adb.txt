@@ -1,0 +1,60 @@
+##############################################################################
+# ADB CHEATSHEET (中文速查表)  -  by baiguangan (created on 2018/03/2)
+# Version: 1, Last Modified: 2018/03/2 9:13
+# https://github.com/skywind3000/awesome-cheatsheets
+##############################################################################
+
+
+##############################################################################
+# 常用命令
+##############################################################################
+
+devices                   # 查看已连接的设备
+start-server              # 启动 adb server
+kill-server               # 停止 adb server
+logcat                    # 查看日志
+install                   # 安装一个apk
+uninstall                 # 卸载一个apk
+shell                     # 进入终端
+
+##############################################################################
+# 其他命令
+##############################################################################
+
+help                      # 查看帮助信息
+version                   # 查看版本
+devices                   # 查看已连接的设备
+forward                   # 端口转发
+bugreport                 # 生成adb出错报告
+install                   # 安装一个apk
+uninstall                 # 卸载一个apk
+disconnect                # 断开设备
+tcpip                     # 侦听端口
+connect                   # 连接设备
+start-server              # 启动 adb server
+kill-server               # 停止 adb server
+logcat                    # 查看日志
+reboot                    # 重启
+push                      # 上传
+pull                      # 下载
+remount                   # 提权
+get-serialno              # 获取序列号
+shell                     # 进入终端
+shell screencap           # 屏幕截图
+shell screenrecord        # 录制视频
+shell pm list packages    # 列出手机装的所有app的包名
+shell pm list packages -s # 列出系统应用的所有包名
+shell pm list packages -3 # 列出第三方应用的所有包名
+shell pm clear            # 清除应用数据与缓存
+shell am start -n         # 启动应用
+shell am force-stop       # 停止应用
+shell am force-stop       # 强制停止应用
+shell wm size             # 查看屏幕分辨率
+shell wm density          # 查看屏幕密度
+
+##############################################################################
+# References
+##############################################################################
+https://developer.android.google.cn/studio/command-line/adb.html
+
+
