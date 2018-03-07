@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 34, Last Modified: 2018/03/07 17:49
+# Version: 35, Last Modified: 2018/03/07 17:50
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -710,7 +710,7 @@ function ccat() {
     fi
 }
 
-# 放到你的配置文件中，给 man 增加色彩高亮
+# 放到你的配置文件中，给 man 增加漂亮的色彩高亮
 export LESS_TERMCAP_mb=$'\E[1m\E[32m'
 export LESS_TERMCAP_mh=$'\E[2m'
 export LESS_TERMCAP_mr=$'\E[7m'
