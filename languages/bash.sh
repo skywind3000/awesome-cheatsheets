@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 35, Last Modified: 2018/03/07 17:50
+# Version: 36, Last Modified: 2018/03/09 00:05
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -307,8 +307,8 @@ declare -f                # 列出函数定义
 statement1 && statement2  # and 操作符
 statement1 || statement2  # or 操作符
 
-exp1 -a exp2              # exp1 和 exp2 同时为真时返回真
-exp1 -o exp2              # exp1 和 exp2 有一个为真就返回真
+exp1 -a exp2              # exp1 和 exp2 同时为真时返回真（POSIX XSI扩展）
+exp1 -o exp2              # exp1 和 exp2 有一个为真就返回真（POSIX XSI扩展）
 ( expression )            # 如果 expression 为真时返回真，输入注意括号前反斜杆
 ! expression              # 如果 expression 为假那返回真
 
@@ -386,13 +386,22 @@ else
     echo "neither"
 fi
 
-# 复杂条件判断，注意，小括号是字面量，实际输入时前面要加反斜杆
+# 复杂条件判断，注意 || 和 && 是完全兼容 POSIX 的写法
+if [ $x -gt 10 ] && [ $x -lt 20 ]; then
+    echo "yes, between 10 and 20"
+fi
+
+# 可以用 && 命令连接符来做和上面完全等价的事情
+[ $x -gt 10 ] && [ $x -lt 20 ] && echo "yes, between 10 and 20"
+
+# POSIX XSI 扩展写法，小括号是字面量，实际输入时前面要加反斜杆
 if [ \( $x -gt 10 \) -a \( $x -lt 20 \) ]; then
     echo "yes, between 10 and 20"
 fi
 
 # 可以用 && 命令连接符来做和上面完全等价的事情
 [ \( $x -gt 10 \) -a \( $x -lt 20 \) ] && echo "yes, between 10 and 20"
+
 
 # 判断程序存在的话就执行
 [ -x /bin/ls ] && /bin/ls -l
