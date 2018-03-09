@@ -1,6 +1,6 @@
 ##############################################################################
 # EMACS CHEATSHEET (中文速查表)  -  by skywind (created on 2018/3/9)
-# Version: 1, Last Modified: 2018/03/09 15:35
+# Version: 2, Last Modified: 2018/03/09 17:39
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -10,12 +10,13 @@
 ##############################################################################
 
 C                   以前的 Control 键，现代对应 CTRL 键
-C-x                 同时按下 CTRL+x 
+C-x                 同时按下 CTRL-x (先按住 CTRL键不放再按下 x 键，然后都放开）
 M                   以前的 Meta 键，现代对应 ALT 键
-M-x                 同时按下 ALT+x，也可以先按一下 ESC 再按下 x 键
+M-x                 同时按下 ALT-x，也可以先按一下 ESC 再按下 x 键
 S                   Shift 键
 Del                 BackSpace 键，很久以前有些电脑的 BackSpace 叫做 Delete
 RET                 回车键
+C-x C-c             先按 CTRL-x，再按 CTRL-c
 
 
 ##############################################################################
@@ -36,6 +37,13 @@ M-b                 左移一个单词，同 CTRL+<Left>
 M-f                 右移一个单词，同 CTRL+<Right>
 C-v                 下一页，同 <PageDown> 键
 M-v                 上一页，同 <PageUp> 键
+M-<                 文件开头，同 CTRL+<Home>
+M->                 文件结尾，同 CTRL+<End>
+C-x <               向左水平滚动
+C-x >               向右水平滚动
+M-g M-g             跳到指定行号，连续按两次 ALT-g
+C-M-a               上一个函数，同时按下 CTRL-ALT-a
+C-M-e               下一个函数，同时按下 CTRL-ALT-e
 
 
 
