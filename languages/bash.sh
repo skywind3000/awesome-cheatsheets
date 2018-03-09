@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 36, Last Modified: 2018/03/09 00:05
+# Version: 37, Last Modified: 2018/03/09 15:18
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -394,12 +394,12 @@ fi
 # 可以用 && 命令连接符来做和上面完全等价的事情
 [ $x -gt 10 ] && [ $x -lt 20 ] && echo "yes, between 10 and 20"
 
-# POSIX XSI 扩展写法，小括号是字面量，实际输入时前面要加反斜杆
+# 小括号和 -a -o 是 POSIX XSI 扩展写法，小括号是字面量，输入时前面要加反斜杆
 if [ \( $x -gt 10 \) -a \( $x -lt 20 \) ]; then
     echo "yes, between 10 and 20"
 fi
 
-# 可以用 && 命令连接符来做和上面完全等价的事情
+# 同样可以用 && 命令连接符来做和上面完全等价的事情
 [ \( $x -gt 10 \) -a \( $x -lt 20 \) ] && echo "yes, between 10 and 20"
 
 
@@ -531,6 +531,8 @@ awk '{s+=$1} END {print s}' file   # 计算所有第一列的合
 awk 'NR%3==1' file                 # 从第一行开始，每隔三行打印一行
 
 sed 's/find/replace/' file         # 替换文件中首次出现的字符串并输出结果 
+sed '10s/find/replace/' file       # 替换文件第 10 行内容
+sed '10,20s/find/replace/' file    # 替换文件中 10-20 行内容
 sed -r 's/regex/replace/g' file    # 替换文件中所有出现的字符串
 sed -i 's/find/replace/g' file     # 替换文件中所有出现的字符并且覆盖文件
 sed '/line/s/find/replace/' file   # 先搜索行特征再执行替换
@@ -539,6 +541,8 @@ sed 's#find#replace#' file         # 使用 # 替换 / 来避免 pattern 中有�
 sed -i -r 's/^\s+//g' file         # 删除文件每行头部空格
 sed '/^$/d' file                   # 删除文件空行并打印
 sed -i 's/\s\+$//' file            # 删除文件每行末尾多余空格
+sed -n '2p' file                   # 打印文件第二行
+sed -n '2,5p' file                 # 打印文件第二到第五行
 
 
 ##############################################################################
@@ -749,6 +753,7 @@ https://linuxconfig.org/bash-scripting-tutorial
 https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
 https://devhints.io/bash
 https://github.com/jlevy/the-art-of-command-line
+https://yq.aliyun.com/articles/68541
 
 # vim: set ts=4 sw=4 tw=0 et :
 
