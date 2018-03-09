@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 21, Last Modified: 2018/03/07 17:30
+# Version: 22, Last Modified: 2018/03/09 15:50
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -524,6 +524,8 @@ zt                  调整光标所在行到屏幕上部
 zb                  调整光标所在行到屏幕下部
 ga                  显示光标下字符的 ascii 码或者 unicode 编码
 K                   查询光标下单词的帮助
+CTRL-PgUp           上个标签页，GVim OK，部分终端软件需设置对应键盘码
+CTRL-PgDown         下个标签页，GVim OK，部分终端软件需设置对应键盘码
 :set ff=unix        设置换行为 unix
 :set ff=dos         设置换行为 dos
 :set ff?            查看换行设置
