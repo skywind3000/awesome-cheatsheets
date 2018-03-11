@@ -531,6 +531,8 @@ CTRL-PgDown         下个标签页，GVim OK，部分终端软件需设置对�
 :set ff?            查看换行设置
 :set nohl           清除搜索高亮
 :set termcap        查看会从终端接收什么以及会发送给终端什么命令
+:set guicursor=     解决 SecureCRT/PenguiNet 中 NeoVim 局部奇怪字符问题
+:set t_RS= t_SH=    解决 SecureCRT/PenguiNet 中 Vim8.0 终端功能奇怪字符
 :earlier 15m        回退到15分钟前的文件内容
 :.!date             在当前窗口插入时间
 :%!xxd              开始二进制编辑
@@ -539,8 +541,6 @@ CTRL-PgDown         下个标签页，GVim OK，部分终端软件需设置对�
 :g/gladiolli/#      搜索单词打印结果，并在结果前加上行号
 :g/ab.*cd.*efg/#    搜索包含 ab,cd 和 efg 的行，打印结果以及行号
 :v/./,/./-j         压缩空行
-:set guicursor=     解决 SecureCRT/PenguiNet 中 NeoVim 局部奇怪字符问题
-:set t_RS= t_SH=    解决 SecureCRT/PenguiNet 中 Vim8.0 终端功能奇怪字符
 /fred\|joe          搜索 fred 或者 joe
 /\<\d\d\d\d\>       精确搜索四个数字
 /^\n\{3}            搜索连续三个空行
