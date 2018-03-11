@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 22, Last Modified: 2018/03/09 15:50
+# Version: 25, Last Modified: 2018/03/09 15:50
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -530,11 +530,18 @@ CTRL-PgDown         下个标签页，GVim OK，部分终端软件需设置对�
 :set ff=dos         设置换行为 dos
 :set ff?            查看换行设置
 :set nohl           清除搜索高亮
+:set termcap        查看会从终端接收什么以及会发送给终端什么命令
 :earlier 15m        回退到15分钟前的文件内容
 :.!date             在当前窗口插入时间
 :%!xxd              开始二进制编辑
 :%!xxd -r           保存二进制编辑
 :r !curl -sL {URL}  读取 url 内容添加到光标后
+:g/gladiolli/#      搜索单词打印结果，并在结果前加上行号
+:g/ab.*cd.*efg/#    搜索包含 ab,cd 和 efg 的行，打印结果以及行号
+:v/./,/./-j         压缩空行
+/fred\|joe          搜索 fred 或者 joe
+/\<\d\d\d\d\>       精确搜索四个数字
+/^\n\{3}            搜索连续三个空行
 
 
 ##############################################################################
@@ -624,9 +631,11 @@ reddit              https://www.reddit.com/r/vim/
 正确设置 ALT/BS 键  http://www.skywind.me/blog/archives/2021
 视频教程            http://vimcasts.org/
 中文帮助            http://vimcdoc.sourceforge.net/doc/help.html
+中文版入门到精通    https://github.com/wsdjeg/vim-galore-zh_cn
 五分钟脚本入门      http://andrewscala.com/vimscript/
 脚本精通            http://learnvimscriptthehardway.stevelosh.com/
 中文脚本帮助        vimcdoc.sourceforge.net/doc/eval.html
+十六使用经验        http://zzapper.co.uk/vimtips.html
 
 
 ##############################################################################
