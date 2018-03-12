@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 30, Last Modified: 2018/03/12 10:53
+# Version: 31, Last Modified: 2018/03/12 10:53
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -674,7 +674,7 @@ reddit              https://www.reddit.com/r/vim/
 五分钟脚本入门      http://andrewscala.com/vimscript/
 脚本精通            http://learnvimscriptthehardway.stevelosh.com/
 中文脚本帮助        vimcdoc.sourceforge.net/doc/eval.html
-十六使用经验        http://zzapper.co.uk/vimtips.html
+十六年使用经验      http://zzapper.co.uk/vimtips.html
 
 
 ##############################################################################
