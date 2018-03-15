@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 34, Last Modified: 2018/03/15 15:04
+# Version: 35, Last Modified: 2018/03/15 15:09
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -553,13 +553,15 @@ zz                  调整光标所在行到屏幕中央
 zt                  调整光标所在行到屏幕上部
 zb                  调整光标所在行到屏幕下部
 ga                  显示光标下字符的 ascii 码或者 unicode 编码
-g8                  显示光标下字符的 utf-8 编码结果
+g8                  显示光标下字符的 utf-8 编码字节序
 gi                  回到上次进入插入的地方，并切换到插入模式
 K                   查询光标下单词的帮助
 ZZ                  保存文件（如果有改动的话），并关闭窗口
 CTRL-PgUp           上个标签页，GVim OK，部分终端软件需设置对应键盘码
 CTRL-PgDown         下个标签页，GVim OK，部分终端软件需设置对应键盘码
 CTRL-R CTRL-W       命令模式下插入光标下单词
+CTRL-INSERT         复制到系统剪贴板（GVIM）
+SHIFT-INSERT        粘贴系统剪贴板的内容（GVIM）
 :set ff=unix        设置换行为 unix
 :set ff=dos         设置换行为 dos
 :set ff?            查看换行设置
@@ -701,8 +703,7 @@ reddit              https://www.reddit.com/r/vim/
 - 搜索时可以用 CTRL-R CTRL-W 插入光标下的单词
 - 映射按键时，应该默认使用 noremap ，只有特别需要的时候使用 map
 - 当你觉得做某事很低效时，你应该停下来，u u u u 然后思考正确的高效方式来完成
-- 用 y复制文本后，命令模式中 CTRL-R 然后按双引号 " 可以插入之前复制内容
-- Windows 下的 GVim 可以用 CTRL-INSERT 和 SHIFT-INSERT 操作系统剪贴板
+- 用 y复制文本后，命令模式中 CTRL-R 然后按双引号 0 可以插入之前复制内容
 - Windows 下的 GVim 可以设置 set rop=type:directx,renmode:5 增强显示
 
 
