@@ -676,6 +676,7 @@ echo $[RANDOM%X+1]                 # 取得 1 到 X 之间的随机数
 bind -x '"\C-l":ls -l'             # 设置 CTRL+l 为执行 ls -l 命令
 find / -type f -size +5M           # 查找大于 5M 的文件
 chmod --reference f1 f2            # 将 f2 的权限设置成 f1 一模一样的
+curl -L cheat.sh                   # 速查表大全
 
 
 ##############################################################################
