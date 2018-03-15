@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 32, Last Modified: 2018/03/15 10:50
+# Version: 34, Last Modified: 2018/03/15 15:04
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
