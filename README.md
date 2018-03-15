@@ -2,7 +2,7 @@
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/skywind3000/awesome-cheatsheets)
 
-![](awesome.png)
+[![](awesome.png)](https://github.com/skywind3000/awesome-cheatsheets)
 
 ## 最好用的中文速查表（Cheatsheet）
 
