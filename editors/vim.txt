@@ -720,6 +720,7 @@ reddit              https://www.reddit.com/r/vim/
 - 多阅读 :h index 学习新的快捷键，让你更加高效
 - Vim 帮助系统里有一个使用技巧集合，使用 :h tips 阅读
 - Windows 下的 GVim 可以用 CTRL-INSERT 和 SHIFT-INSERT 操作系统剪贴板
+- Windows 下的 GVim 可以设置 set rop=type:directx,renmode:5 增强显示
 - 思考题：知道下面控制代码 ^I ^M ^J ^[ ^H ^@ 分别代表什么意思么？
 
 
