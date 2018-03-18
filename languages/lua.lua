@@ -11,4 +11,4 @@
 
 print("Hello, World !!")           -- 基本输出
 print("Hi" .. " You !!")           -- 字符串链接
-print(type(0) .. " " .. type(''))  -- 输出类型
+print(type(''))                    -- 输出类型
