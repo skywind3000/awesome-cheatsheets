@@ -4,7 +4,6 @@
 
 [![](awesome.png)](https://github.com/skywind3000/awesome-cheatsheets)
                                                                                       
-```
 
 ## 最好用的中文速查表（Cheatsheet）
 
