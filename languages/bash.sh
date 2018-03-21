@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 41, Last Modified: 2018/03/11 00:12
+# Version: 42, Last Modified: 2018/03/21 10:09
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -792,7 +792,12 @@ function ccat() {
     fi
 }
 
-# 放到你的配置文件中，给 man 增加漂亮的色彩高亮
+
+##############################################################################
+# 好玩的配置
+##############################################################################
+
+# 放到你的 ~/.bashrc 配置文件中，给 man 增加漂亮的色彩高亮
 export LESS_TERMCAP_mb=$'\E[1m\E[32m'
 export LESS_TERMCAP_mh=$'\E[2m'
 export LESS_TERMCAP_mr=$'\E[7m'
@@ -806,6 +811,17 @@ export LESS_TERMCAP_ZN=""
 export LESS_TERMCAP_se=$'\E[27m\E(B\E[m'
 export LESS_TERMCAP_ZV=""
 export LESS_TERMCAP_so=$'\E[1m\E[33m\E[44m'
+
+# ALT+hjkl/HJKL 快速移动光标，将下面内容添加到 ~/.inputrc 中可作用所有工具，
+# 包括 bash/zsh/python/lua 等使用 readline 的工具，帮助见：info rluserman
+"\eh": backward-char
+"\el": forward-char
+"\ej": next-history
+"\ek": previous-history
+"\eH": backward-word
+"\eL": forward-word
+"\eJ": beginning-of-line
+"\eK": end-of-line
 
 
 ##############################################################################
