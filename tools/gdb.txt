@@ -63,6 +63,9 @@ info watchpoints          # 显示所有观察点
 
 run                       # 运行程序
 run {args}                # 以某参数运行程序
+run < file				  # 以某文件为标准输入运行程序
+run < <(cmd)			  # 以某命令的输出作为标准输入运行程序
+run <<< $(cmd)			  # 以某命令的输出作为标准输入运行程序
 set args {args} ...       # 设置运行的参数
 show args                 # 显示当前的运行参数
 cont                      # 继续运行，可简写为 c
@@ -183,6 +186,18 @@ set schedule-locking ?    # 调试一个线程时，其他线程是否执行，o
 set non-stop on/off       # 调试一个线程时，其他线程是否运行
 set pagination on/off     # 调试一个线程时，分页是否停止
 set target-async on/off   # 同步或者异步调试，是否等待线程中止的信息
+
+
+
+##############################################################################
+# 进程调试
+##############################################################################
+
+info inferiors						# 查看当前进程和 id
+inferior {id}						# 切换某个进程
+kill inferior {id...}				# 杀死某个进程
+set detach-on-fork on/off			# 设置当进程调用fork时gdb是否同时调试父子进程
+set follow-fork-mode parent/child	# 设置当进程调用fork时是否进入子进程
 
 
 ##############################################################################
