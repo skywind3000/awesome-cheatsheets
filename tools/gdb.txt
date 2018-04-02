@@ -63,9 +63,9 @@ info watchpoints          # 显示所有观察点
 
 run                       # 运行程序
 run {args}                # 以某参数运行程序
-run < file                  # 以某文件为标准输入运行程序
+run < file                # 以某文件为标准输入运行程序
 run < <(cmd)              # 以某命令的输出作为标准输入运行程序
-run <<< $(cmd)              # 以某命令的输出作为标准输入运行程序
+run <<< $(cmd)            # 以某命令的输出作为标准输入运行程序
 set args {args} ...       # 设置运行的参数
 show args                 # 显示当前的运行参数
 cont                      # 继续运行，可简写为 c
