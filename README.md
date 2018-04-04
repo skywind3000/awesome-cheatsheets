@@ -23,6 +23,7 @@
 
 - [Gdb](tools/gdb.txt)
 - [Adb](tools/adb.txt)
+- [Tmux](tools/tmux.txt)
 
 ### :pencil:文本编辑
 
@@ -31,6 +32,6 @@
 
 ## :pray:欢迎贡献
 
-[![@chlins](https://avatars2.githubusercontent.com/u/31262637?s=56)](https://github.com/chlins) [![@microcisco](https://avatars1.githubusercontent.com/u/9547228?s=56)](https://github.com/microcisco)
+[![@chlins](https://avatars2.githubusercontent.com/u/31262637?s=56)](https://github.com/chlins) [![@microcisco](https://avatars1.githubusercontent.com/u/9547228?s=56)](https://github.com/microcisco) [![@ziyenano](https://avatars0.githubusercontent.com/u/11867700?s=56)](https://github.com/ziyenano)
 
 希望把你的名字和头像列在这里么？欢迎把你熟悉的编程语言、框架和工具的常用知识点做成 cheatsheet 用 PR 发过来。
