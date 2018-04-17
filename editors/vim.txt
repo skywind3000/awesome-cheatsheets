@@ -684,6 +684,7 @@ reddit              https://www.reddit.com/r/vim/
 脚本精通            http://learnvimscriptthehardway.stevelosh.com/
 中文脚本帮助        vimcdoc.sourceforge.net/doc/eval.html
 十六年使用经验      http://zzapper.co.uk/vimtips.html
+配色方案            http://vimcolors.com/
 
 
 ##############################################################################
