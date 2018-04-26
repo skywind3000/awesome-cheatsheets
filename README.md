@@ -18,6 +18,7 @@
 
 - [Bash](languages/bash.sh)
 - [Go](languages/golang.go)
+- [Php](languages/php.php)
 
 ### :wrench:开发工具
 
@@ -32,6 +33,6 @@
 
 ## :pray:欢迎贡献
 
-[![@chlins](https://avatars2.githubusercontent.com/u/31262637?s=56)](https://github.com/chlins) [![@microcisco](https://avatars1.githubusercontent.com/u/9547228?s=56)](https://github.com/microcisco) [![@ziyenano](https://avatars0.githubusercontent.com/u/11867700?s=56)](https://github.com/ziyenano)
+[![@chlins](https://avatars2.githubusercontent.com/u/31262637?s=56)](https://github.com/chlins) [![@microcisco](https://avatars1.githubusercontent.com/u/9547228?s=56)](https://github.com/microcisco) [![@ziyenano](https://avatars0.githubusercontent.com/u/11867700?s=56)](https://github.com/ziyenano) [![@fyzzy1943](https://avatars3.githubusercontent.com/u/5002182?s=56)](https://github.com/fyzzy1943)
 
 希望把你的名字和头像列在这里么？欢迎把你熟悉的编程语言、框架和工具的常用知识点做成 cheatsheet 用 PR 发过来。
