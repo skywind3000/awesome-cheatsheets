@@ -1,4 +1,4 @@
-# VimScript 速查表（五分钟入门教程）
+# VimScript 速查表
 
 译注：折腾 Vim 当然要能看懂和改写相关脚本，而中文资料匮乏，缺一个提纲挈领的教程。本文翻译自 Andrew Scala 的 《[Five Minute Vimscript](http://andrewscala.com/vimscript/)》，立足于让你用最短的时间掌握 VimScript 的基础和要点，你可以把它看成一份语言速查表。
 

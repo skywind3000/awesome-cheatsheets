@@ -19,6 +19,7 @@
 - [Bash](languages/bash.sh)
 - [Go](languages/golang.go)
 - [Php](languages/php.php)
+- [VimScript](languages/vimscript.md)
 
 ### :wrench:开发工具
 
