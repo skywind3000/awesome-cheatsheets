@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 40, Last Modified: 2018/04/18 00:23
+# Version: 41, Last Modified: 2018/05/28 11:18
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -693,8 +693,8 @@ reddit              https://www.reddit.com/r/vim/
 
 - 永远不要用 CTRL-C 代替 <ESC> 完全不同的含义，容易错误中断运行的后台脚本
 - 很多人使用 CTRL-[ 代替 <ESC>，左手小指 CTRL，右手小指 [ 熟练后很方便
-- SecureCRT 中使用 Vim 8 内嵌终端如看到奇怪字符，使用 :set t_RS= t_SH= 解决
-- SecureCRT 中使用 NeoVim 如看到奇怪字符，使用 :set guicursor= 解决
+- 某些终端中使用 Vim 8 内嵌终端如看到奇怪字符，使用 :set t_RS= t_SH= 解决
+- 某些终端中使用 NeoVim 如看到奇怪字符，使用 :set guicursor= 解决
 - 多使用 ciw, ci[, ci", ci( 以及 diw, di[, di", di( 命令来快速改写/删除文本
 - SHIFT 相当于移动加速键， w b e 移动光标很慢，但是 W B E 走的很快
 - 自己要善于总结新技巧，比如移动到行首非空字符时用 0w 命令比 ^ 命令更容易输入

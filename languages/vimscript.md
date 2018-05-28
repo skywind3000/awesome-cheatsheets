@@ -250,7 +250,7 @@ Bar
 
 教程:
 
-- [Vim 中文帮助文档（usr_41） - 编写 Vim 脚本](http://vimcdoc.sourceforge.net/doc/usr_41.html) 
+- [Vim 中文帮助文档（usr_41） - 编写 Vim 脚本和 API 列表](http://vimcdoc.sourceforge.net/doc/usr_41.html)
 - [Vim 脚本指北](https://github.com/lymslive/vimllearn)
 - [Vim 脚本开发规范](https://github.com/vim-china/vim-script-style-guide)
 
