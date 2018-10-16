@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 43, Last Modified: 2018/04/02 17:00
+# Version: 44, Last Modified: 2018/10/17 03:15
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -581,6 +581,8 @@ sed '10s/find/replace/' file       # 替换文件第 10 行内容
 sed '10,20s/find/replace/' file    # 替换文件中 10-20 行内容
 sed -r 's/regex/replace/g' file    # 替换文件中所有出现的字符串
 sed -i 's/find/replace/g' file     # 替换文件中所有出现的字符并且覆盖文件
+sed -i '/find/i\newline' file      # 在文件的匹配文本前插入行
+sed -i '/find/a\newline' file      # 在文件的匹配文本后插入行
 sed '/line/s/find/replace/' file   # 先搜索行特征再执行替换
 sed -e 's/f/r/' -e 's/f/r' file    # 执行多次替换
 sed 's#find#replace#' file         # 使用 # 替换 / 来避免 pattern 中有斜杆
