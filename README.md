@@ -16,6 +16,7 @@
 
 ### :page_with_curl:编程语言
 
+- [C](languages/c_language.md)
 - [Bash](languages/bash.sh)
 - [Go](languages/golang.go)
 - [Php](languages/php.php)
