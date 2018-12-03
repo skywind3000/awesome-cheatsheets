@@ -719,9 +719,6 @@ wget -qO - "http://www.tarball.com/tarball.gz" | tar zxvf -
 # 性能测试：测试处理器性能
 python -c "import test.pystone;print(test.pystone.pystones())"
 
-# 性能测试：测试内存带宽
-dd if=/dev/zero of=/dev/null bs=1M count=32768
-
 # Linux 下挂载一个 iso 文件
 mount /path/to/file.iso /mnt/cdrom -oloop
 
