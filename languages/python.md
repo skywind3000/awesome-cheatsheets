@@ -26,6 +26,8 @@ Python 速查表中文版
 
 [对列表、字典和元组的深入理解](#对列表和字典以及元组的深入理解)
 
+[单元测试](#单元测试)
+
 ## 惯例
 
 - Python 对大小写敏感；
@@ -541,5 +543,57 @@ for val in collection:
 
 ```python
 [expr for val in collection for innerVal in val if condition]
+```
+
+## 单元测试
+
+Python自带`unittest`模块，可供我们编写单元测试。
+
+```python
+import unittest
+```
+
+我们可以编写继承于`unittest.TestCase`测试类的子类，并在子类中编写具体的测试函数。测试函数命必须以`test_`开头，否则不会被识别为测试函数，进而不会在运行单元测试时被运行。 
+
+```python
+class TestSubclass(unittest.TestCase):
+  def test_func(self):
+    self.assertEqual(0, 0)
+    # 可以通过msg关键字参数提供测试失败时的提示消息
+    self.assertEqual(0, 0, msg='modified message')
+    self.assertGreater(1, 0)
+    self.assertIn(0, [0])
+    self.assertTrue(True)
+    # 测试是否会抛出异常
+    with self.assertRaises(KeyError):
+      _ = dict()[1]
+
+  # 被@unittest.skip装饰器装饰的测试类或测试函数会被跳过
+  @unittest.skip(reason='just skip')
+  def test_skip(self):
+    raise Exception('I shall never be tested')
+```
+
+另外， `unittest.TestCase`中还有两个特殊的成员函数，他们分别会在调用每一个测试函数的前后运行。在测试前连接数据库并在测试完成后断开连接是一种常见的使用场景。
+
+```python
+def setUp(self):
+  # To do: connect to the database
+  pass
+
+def tearDown(self):
+  # To do: release the connection
+  pass
+
+def test_database(self):
+  # To do: test the database
+  pass
+```
+
+测试类编写完毕后，可以通过添加以下代码来将当前文件当成正常的Python脚本使用
+
+```python
+if __name__ == '__main__':
+  unittest.main()
 ```
 
