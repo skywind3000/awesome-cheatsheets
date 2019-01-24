@@ -94,7 +94,7 @@ Python 速查表中文版
    if variable is None :
    ```
 
-6. **datatime**：Python 内建的 datetime 模块提供了 `datetime`、`data` 以及 `time` 类型。
+6. **datetime**：Python 内建的 datetime 模块提供了 `datetime`、`data` 以及 `time` 类型。
 
    - `datetime` 组合了存储于 `date` 和 `time` 中的信息。
 
