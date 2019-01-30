@@ -349,8 +349,7 @@ sorted([2, 1, 3]) => [1, 2, 3]
 应用：
 
 ```python
-sorted(set('abc bcd')) => [' ',
-'a', 'b', 'c', 'd']
+sorted(set('abc bcd')) => [' ', 'a', 'b', 'c', 'd']
 # 返回一个字符串排序后无重复的字母序列
 ```
 
@@ -371,7 +370,7 @@ for i, (a, b) in enumerate(zip(seq1, seq2)):
 2. `unzip`：另一种思考方式是把一些行转化为一些列：
 
 ```python
-seq1, seq2 = zip(zipOutput)
+seq1, seq2 = unzip(zipOutput)
 ```
 
 - `reversed()` 将一个序列的元素以逆序迭代。
