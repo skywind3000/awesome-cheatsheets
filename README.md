@@ -53,9 +53,7 @@
 
 -->
 
-## :pray:感谢捐助
-
-支持本项目，成为一名 sponsor，你的图标会显示在这里，点击可以跳转到你的主页 [[成为赞助者](https://opencollective.com/awesome-cheatsheets#sponsor)]
+支持本项目，除了贡献代码，还能成为一名 sponsor，你的图标会显示在这里，点击可以跳转到你的主页 [[成为赞助者](https://opencollective.com/awesome-cheatsheets#sponsor)]
 
 <a href="https://opencollective.com/awesome-cheatsheets/sponsor/0/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/awesome-cheatsheets/sponsor/1/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/1/avatar.svg"></a>
