@@ -35,22 +35,25 @@
 - [VIM](editors/vim.txt)
 - [Nano](editors/nano.txt)
 
-## Contributors
+## :pray:感谢贡献
 
-This project exists thanks to all the people who contribute. 
+本项目得以存在并发展，需要谢谢下列参与贡献的网友：
+
 <a href="https://github.com/skywind3000/awesome-cheatsheets/graphs/contributors"><img src="https://opencollective.com/awesome-cheatsheets/contributors.svg?width=890&button=false" /></a>
 
+希望把你的名字和头像列在这里么？欢迎把你熟悉的编程语言、框架和工具的常用知识点做成 cheatsheet 用 PR 发过来。
 
-## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/awesome-cheatsheets#backer)]
+## :pray:感谢支持
+
+感谢支持者 🙏 [[成为支持者](https://opencollective.com/awesome-cheatsheets#backer)]
 
 <a href="https://opencollective.com/awesome-cheatsheets#backers" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/backers.svg?width=890"></a>
 
 
-## Sponsors
+## 赞助者
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/awesome-cheatsheets#sponsor)]
+支持本项目，成为一名 sponsor，你的图标会显示在这里，点击可以跳转到你的主页 [[成为赞助者](https://opencollective.com/awesome-cheatsheets#sponsor)]
 
 <a href="https://opencollective.com/awesome-cheatsheets/sponsor/0/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/awesome-cheatsheets/sponsor/1/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/1/avatar.svg"></a>
