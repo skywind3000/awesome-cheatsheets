@@ -1,6 +1,8 @@
 > 超级速查表 - 编程语言、框架和开发工具的速查表，单个文件包含一切你需要知道的东西 :zap:
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/skywind3000/awesome-cheatsheets) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/skywind3000/awesome-cheatsheets/blob/master/LICENSE)
+[![Backers on Open Collective](https://opencollective.com/awesome-cheatsheets/backers/badge.svg)](#backers) 
+[![Sponsors on Open Collective](https://opencollective.com/awesome-cheatsheets/sponsors/badge.svg)](#sponsors) 
 
 [![](awesome.png)](https://github.com/skywind3000/awesome-cheatsheets)
 ​                                                                                      
@@ -38,3 +40,33 @@
 [![@chlins](https://avatars2.githubusercontent.com/u/31262637?s=56)](https://github.com/chlins) [![@microcisco](https://avatars1.githubusercontent.com/u/9547228?s=56)](https://github.com/microcisco) [![@ziyenano](https://avatars0.githubusercontent.com/u/11867700?s=56)](https://github.com/ziyenano) [![@fyzzy1943](https://avatars3.githubusercontent.com/u/5002182?s=56)](https://github.com/fyzzy1943)[![@0xPoker](https://avatars1.githubusercontent.com/u/30389809?s=56&v=4)](https://github.com/490694561)
 
 希望把你的名字和头像列在这里么？欢迎把你熟悉的编程语言、框架和工具的常用知识点做成 cheatsheet 用 PR 发过来。
+
+## Contributors
+
+This project exists thanks to all the people who contribute. 
+<a href="https://github.com/skywind3000/awesome-cheatsheets/graphs/contributors"><img src="https://opencollective.com/awesome-cheatsheets/contributors.svg?width=890&button=false" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/awesome-cheatsheets#backer)]
+
+<a href="https://opencollective.com/awesome-cheatsheets#backers" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/awesome-cheatsheets#sponsor)]
+
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/0/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/1/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/2/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/3/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/4/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/5/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/6/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/7/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/8/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/awesome-cheatsheets/sponsor/9/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/9/avatar.svg"></a>
+
+
