@@ -44,14 +44,14 @@
 希望把你的名字和头像列在这里么？欢迎把你熟悉的编程语言、框架和工具的常用知识点做成 cheatsheet 用 PR 发过来。
 
 
-## :pray:感谢支持
+### 支持者们
 
 感谢支持者 🙏 [[成为支持者](https://opencollective.com/awesome-cheatsheets#backer)]
 
 <a href="https://opencollective.com/awesome-cheatsheets#backers" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/backers.svg?width=890"></a>
 
 
-## 赞助者
+### 赞助者们
 
 支持本项目，成为一名 sponsor，你的图标会显示在这里，点击可以跳转到你的主页 [[成为赞助者](https://opencollective.com/awesome-cheatsheets#sponsor)]
 
