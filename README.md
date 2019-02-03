@@ -37,7 +37,7 @@
 
 ## :pray:感谢贡献
 
-本项目得以存在并发展，需要谢谢下列参与贡献的网友：
+本项目的存在，离不开参与贡献的网友们，感谢：
 
 <a href="https://github.com/skywind3000/awesome-cheatsheets/graphs/contributors"><img src="https://opencollective.com/awesome-cheatsheets/contributors.svg?width=890&button=false" /></a>
 
