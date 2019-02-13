@@ -299,7 +299,7 @@ text=$(IFS=/; echo "${array[*]}")  # 用斜杠链接数组并赋值给变量
 
 A=( foo bar "a  b c" 42 ) # 数组定义
 B=("${A[@]:1:2}")         # 数组切片：B=( bar "a  b c" )
-C=("${A[@]:1:2}")         # 数组切片：C=( bar "a  b c" 42 )
+C=("${A[@]:1}")           # 数组切片：C=( bar "a  b c" 42 )
 echo "${B[@]}"            # bar a  b c
 echo "${B[1]}"            # a  b c
 echo "${C[@]}"            # bar a  b c 42
