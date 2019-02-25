@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 45, Last Modified: 2019/02/13 12:15
+# Version: 46, Last Modified: 2019/02/25 16:53
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -755,6 +755,15 @@ lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2
 
 # 在 .bashrc / .bash_profile 中加载另外一个文件（比如你保存在 github 上的配置）
 source ~/github/profiles/my_bash_init.sh
+
+# 反向代理：将外网主机（202.115.8.1）端口（8443）转发到内网主机 192.168.1.2:443
+ssh -CqTnN -R 0.0.0.0:8443:192.168.1.2:443  user@202.115.8.1
+
+# 正向代理：将本地主机的 8443 端口，通过 192.168.1.3 转发到 192.168.1.2:443 
+ssh -CqTnN -L 0.0.0.0:8443:192.168.1.2:443  user@192.168.1.3
+
+# socks5 代理：本地监听 socks5，把 socks5 的链接请求通过远程主机转发出去
+ssh -CqTnN -D localhost:1080  user@202.115.8.1
 
 # 终端下正确设置 ALT 键和 BackSpace 键
 http://www.skywind.me/blog/archives/2021
