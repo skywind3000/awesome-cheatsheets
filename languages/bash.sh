@@ -687,7 +687,7 @@ mount | column -t                  # 漂亮的列出当前加载的文件系统
 curl ip.cn                         # 取得外网 ip 地址和服务商信息
 disown -a && exit                  # 关闭所有后台任务并退出
 cat /etc/issue                     # 查看 Linux 发行版信息
-lsof -i port:80                    # 哪个程序在使用 80 端口？
+lsof -i :80                        # 哪个程序在使用 80 端口？
 showkey -a                         # 取得按键的 ASCII 码
 svn diff | view -                  # 使用 Vim 来显示带色彩的 diff 输出
 mv filename.{old,new}              # 快速文件改名
