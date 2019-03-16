@@ -114,7 +114,7 @@ dt2 = dt1.replace(minute = 0, second = 30)
 diff = dt1 - dt2
 ```
 
-**注：Python 中的绝大多数对象都是可变的，只有字符串和元组例外。**
+** 注：Python中的不可变对象只有`numbers`,`str`,`tuple`。 可变（Mutable）与不可变（Immutable）关键在于对象初始化之后内存`id`会不会改变**
 
 ## 数据结构
 
