@@ -1,0 +1,228 @@
+*********************************************Start**********************************************
+./redis-server /path/redis.conf 		指定配置文件启动redis
+redis-cli -h host -p port 				启动redis客户端
+redis-cli -c 							启动redis智能客户端
+
+*********************************************keys**********************************************
+
+keys pattern							查找所有匹配模式的key					
+DEL key [key...]						删除指定的key（一个或多个）
+DUMP key 								序列化给定的key并返回被序列化的值
+EXISTS key [key...]						查询key是否存在
+EXPIRE key seconds						设置一个key的过期时间（秒）
+EXPIREAT key timestamp					设置key在指定的unix时间过期
+PERSIST keys							移除key的过期时间
+PEXPIRE key milliseconds				设置key的有效时间（毫秒）
+PEXPIRE key milliseconds-timestamp		设置key的到期时间unix时间戳（毫秒）
+TTL key 								获取key的有效时间（秒）
+PTTL key 								获取key的有效时间（毫秒）
+RANDOMKEY								随机从数据库中返回一个key
+RENAME key newkey						将一个key重命名							
+TYPE key 	 							获取key的存储类型			
+MOVE key db 							移动key到另一个db
+MIGRATE host port key destination-db	跨实例的key的复制或替换迁移（原子性）
+	timeout [COPY | REPLACE]
+WAIT numslaves timeout					阻塞当前客户端直到所有以前写命令成功传输和制定的slaves确认
+SCAN cursor [MATCH pattern] 			迭代查询key
+	[COUNT count]	
+RESTORE key ttl serialized-value 		反序列化值为redis的键
+	[REPALCE]
+SORT key [BY pattern]
+	[LIMIT offset count]
+	[GET pattern [GET pattern...]]
+	[ASC|DESC]
+	[ALPHA] destination
+
+*********************************************Strings**********************************************
+
+GET key 								返回key的value
+MGET key [key...] 						获取多个key的值
+INCR key 								原子加1
+INCRBY key increment 					原子增加指定整数
+INCRBYFLOAT key increment 				原子增加一个浮点数
+DECR key 								原子减1
+DECRBY key decrement					原子减去指定整数
+APPEND key value 						追加一个值到key上
+GETBIT key offset 						返回值在偏移量位处的bit值
+GETRANGE key start end					获取key的值的子字符串
+GETSET key value 						返回旧值并设置新值
+BITCOUNT key [start end]				统计字符串指定起始位置的字节数
+SET key value [EX seconds] 				设置一个key value
+	[PX milliseconds]
+	[NX|XX]
+MSET key value [key value ...] 			设置多个key value
+MSETNX key value [key value ...] 		设置多个key value（仅当所有key都不存在时）
+PSETEX key milliseconds value 			设置key value以及过期时间（毫秒）
+SETEX key seconds value 				设置key value以及过期时间（秒）	
+SETBIT key offset value 				设置key的value在offset的bit值					
+SETNX key value 						设置一个key value（仅key不存在时）
+SETRANGE key offset value 				重写string在指定offset的值
+STRLEN key 								获取指定key的String值的长度
+
+*********************************************Hashes**********************************************
+
+HSET key field value 					设置hash里的一个字段
+HSETNX key field value 					设置hash的一个字段（仅字段不存在时）
+HMSET key field value [field value ...]	设置hash中指定的字段的值
+HGET key field							获取field的值
+HGETALL key 							获取key的所有field和value
+HMGET key field [field...] 				获取hash里指定的field的value
+HDEL key field [field...] 				删除key的一个或多个field
+HEXISTS key field						判断field是否存在
+HINCRBY key field increment 			将hash中field的值增加给定的数字
+HINCRBYFLOAT key field increment 		将hash中field的值增加给定的浮点数
+HLEN key 								获取hash里所有field数量
+HKEYS key 								获取hash所有field
+HVALS key 								获取hash所有值
+HSTRLEN key field 						获取指定field的长度
+HSCAN key cursor[MATCH pattern] 		迭代查询
+	[COUNT count]
+
+*********************************************Lists**********************************************
+
+LPOP key [key...] timeout 				左侧弹出元素
+BLPOP key [key...] timeout 				左侧弹出元素，若无元素则阻塞
+RPOP key [key...] timeout 				右侧弹出元素
+BRPOP key [key...] timeout 				右侧弹出元素，若无元素则阻塞
+LPUSH key value [value...] 				从左侧压入元素
+LPUSHX key value 						从左侧压入元素（仅当key存在时）
+RPUSH key value [value...] 				从右侧压入元素
+RPUSHX key value 						从右侧压入元素（仅当key存在时）
+RPOPLPUSH source destination timeout	source右侧弹出元素到destination左侧压入
+BRPOPLPUSH source destination timeout	source右侧弹出元素到destination左侧压入，若无元素则阻塞
+LINDEX key index						返回列表里元素的索引，下标从0开始
+LINSERT key BEFORE|AFTER pivot value 	在key的基准值的前|后插入value
+LLEN key 								获取队列长度
+LRANGE key start stop 					从列表中获取指定范围的元素
+LREM key count value 					从列表删除count个元素
+LSET key index value 					设置队列中位于index的元素
+LTRIM key start stop 					截取元素，从0开始
+
+*********************************************Sets**********************************************
+
+SADD key member [member...] 			添加元素到集合里
+SCARD key 								获取集合里元素数量
+SISMEMBER key member 					确定member是否是集合key的成员
+SMEMBERS key 							获取集合key里所有的元素
+SPOP key [count] 						在集合中随机移除并返回count个元素
+SRANDMEMBER key [count] 				从集合中随机获取count个元素
+SREM key member [member...] 			从集合中删除元素
+SDIFF key [key...] 						返回不同的集合key之间的差集元素
+SDIFFSTORE destination key [key...] 	返回不同的集合key之间的差集元素，结果放在destination集合里
+SINTER key [key...]  					获得集合key之间的交集元素
+SINTER destination key [key...] 		返回集合key之间的交集元素，结果放在destination集合里
+SUNION key [key...] 					返回给定的集合key的并集所有元素
+SUNIONSTORE destination key [key...] 	合并集合并将结果存入destination
+SMOVE source destination member 		移动source中的member到destination
+SSCAN key cursor [MATCH pattern]		迭代查找元素
+	[COUNT count]
+
+*********************************************SortedSets**********************************************
+
+ZADD key [NX|XX] [CH] [INCR] 
+	score member [score member ...]		向集合中添加成员，若已存在则进行更新，并自动排序
+ZCARD key 								获取排序集合中的成员数量
+ZSCORE key member 						返回member的score
+ZPOPMAX key [count] 					弹出count个最大分数的成员
+ZPOPMIN key [count] 					弹出count个最小分数的成员
+ZRANGE key start stop [WITHSCORES] 		返回指定范围的元素，分数从低到高，若相同则按字典序，索引0起且包含
+ZRANGEBYLEX key min max  				返回指定成员区间内的成员，分数相同，字典序输出
+	[LIMIT offset count] 
+ZRANGEBYSCORE key min max  				返回指定分数区间内的成员，分数从低到高
+	[LIMIT offset count] 
+ZREVRANGE key start stop [WITHSCORES] 	返回指定范围的元素，分数从高到底，若相同则按字典倒序
+ZREVRANGEBYLEX key min max  			返回指定成员区间内的成员，分数相同，字典倒序输出
+	[LIMIT offset count] 
+ZREVRANGEBYSCORE key max min  			返回指定分数区间内的成员，分数从高到低
+	[LIMIT offset count] 
+ZCOUNT key min max 						返回分数在min和max之间的成员数量
+ZINCRBY key increment member 			为集合中的member的score增加increment数值
+ZLEXCOUNT key member1 member2 			返回分数在两个成员分数之间的成员数量
+ZRANK key member  						返回member的分数排名，排名0起步，score从小到大
+ZREVRANK key member 					返回member的分数排名，排名0起步，score从大到小
+ZREM key member [member...] 			删除成员
+ZREMRANGEBYLEX key min max  			删除名称按字典序之间的所有成员，元素分数必须相同
+ZREMRANGEBYRANK key start stop  		删除制定排名区间内的所有成员，索引0起步
+ZREMRANGEBYSCORE key min max  			删除正序分数之间的所有成员
+ZUNIONSTORE destination numkeys 		计算numkeys个集合的交集元素，结果放在destination中
+	key [key...] [WEIGHTS weight]
+	[SUM|MIN|MAX]
+ZINTERESTORE destination numkeys  		计算numkeys个集合的交集元素，结果放在destination中
+	key [key...] [WEIGHTS weight]
+	[SUM|MIN|MAX]
+ZSCAN key cursor [MATCH pattern]		迭代查询
+	[COUNT count]
+
+*********************************************HyperLogLog**********************************************
+
+PFADD key element [element...] 			添加元素
+PFCOUNT key [key...] 					返回key中元素近似数量，多个key返回并集近似数量
+PFMERGE destkey sourcekey  				合并多个HyperLogLog
+	[sourcekey...]
+
+*********************************************Connection**********************************************
+
+AUTH password 							验证密码
+ECHO message 							回显message字符串
+PING 									ping
+QUIT  									退出
+SELECT index 							选择新数据库
+SWAPDB index index  					交换同一服务器上的两个数据库
+
+*********************************************Pub/Sub**********************************************
+
+PSUBSCRIBE pattern [pattern...] 	 	订阅符合pattern模式的频道信息
+PUBLISH channel message 				发布一条消息到频道中
+PUNSUBSCRIBE [pattern [pattern...]] 	客户端退订指定模式的频道
+UNSUBSCRIBE [channel [channel...]] 		客户端退订指定频道
+SUBSCRIBE channel [channel...] 			监听频道发布的消息
+PUBSUB CHANNELS [pattern] 				列出符合模式的活跃频道
+PUBSUB NUMSUB [channel...]  			列出指定频道的订阅个数
+PUBSUB NUMPAT 							返回客户端订阅的所有模式的总和
+
+*********************************************Server**********************************************
+
+BGREWRITEAOF							异步重写AOF
+BGSAVE									异步备份数据快照到磁盘上
+SAVE 									同步数据岛磁盘
+SHUTDOWN [NOSAVE | SAVE]				关闭服务并不保存|保存
+SLAVEOF host port						为当前实例指定一个主节点
+CLIENT KILL 							关闭客户端连接
+	[IP:port] 
+	[ID client-id] 
+	[TYPE normal|slave|pubsub] 
+	[ADDR ip:port] 
+	[SKIPME yes|no]
+CLIENT LIST								获取客户端连接列表
+CLIENT GETNAME							获取当前连接名称
+CLIENT ID 								返回当前连接的ID
+CLIENT PAUSE timeout					暂停客户端访问timeout时间
+CLIENT REPLY on|off|skip 				设置服务器对当前客户端命令的回复|不回复|跳过
+CLIENT SETNAME connection-name 			设置当前连接名字
+CLIENT UNBLOCK client-id 				解除客户端当前的阻塞行为
+	[timeout|error]						 
+CLIENT COMMAND							获取redis命令信息
+COMMAND COUNT							获取redis命令总数
+COMMAND GETKEYS							从完整的redis命令返回key
+COMMAND INFO command-name
+	[command-name ...]					获取特定命令的详细信息
+CONFIG GET parmeter						获取配置参数的值
+CONFIG REWRITE							重写内存中的配置文件（启动时指定的conf）
+CONFIG SET parameter value				设置配置文件参数
+CONFIG RESETSTAT						复位info命令统计的一些计算器
+DBSIZE									返回当前数据库了key的数量
+DEBUG OBJECT key						获取某个key的debug信息
+DEBUG SEGFAULT							模拟服务器崩溃
+FLUSHALL								清空所有数据库
+FLUSHDB									清空当前数据库
+INFO [section]							获取服务器详细信息
+LASTSAVE								获取最后一次同步磁盘的时间
+MEMORY DOCTOR							输出内存信息日志
+MEMORY HELP								返回子命令的说明信息
+MEMORY-STATS							展示内存使用信息
+MEMORY-USAGE key [SAMPLES count]		某个key的内存占用情况
+MONITOR									监控返回服务器处理的每一个命令
+REPLICAOF host port						在线修改当前服务器的复制设置
+ROLE									返回实例的角色信息以及主从节点的相关信息
+TIME 									返回当前unix时间戳和这一秒已经过去的微妙数
+SLOWLOG subcommand [argument]			慢查询日志
