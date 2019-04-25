@@ -1,33 +1,33 @@
 *********************************************Start**********************************************
   Author@Mutouboy(www.jwb5.cn)
 *********************************************Start**********************************************
-./redis-server /path/redis.conf 		指定配置文件启动redis
-redis-cli -h host -p port 			启动redis客户端
-redis-cli -c 					启动redis智能客户端
+./redis-server /path/redis.conf 			指定配置文件启动redis
+redis-cli -h host -p port 				启动redis客户端
+redis-cli -c 						启动redis智能客户端
 
 *********************************************keys**********************************************
 
-keys pattern					查找所有匹配模式的key					
-DEL key [key...]				删除指定的key（一个或多个）
-DUMP key 					序列化给定的key并返回被序列化的值
-EXISTS key [key...]				查询key是否存在
-EXPIRE key seconds				设置一个key的过期时间（秒）
-EXPIREAT key timestamp				设置key在指定的unix时间过期
-PERSIST keys					移除key的过期时间
-PEXPIRE key milliseconds			设置key的有效时间（毫秒）
-PEXPIRE key milliseconds-timestamp		设置key的到期时间unix时间戳（毫秒）
-TTL key 					获取key的有效时间（秒）
-PTTL key 					获取key的有效时间（毫秒）
-RANDOMKEY					随机从数据库中返回一个key
-RENAME key newkey				将一个key重命名							
-TYPE key 	 				获取key的存储类型			
-MOVE key db 					移动key到另一个db
-MIGRATE host port key destination-db		跨实例的key的复制或替换迁移（原子性）
-	timeout [COPY | REPLACE]
-WAIT numslaves timeout				阻塞当前客户端直到所有以前写命令成功传输和制定的slaves确认
-SCAN cursor [MATCH pattern] 			迭代查询key
-	[COUNT count]	
-RESTORE key ttl serialized-value 		反序列化值为redis的键
+keys pattern						查找所有匹配模式的key					
+DEL key [key...]					删除指定的key（一个或多个）
+DUMP key 						序列化给定的key并返回被序列化的值
+EXISTS key [key...]					查询key是否存在
+EXPIRE key seconds					设置一个key的过期时间（秒）
+EXPIREAT key timestamp					设置key在指定的unix时间过期
+PERSIST keys						移除key的过期时间
+PEXPIRE key milliseconds				设置key的有效时间（毫秒）
+PEXPIRE key milliseconds-timestamp			设置key的到期时间unix时间戳（毫秒）
+TTL key 						获取key的有效时间（秒）
+PTTL key 						获取key的有效时间（毫秒）
+RANDOMKEY						随机从数据库中返回一个key
+RENAME key newkey					将一个key重命名							
+TYPE key 	 					获取key的存储类型			
+MOVE key db 						移动key到另一个db
+MIGRATE host port key destination-db			跨实例的key的复制或替换迁移（原子性）
+	timeout [COPY | REPLACE]	
+WAIT numslaves timeout					阻塞当前客户端直到所有以前写命令成功传输和制定的slaves确认
+SCAN cursor [MATCH pattern] 				迭代查询key
+	[COUNT count]		
+RESTORE key ttl serialized-value 			反序列化值为redis的键
 	[REPALCE]
 SORT key [BY pattern]
 	[LIMIT offset count]
@@ -157,7 +157,7 @@ ZSCAN key cursor [MATCH pattern]			迭代查询
 
 *********************************************HyperLogLog**********************************************
 
-PFADD key element [element...] 			添加元素
+PFADD key element [element...] 				添加元素
 PFCOUNT key [key...] 					返回key中元素近似数量，多个key返回并集近似数量
 PFMERGE destkey sourcekey  				合并多个HyperLogLog
 	[sourcekey...]
