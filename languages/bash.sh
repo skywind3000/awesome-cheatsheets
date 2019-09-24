@@ -1,6 +1,6 @@
 ##############################################################################
 # BASH CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/14)
-# Version: 46, Last Modified: 2019/02/25 16:53
+# Version: 47, Last Modified: 2019/09/24 17:58
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
