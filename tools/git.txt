@@ -23,21 +23,49 @@ git init
 ##############################################################################
 git add <file>
 git commit -m "descriptions"
+git commit --amend 对最近一次的提交做内容修改
+git commit --amend --author "user_name <user_email>" 修改最近提交用户名和邮箱
 
 
 ##############################################################################
 # 查看状态、比对
 ##############################################################################
 git status
+git status -s 文件状态缩略信息, 常见 A:新增; M:文件变更; ?:未track; D:删除
 git diff <file>
 git diff HEAD -- <file>		查看工作区和版本库里面最新版本的区别
-
+git diff --check <file>     检查是否有空白错误(regex:' \{1,\}$')
+git diff --cached <file>    查看已add的内容(绿M)
 
 ##############################################################################
 # 查看历史版本、历史操作
 ##############################################################################
 git log
 git reflog
+git log -n                  最近n条的提交历史
+git log <branch_name> -n    分支branch_name最近n条的提交历史
+git log --stat              历次commit的文件变化
+git log lhs_hash..rhs_hash  对比两次commit的变化(增删的主语为lhs, 如git log HEAD~2..HEAD == git log HEAD -3)
+git log -p                  历次commit的内容增删
+git log -p -W               历次commit的内容增删, 同时显示变更内容的上下文
+git log origin/EI-1024 -1 --stat -p -W 查看远端分支EI-1024前一次修改的详细内容
+git log origin/master..dev --stat -p -W 查看本地dev分支比远端master分支变化(修改)的详细内容
+
+git log <branch_name> --oneline   对提交历史单行排列
+git log <branch_name> --graph     对提交历史图形化排列
+git log <branch_name> --decorate  对提交历史关联相关引用, 如tag, 本地远程分支等
+git log <branch_name> --oneline --graph --decorate 拼接一下, 树形化显示历史
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%ai(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit 同上, 建议alais保存
+
+git log --since --after     显示时间之后的提交
+git log --until --before    显示时间之前的提交
+git --author                显示指定作者的提交
+git --committer             显示指定committer的提交(注:committer不一定是author)
+git log origin/b3.3/master --author=yx-ren --since="2019-10-01" --before="2019-11-01" 查看某作者在某发布版本最近一个月的提交, 常见于线上背锅
+git log origin/b3.0/master --author=some_leave --since="1 month ago" 查看某刚离职同事过去一个月的提交, 常见于背锅
+git log --since=1.weeks     过去一周的提交(写周报的时候可以看看我这一周干了啥)
+git log --since=1.days      过去一天的提交(下班的时候可以看看我这一天干了啥)
+git log --since="1 weeks 2 days 3 hours 40 minutes 50 seconds ago" 过去1周2天3小时40分50秒之内的提交
 
 
 ##############################################################################
