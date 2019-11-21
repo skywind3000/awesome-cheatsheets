@@ -22,6 +22,7 @@ git init
 # 提交修改
 ##############################################################################
 git add <file>
+git add -u 提交work directory中所有已track的文件至staging area
 git commit -m "descriptions"
 git commit --amend 对最近一次的提交做内容修改
 git commit --amend --author "user_name <user_email>" 修改最近提交用户名和邮箱
@@ -197,6 +198,45 @@ git push origin <tag name>					推送指定标签到远程
 git push origin --tags						推送所有本地标签到远程
 git push origin :refs/tags/<tag name>				删除远程标签（先删除本地标签）
 
+##############################################################################
+# rebase(换基)
+##############################################################################
+# rebase 在日常中常用功能主要是两个, 多人协同开发定期rebase master以及压缩某分支多个commit
+git rebase master 常见于多人开发, 每个开发人员从master checkout出自己的分支, 开发一段时间后提交至master之前最好rebase一下, 防止冲突,
+              就算真有冲突在本地解决好过强制提交, 开发流程中尽量保证master的干净整洁
+git rebase -i HEAD~n 压缩当前分支的n个commit并合并为1个commit, 常见第一行为pick, 剩下的n-1行为squash
+
+git rebase --abort # rebase过程中发生错误, 可以利用该命令终止整个rebase过程
+git rebase --continue # rebase过程中发生冲突, 在解决冲突后可以利用该命令进行后续过程
+
+##############################################################################
+# 打patch(补丁)
+##############################################################################
+# 生成diff patch文件(git可以识别diff文件)
+git <branch> log -n -p > diff.patch # 生成某分支过去n个commit的文件diff信息至单个diff文件
+git diff <--cached> diff.patch # 针对当前缓存区的内容生成diff文件
+
+# 利用apply打patch
+git apply --check diff.patch    #检查是否可以正常应用, 无回显证明无冲突
+git apply --stat diff.patch     #查看应用diff文件后的文件变化
+git apply diff.patch            #打patch, 仅仅改变文件信息, 无commit信息, 仍然需要add, commit
+
+# 利用--format-patch生成patch, 带commit信息
+git format-patch <branch> -n 　 #生成分支<branch>最近的n次commit的patch
+git format-patch <r1>..<r2>     #生成两个commit间的修改的patch（包含两个commit. <r1>和<r2>都是具体的commit号)
+git format-patch -1 <r1>        #生成单个commit的patch
+git format-patch <r1>           #生成某commit以来的修改patch（不包含该commit）
+git format-patch --root <r1>　　#生成从根到r1提交的所有patch
+
+# 利用am打patch
+git apply --check 0001-update-bash.sh.patch #检查patch是否冲突可用
+git apply --stat 0001-update-bash.sh.patch  #检查patch文件变更情况, 无回显证明无冲突
+git am 0001-update-bash.sh.patch            #将该patch打上到当前分支, 带commit信息
+git am ./*.patch                            #将当前路径下的所有patch按照先后顺序打上
+git am --abort                              #终止整个打patch的过程, 类似rebase --abort
+git am --resolved                           #解决冲突后, 可以执行该命令进行后续的patch, 类似rebase --continue
+
+##############################################################################
 
 ##############################################################################
 # 使用GitHub
