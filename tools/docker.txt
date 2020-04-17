@@ -9,15 +9,15 @@
 ##############################################################################
 # 镜像
 ##############################################################################
-docker login img         # 登录到远程仓库
-docker logout img        # 登出到远程仓库
-docker search img        # 查找镜像
-docker pull img          # 拉取（下载）镜像
-docker push img[:tag]    # 推送镜像
-docker images            # 查看已拉取的镜像
-docker rmi img           # 删除镜像
-docker history img       # 查看指定镜像的创建历史
-docker build [OPT] PATH  # 从Dockerfile创建镜像
+docker login img                                           # 登录到远程仓库
+docker logout img                                          # 登出到远程仓库
+docker search img                                          # 查找镜像
+docker pull img                                            # 拉取（下载）镜像
+docker push img[:tag]                                      # 推送镜像
+docker images                                              # 查看已拉取的镜像
+docker rmi img                                             # 删除镜像
+docker history img                                         # 查看指定镜像的创建历史
+docker build [OPT] PATH                                    # 从Dockerfile创建镜像
     # OPT详解
     # --build-arg=[]          : 设置镜像创建时的变量
     # --cpu-shares            : 设置CPU使用权重
@@ -40,10 +40,11 @@ docker build [OPT] PATH  # 从Dockerfile创建镜像
     # --ulimit                : Ulimit配置
     # --tag, -t               : 镜像的名字及标签
     # --network               : 默认 default。在构建期间设置RUN指令的网络模式
-docker save img -o xxx   # 将指定镜像归档为tar文件
-docker load img -i xxx   # 加载镜像归档文件（必须为save创建的）
-docker export img -o xxx # 将指定镜像归档为tar文件
-docker import xxx img    # 加载镜像归档文件（必须为export创建的）
+docker save img -o xxx                                     # 将指定镜像归档为tar文件
+docker load img -i xxx                                     # 加载镜像归档文件（必须为save创建的）
+docker tag img[:tag] [registryhost/][username/]name[:tag]  # 标记本地镜像
+docker export img -o xxx                                   # 将指定镜像归档为tar文件
+docker import xxx img                                      # 加载镜像归档文件（必须为export创建的）
 
 
 ##############################################################################
