@@ -103,6 +103,41 @@ docker cp FILE container:PATH                                                   
 
 
 ##############################################################################
+# Dockerfile
+##############################################################################
+# 指定基础镜像
+FROM img
+# build时运行指令
+RUN echo 'a command'
+# 复制到容器
+COPY source target
+# 复制到容器，如果遇到压缩包则自动解压
+ADD source target
+# run时运行指令，如果有多条则只有最后一个生效，可被docker run命令行参数中指定要运行的程序所覆盖，附加在ENTRYPOINT指令后面，相当于定参
+CMD 'a command'
+# run时运行指令，如果有多条则只有最后一个生效，不可被docker run命令行参数中指定要运行的程序所覆盖，除了--entrypoint选项，相当于变参
+ENTRYPOINT 'echo'
+# 对于CMD和ENTRYPOINT，举个例子：
+# 如果没有传参数，上例为：echo 'a command'
+# 如果改变了CMD为'hello'，则为：echo 'hello'
+# 如果改变了ENTRYPOINT为'print'，则为：print 'a command'
+# 定义环境变量，同时也适用于文件内
+ENV value
+$value
+# 定义文件变量
+ARG value
+$value
+# 定义匿名数据卷，如果没有挂载路径则自动挂载到匿名卷
+VOLUME /path/to/sp
+# 标记端口
+EXPOSE portID
+# 改变执行后面命令的用户
+USER username
+# 指定监控容器服务运行状态的程序
+HEALTHCHECK CMD monitorProgram
+
+
+##############################################################################
 # 其他
 ##############################################################################
 docker info     # 显示 Docker 系统信息，包括镜像和容器数
