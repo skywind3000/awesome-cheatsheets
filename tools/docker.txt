@@ -7,6 +7,30 @@
 
 
 ##############################################################################
+# 加速
+##############################################################################
+网易：  https://hub-mirror.c.163.com/
+阿里云：https://<你的ID>.mirror.aliyuncs.com
+Upstart:
+    在/etc/default/docker里加入
+        DOCKER_OPTS="--registry-mirror=https://xxxxxxx.com/
+    后重启服务
+        sudo service docker restart
+Systemd:
+    在/etc/docker/daemon.json里加入
+        {"registry-mirrors":["https://reg-mirror.qiniu.com/"]}
+    后重新启动服务
+        sudo systemctl daemon-reload
+        sudo systemctl restart docker
+Windows:
+    在Settings->Daemon里Registrymirrors一栏使用
+        https://registry.docker-cn.com
+Mac OS:
+    在Perferences...->Daemon->Registrymirrors里使用
+        https://reg-mirror.qiniu.com
+
+
+##############################################################################
 # 镜像
 ##############################################################################
 docker login img                                           # 登录到远程仓库
@@ -55,7 +79,6 @@ docker import xxx img                                      # 加载镜像归档�
 docker run -it -d -e xxx --link xxx -v ~/:~/ -p 8088:8088 --name=xxx ID command
                后台      连接容器            端口映射                镜像
                运行                                                  ID
-
 docker stop ID                                                                         # 暂停容器
 docker start ID                                                                        # 启动容器
 docker rm ID                                                                           # 删除容器（已暂停运行）
@@ -71,3 +94,9 @@ for i in  `docker ps |grep Up|awk '{print $1}'`;do echo \ &&docker top $i; done 
 docker events                                                                          # 从服务器获取实时事件，--since限制开始时间，--until限制结束时间
 docker cp FILE ID:PATH                                                                 # 从主机拷贝文件到容器
 
+
+##############################################################################
+# 其他
+##############################################################################
+docker info     # 显示 Docker 系统信息，包括镜像和容器数
+docker version  # 显示 Docker 版本信息
