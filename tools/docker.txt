@@ -85,6 +85,7 @@ docker stop container                                                           
 docker start container                                                                        # 启动容器
 docker restart container                                                                      # 重启容器
 docker kill container                                                                         # 杀掉一个运行中的容器
+docker diff container                                                                         # 检查容器里文件结构的更改
 docker pause container                                                                        # 暂停容器中的所有进程
 docker unpause container                                                                      # 回复容器中的所有进程
 docker rm container                                                                           # 删除容器（已暂停运行）
