@@ -55,25 +55,18 @@ docker run -it -d -e xxx --link xxx -v ~/:~/ -p 8088:8088 --name=xxx ID command
                后台      连接容器            端口映射                镜像
                运行                                                  ID
 
-# 暂停容器
-docker stop ID
-
-# 启动容器
-docker start ID
-
-# 删除容器（已暂停运行）
-docker rm ID
-
-# 进入容器
-docker exec -it ID command
-
-# 查看所有容器
-docker ps -a
-
-# 查看容器日志
-docker log ID
-
-# 从主机拷贝文件到容器
-docker cp FILE ID:PATH
-docker cp ID:PATH FILE
+docker stop ID                                                                         # 暂停容器
+docker start ID                                                                        # 启动容器
+docker rm ID                                                                           # 删除容器（已暂停运行）
+docker exec -it ID command                                                             # 进入容器
+docker ps -a -f 过滤字段                                                               # 查看所有容器
+docker logs ID                                                                         # 查看容器日志
+docker wait ID                                                                         # 阻塞运行直到容器停止，然后打印出它的退出代码
+docker port ID                                                                         # 查看容器的端口映射情况
+docker inspect --type ID                                                               # 获取容器元数据，--type参数输出为json格式
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ID  # 获取指定正在运行的容器IP
+docker top ID                                                                          # 查看容器进程运行情况
+for i in  `docker ps |grep Up|awk '{print $1}'`;do echo \ &&docker top $i; done        # 获取全部运行容器的进程信息
+docker events                                                                          # 从服务器获取实时事件，--since限制开始时间，--until限制结束时间
+docker cp FILE ID:PATH                                                                 # 从主机拷贝文件到容器
 
