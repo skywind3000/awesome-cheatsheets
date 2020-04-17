@@ -41,6 +41,7 @@ docker push img[:tag]                                      # 推送镜像
 docker images                                              # 查看已拉取的镜像
 docker rmi img                                             # 删除镜像
 docker history img                                         # 查看指定镜像的创建历史
+docker commit -a author -m message -p container img        # 从容器创建镜像，-p为创建时停止容器
 docker build [OPT] PATH                                    # 从Dockerfile创建镜像
     # OPT详解
     # --build-arg=[]          : 设置镜像创建时的变量
@@ -74,25 +75,30 @@ docker import xxx img                                      # 加载镜像归档�
 ##############################################################################
 # 容器
 ##############################################################################
-# 创建容器
+# 创建并启动容器
                   参数              路径映射              容器名称      指令
-docker run -it -d -e xxx --link xxx -v ~/:~/ -p 8088:8088 --name=xxx ID command
-               后台      连接容器            端口映射                镜像
-               运行                                                  ID
-docker stop ID                                                                         # 暂停容器
-docker start ID                                                                        # 启动容器
-docker rm ID                                                                           # 删除容器（已暂停运行）
-docker exec -it ID command                                                             # 进入容器
-docker ps -a -f 过滤字段                                                               # 查看所有容器
-docker logs ID                                                                         # 查看容器日志
-docker wait ID                                                                         # 阻塞运行直到容器停止，然后打印出它的退出代码
-docker port ID                                                                         # 查看容器的端口映射情况
-docker inspect --type ID                                                               # 获取容器元数据，--type参数输出为json格式
-docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ID  # 获取指定正在运行的容器IP
-docker top ID                                                                          # 查看容器进程运行情况
-for i in  `docker ps |grep Up|awk '{print $1}'`;do echo \ &&docker top $i; done        # 获取全部运行容器的进程信息
-docker events                                                                          # 从服务器获取实时事件，--since限制开始时间，--until限制结束时间
-docker cp FILE ID:PATH                                                                 # 从主机拷贝文件到容器
+docker run -it -d -e xxx --link xxx -v ~/:~/ -p 8088:8088 --name=xxx img command
+               后台      连接容器            端口映射                镜像ID
+               运行
+docker create --name=xxx container                                                            # 创建但不启动容器
+docker stop container                                                                         # 暂停容器
+docker start container                                                                        # 启动容器
+docker restart container                                                                      # 重启容器
+docker kill container                                                                         # 杀掉一个运行中的容器
+docker pause container                                                                        # 暂停容器中的所有进程
+docker unpause container                                                                      # 回复容器中的所有进程
+docker rm container                                                                           # 删除容器（已暂停运行）
+docker exec -it container command                                                             # 进入容器
+docker ps -a -f 过滤字段                                                                      # 查看所有容器
+docker logs container                                                                         # 查看容器日志
+docker wait container                                                                         # 阻塞运行直到容器停止，然后打印出它的退出代码
+docker port container                                                                         # 查看容器的端口映射情况
+docker inspect --type container                                                               # 获取容器元数据，--type参数输出为json格式
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container  # 获取指定正在运行的容器IP
+docker top container                                                                          # 查看容器进程运行情况
+for i in  `docker ps |grep Up|awk '{print $1}'`;do echo \ &&docker top $i; done               # 获取全部运行容器的进程信息
+docker events                                                                                 # 从服务器获取实时事件，--since限制开始时间，--until限制结束时间
+docker cp FILE container:PATH                                                                 # 从主机拷贝文件到容器
 
 
 ##############################################################################
@@ -100,3 +106,4 @@ docker cp FILE ID:PATH                                                          
 ##############################################################################
 docker info     # 显示 Docker 系统信息，包括镜像和容器数
 docker version  # 显示 Docker 版本信息
+
