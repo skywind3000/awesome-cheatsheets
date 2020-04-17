@@ -1,6 +1,7 @@
 ##############################################################################
 # DOCKER CHEATSHEET (中文速查表)  -  by Joxos (created on 2020/04/16)
-# Version: 1, Last Modified: 2020/04/16 18:00
+# 参考资料：RUNOOB
+# Version: 1, Last Modified: 2020/04/17
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -8,10 +9,41 @@
 ##############################################################################
 # 镜像
 ##############################################################################
-docker search xxx    # 查找镜像
-docker pull xxx      # 拉取（下载）镜像
-docker images        # 查看已拉取的镜像
-docker rmi xxx       # 删除镜像
+docker login img         # 登录到远程仓库
+docker logout img        # 登出到远程仓库
+docker search img        # 查找镜像
+docker pull img          # 拉取（下载）镜像
+docker push img[:tag]    # 推送镜像
+docker images            # 查看已拉取的镜像
+docker rmi img           # 删除镜像
+docker history img       # 查看指定镜像的创建历史
+docker build [OPT] PATH  # 从Dockerfile创建镜像
+    # OPT详解
+    # --build-arg=[]          : 设置镜像创建时的变量
+    # --cpu-shares            : 设置CPU使用权重
+    # --cpu-period            : 限制CPU CFS周期
+    # --cpu-quota             : 限制CPU CFS配额
+    # --cpuset-cpus           : 指定使用的CPUid
+    # --cpuset-mems           : 指定使用的内存id
+    # --disable-content-trust : 忽略校验，默认开启
+    # -f                      : 指定要使用的Dockerfile路径
+    # --force-rm              : 设置镜像过程中删除中间容器
+    # --isolation             : 使用容器隔离技术
+    # --label=[]              : 设置镜像使用的元数据
+    # -m                      : 设置内存最大值
+    # --memory-swap           : 设置Swap的最大值为内存+swap，"-1"表示不限swap
+    # --no-cache              : 创建镜像的过程不使用缓存
+    # --pull                  : 尝试去更新镜像的新版本
+    # --quiet, -q             : 安静模式，成功后只输出镜像 ID
+    # --rm                    : 设置镜像成功后删除中间容器
+    # --shm-size              : 设置/dev/shm的大小，默认值是64M
+    # --ulimit                : Ulimit配置
+    # --tag, -t               : 镜像的名字及标签
+    # --network               : 默认 default。在构建期间设置RUN指令的网络模式
+docker save img -o xxx   # 将指定镜像归档为tar文件
+docker load img -i xxx   # 加载镜像归档文件（必须为save创建的）
+docker export img -o xxx # 将指定镜像归档为tar文件
+docker import xxx img    # 加载镜像归档文件（必须为export创建的）
 
 
 ##############################################################################
