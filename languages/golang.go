@@ -34,6 +34,7 @@ GOOS                                                  // 编译系统
 GOARCH                                                // 编译arch
 GO111MODULE                                           // gomod开关
 GOPROXY                                               // go代理 https://goproxy.io  https://goproxy.cn
+GOSSAFUNC                                             // 生成SSA.html文件，展示代码优化的每一步 GOSSAFUNC=func_name go build
 
 /*******************************************************************************
  * Hello World
