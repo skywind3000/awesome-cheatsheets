@@ -199,6 +199,8 @@ git branch -D <branch name>	强制删除分支（丢弃未合并分支）
 ##############################################################################
 User 1:
 git remote [-v]						查看远程库信息（-v 查看详细信息）
+git remote update origin --prune                        更新分支列表(更新远程分支列表)
+git remote update origin -p                             更新分支列表(更新远程分支列表)
 git push origin [master/dev/...]			推送指定分支到远程
 User 2:
 git clone <remote address>				克隆到本地（只能克隆master）
