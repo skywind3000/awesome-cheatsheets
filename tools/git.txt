@@ -35,8 +35,10 @@ git status
 git status -s 文件状态缩略信息, 常见 A:新增; M:文件变更; ?:未track; D:删除
 git diff <file>
 git diff HEAD -- <file>		查看工作区和版本库里面最新版本的区别
-git diff --check <file>     检查是否有空白错误(regex:' \{1,\}$')
-git diff --cached <file>    查看已add的内容(绿M)
+git diff --check <file>     	检查是否有空白错误(regex:' \{1,\}$')
+git diff --cached <file>    	查看已add的内容(绿M)
+git diff branch1 branch2 --stat	查看两个分支差异
+git diff branch1 branch2 <file...> 查看分支文件具体差异
 
 ##############################################################################
 # 查看历史版本、历史操作
