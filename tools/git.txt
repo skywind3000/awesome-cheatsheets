@@ -323,7 +323,7 @@ git rebase --noto client server
 # 注:其中C3', C8', C9'与C3, C8, C9的提交内容完全一样, 但是hash id是完全不同的
             (master branch)(client branch)
                    |            |
-C1 <- C2 <- C5 <- C6 <- C8' <- C9'
+C1 <- C2 <- C5 <- C6 <- C3' <- C8' <- C9'
          \
           \
            \
