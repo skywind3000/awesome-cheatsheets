@@ -13,7 +13,7 @@ gdb object                # 正常启动，加载可执行
 gdb object core           # 对可执行 + core 文件进行调试
 gdb object pid            # 对正在执行的进程进行调试
 gdb                       # 正常启动，启动后需要 file 命令手动加载
-gdb -tui                  # 启用 gdb 的文本界面
+gdb -tui                  # 启用 gdb 的文本界面（或 ctrl-x ctrl-a 更换 CLI/TUI）
 
 
 ##############################################################################
@@ -245,7 +245,7 @@ quit                      # 退出 gdb
 # GDB 前端
 ##############################################################################
 
-gdb-tui                   使用 gdb -tui 启动
+gdb-tui                   使用 gdb -tui 启动（或 ctrl-x ctrl-a 更换 CLI/TUI）
 cgdb                      http://cgdb.github.io/
 emacs                     http://gnu.org/software/emacs
 gdbgui                    https://github.com/cs01/gdbgui
