@@ -47,7 +47,7 @@ clear line                # 删除行号断点
 clear basic.c:101         # 删除文件名和行号的断点
 clear basic.c:main        # 删除文件名和函数名的断点
 clear *0x00400448         # 删除内存地址的断点
-disable 2                 # 禁用某断点，但是部删除
+disable 2                 # 禁用某断点，但是不删除
 enable 2                  # 允许某个之前被禁用的断点，让它生效
 rbreak {regexpr}          # 匹配正则的函数前断点，如 ex_* 将断点 ex_ 开头的函数
 tbreak function|line      # 临时断点
@@ -171,7 +171,7 @@ handle INT noprint        # 信号发生时不打印信息
 handle INT stop           # 信号发生时中止被调试程序
 handle INT nostop         # 信号发生时不中止被调试程序
 handle INT pass           # 调试器接获信号，不让程序知道
-handle INT nopass         # 调试起不接获信号
+handle INT nopass         # 调试器不接获信号
 signal signo              # 继续并将信号转移给程序
 signal 0                  # 继续但不把信号给程序
 
