@@ -47,14 +47,17 @@ clear line                # 删除行号断点
 clear basic.c:101         # 删除文件名和行号的断点
 clear basic.c:main        # 删除文件名和函数名的断点
 clear *0x00400448         # 删除内存地址的断点
-disable 2                 # 禁用某断点，但是部删除
+disable 2                 # 禁用某断点，但是不删除
 enable 2                  # 允许某个之前被禁用的断点，让它生效
+rbreak {regexpr}          # 匹配正则的函数前断点，如 ex_* 将断点 ex_ 开头的函数
 tbreak function|line      # 临时断点
+hbreak function|line      # 硬件断点
 ignore {id} {count}       # 忽略某断点 N-1 次
 condition {id} {expr}     # 条件断点，只有在条件生效时才发生
 condition 2 i == 20       # 2号断点只有在 i == 20 条件为真时才生效
 watch {expr}              # 对变量设置监视点
 info watchpoints          # 显示所有观察点
+catch exec                # 断点在exec事件，即子进程的入口地址
 
 
 ##############################################################################
@@ -168,7 +171,7 @@ handle INT noprint        # 信号发生时不打印信息
 handle INT stop           # 信号发生时中止被调试程序
 handle INT nostop         # 信号发生时不中止被调试程序
 handle INT pass           # 调试器接获信号，不让程序知道
-handle INT nopass         # 调试起不接获信号
+handle INT nopass         # 调试器不接获信号
 signal signo              # 继续并将信号转移给程序
 signal 0                  # 继续但不把信号给程序
 
@@ -227,7 +230,6 @@ break class::member       # 在类成员处设置断点
 list class:member         # 显示类成员代码
 ptype class               # 查看类包含的成员
 print *this               # 查看 this 指针
-rbreak {regexpr}          # 匹配正则的函数前断点，如 ex_* 将断点 ex_ 开头的函数
 
 
 ##############################################################################

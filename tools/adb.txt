@@ -25,6 +25,7 @@ help                      # 查看帮助信息
 version                   # 查看版本
 devices                   # 查看已连接的设备
 forward                   # 端口转发
+reverse                   # 反向端口转发
 bugreport                 # 生成adb出错报告
 install                   # 安装一个apk
 uninstall                 # 卸载一个apk
@@ -37,7 +38,9 @@ logcat                    # 查看日志
 reboot                    # 重启
 push                      # 上传
 pull                      # 下载
-remount                   # 提权
+root                      # 以root权限重启adbd
+disable-verity            # 禁用dm-verity以使/system分区可被修改
+remount                   # 以rw权限重新挂载/system分区
 get-serialno              # 获取序列号
 shell                     # 进入终端
 shell screencap           # 屏幕截图
