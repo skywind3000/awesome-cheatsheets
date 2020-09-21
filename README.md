@@ -30,6 +30,7 @@
 - [Adb](tools/adb.txt)
 - [Tmux](tools/tmux.txt)
 - [Git](tools/git.txt)
+- [FFmpeg](tools/ffmpeg.sh)
 
 ### :pencil:文本编辑
 
