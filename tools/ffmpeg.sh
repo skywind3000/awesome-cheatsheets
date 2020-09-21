@@ -1,6 +1,6 @@
 ##############################################################################
 # FFMPEG CHEATSHEET (中文速查表)  -  by skywind (created on 2020/09/20)
-# Version: 2, Last Modified: 2020/09/21 12:17
+# Version: 3, Last Modified: 2020/09/21 14:37
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -37,7 +37,7 @@
 
 -aspect RATIO                                               # 长宽比 4:3, 16:9
 -r RATE                                                     # 每秒帧率
--s WIDTHxHEIGHT                                             # 视频尺寸：640x480, 1024x768
+-s WIDTHxHEIGHT                                             # 视频尺寸：640x480
 -vn                                                         # 禁用视频
 
 
