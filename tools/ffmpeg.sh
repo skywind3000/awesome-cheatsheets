@@ -13,9 +13,9 @@
 -formats                                                    # 列出支持的格式
 -protocols                                                  # 列出支持的协议
 -i input.mp4                                                # 指定输入文件
--c:v h264                                                   # 指定视频编码
+-c:v libx264                                                   # 指定视频编码
 -c:a aac                                                    # 指定音频编码
--vcodec h264                                                # 旧写法
+-vcodec libx264                                                # 旧写法
 -acodec aac                                                 # 旧写法
 -fs SIZE                                                    # 指定文件大小
 
