@@ -1,6 +1,6 @@
 ##############################################################################
 # FFMPEG CHEATSHEET (中文速查表)  -  by skywind (created on 2020/09/20)
-# Version: 1, Last Modified: 2020/09/20 17:58
+# Version: 2, Last Modified: 2020/09/21 12:17
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -93,6 +93,7 @@ ffmpeg -i "<url>" out.mp4                                   # 下载视频
 ##############################################################################
 
 https://cheatography.com/thetartankilt/cheat-sheets/ffmpeg/
+http://qwinff.github.io/
 
 
 
