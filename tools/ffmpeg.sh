@@ -83,3 +83,11 @@ ffmpeg -i input.mp4 -vf ass=sub.ass out.mp4                 # 烧录字幕进视
 ffmpeg -i "<url>" out.mp4                                   # 下载视频
 
 
+##############################################################################
+# 相关资源
+##############################################################################
+
+https://cheatography.com/thetartankilt/cheat-sheets/ffmpeg/
+
+
+
