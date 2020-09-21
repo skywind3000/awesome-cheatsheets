@@ -13,9 +13,9 @@
 -formats                                                    # 列出支持的格式
 -protocols                                                  # 列出支持的协议
 -i input.mp4                                                # 指定输入文件
--c:v libx264                                                   # 指定视频编码
+-c:v libx264                                                # 指定视频编码
 -c:a aac                                                    # 指定音频编码
--vcodec libx264                                                # 旧写法
+-vcodec libx264                                             # 旧写法
 -acodec aac                                                 # 旧写法
 -fs SIZE                                                    # 指定文件大小
 
@@ -56,7 +56,7 @@
 ffmpeg -i input.mov output.mp4                              # 转码为 MP4
 ffmpeg -i input.mp4 -vn -c:a copy output.aac                # 提取音频
 ffmpeg -i input.mp4 -vn -c:a mp3 output.mp3                 # 提取音频并转码
-ffmpeg -i input.mov -c:v h264 -c:a aac -strict -2 out.mp4   # 指定编码参数
+ffmpeg -i input.mov -c:v libx264 -c:a aac -2 out.mp4        # 指定编码参数
 ffmpeg -i input.mov -c:v libvpx -c:a libvorbis out.webm     # 转换 webm
 ffmpeg -i input.mp4 -ab 56 -ar 44100 -b 200 -f flv out.flv  # 转换 flv
 ffmpeg -i input.mp4 -an animated.gif                        # 转换 GIF
