@@ -781,5 +781,6 @@ https://github.com/hobbestigrou/vimtips-fortune/blob/master/fortunes/vimtips
 https://github.com/glts/vim-cottidie/blob/master/autoload/cottidie/tips
 
 
+
 # vim: set ts=4 sw=4 tw=0 noet noautoindent fdm=manual :
 
