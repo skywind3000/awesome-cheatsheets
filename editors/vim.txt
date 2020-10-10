@@ -1,6 +1,6 @@
 ##############################################################################
 # VIM CHEATSHEET (中文速查表)  -  by skywind (created on 2017/10/12)
-# Version: 46, Last Modified: 2020/09/25 17:10
+# Version: 47, Last Modified: 2020/10/10 11:02
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -762,6 +762,7 @@ reddit              https://www.reddit.com/r/vim/
 - 映射按键时，应该默认使用 noremap ，只有特别需要的时候使用 map
 - 当你觉得做某事很低效时，你应该停下来，u u u u 然后思考正确的高效方式来完成
 - 用 y复制文本后，命令模式中 CTRL-R 然后按双引号 0 可以插入之前复制内容
+- 某些情况下 Vim 绘制高亮慢，滚屏刷新慢可以试试 set re=1 使用老的正则引擎
 - Windows 下的 GVim 可以设置 set rop=type:directx,renmode:5 增强显示
 
 
