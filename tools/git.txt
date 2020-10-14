@@ -318,7 +318,7 @@ C1 <- C2 <- C5 <- C6
 # 过更全面的测试。 这时可以使用 git rebase 命令的 --onto 选项，选中在 client 分支里但不在
 # server 分支里的修改（即 C8 和 C9），将它们在 master 分支上重放：
 
-git rebase --noto client server
+git rebase --noto master server client
 # 得到如下图所示的提交状态
 # 注:其中C3', C8', C9'与C3, C8, C9的提交内容完全一样, 但是hash id是完全不同的
             (master branch)(client branch)
@@ -369,7 +369,7 @@ git apply diff.patch            #打patch, 仅仅改变文件信息, 无commit�
 
 # 利用--format-patch生成patch, 带commit信息
 git format-patch <branch> -n 　 #生成分支<branch>最近的n次commit的patch
-git format-patch <r1>..<r2>     #生成两个commit间的修改的patch（包含两个commit. <r1>和<r2>都是具体的commit号)
+git format-patch <r1>..<r2>     #生成两个commit间的修改的patch（包含r2, 不包含r1. <r1>和<r2>都是具体的commit号)
 git format-patch -1 <r1>        #生成单个commit的patch
 git format-patch <r1>           #生成某commit以来的修改patch（不包含该commit）
 git format-patch --root <r1>　　#生成从根到r1提交的所有patch
