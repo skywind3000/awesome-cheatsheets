@@ -92,8 +92,11 @@ ffmpeg -i "<url>" out.mp4                                   # 下载视频
 # 组合用法
 ##############################################################################
 
-# 给 gif 加上静音音轨并转换成 mp4，手机上还可以加一个 -pix_fmt yuv420p
+# 给 gif 加上静音音轨并转换成 mp4
 ffmpeg -f lavfi -i anullsrc -i in.gif -c:v libx264 -c:a aac -shortest out.mp4
+
+# 给 gif 加上静音音轨并转换成 mp4，兼容手机播放
+ffmpeg -f lavfi -i anullsrc -i in.gif -c:v libx264 -c:a aac -shortest -pix_fmt yuv420p out.mp4
 
 
 ##############################################################################
