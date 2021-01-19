@@ -27,7 +27,7 @@
 -aq QUALITY                                                 # 音频质量，编码器相关
 -ar 44100                                                   # 音频采样率
 -ac 1                                                       # 音频声道数量
--an                                                         # 禁止音频
+-an                                                         # 禁用音频
 -vol 512                                                    # 改变音量为 200%
 
 
@@ -35,9 +35,9 @@
 # 视频参数
 ##############################################################################
 
--aspect RATIO                                               # 长宽比 4:3, 16:9
+-aspect RATIO                                               # 指定长宽比 4:3, 16:9
 -r RATE                                                     # 每秒帧率
--s WIDTHxHEIGHT                                             # 视频尺寸：640x480
+-s WIDTHxHEIGHT                                             # 指定视频尺寸：640x480
 -vn                                                         # 禁用视频
 
 
@@ -47,6 +47,7 @@
 
 -b:v 1M                                                     # 设置视频码率 1mbps/s
 -b:a 1M                                                     # 设置音频码率 1mbps/s
+-crf 24                                                     # 设置视频的动态比特率的值为 24
 
 
 ##############################################################################
@@ -60,6 +61,7 @@ ffmpeg -i input.mov -c:v libx264 -c:a aac -2 out.mp4        # 指定编码参数
 ffmpeg -i input.mov -c:v libvpx -c:a libvorbis out.webm     # 转换 webm
 ffmpeg -i input.mp4 -ab 56 -ar 44100 -b 200 -f flv out.flv  # 转换 flv
 ffmpeg -i input.mp4 -an animated.gif                        # 转换 GIF
+ffmpeg -i input.mp4 -c copy uotput.mkv                        # 转换视频容器格式为 mkv
 
 
 ##############################################################################
@@ -85,7 +87,7 @@ ffmpeg -i input.mp4 -vf "crop=400:300:10:10" output.mp4     # 视频尺寸裁剪
 
 ffmpeg -i sub.srt sub.ass                                   # 字幕格式转换
 ffmpeg -i input.mp4 -vf ass=sub.ass out.mp4                 # 烧录字幕进视频
-ffmpeg -i "<url>" out.mp4                                   # 下载视频
+ffmpeg -i "<url>" -c copy out.mp4                                   # 下载视频（不加 -c copy 的话视频会被重新编码）
 
 
 ##############################################################################
