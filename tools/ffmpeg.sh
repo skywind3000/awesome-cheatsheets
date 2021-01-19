@@ -61,7 +61,7 @@ ffmpeg -i input.mov -c:v libx264 -c:a aac -2 out.mp4        # 指定编码参数
 ffmpeg -i input.mov -c:v libvpx -c:a libvorbis out.webm     # 转换 webm
 ffmpeg -i input.mp4 -ab 56 -ar 44100 -b 200 -f flv out.flv  # 转换 flv
 ffmpeg -i input.mp4 -an animated.gif                        # 转换 GIF
-ffmpeg -i input.mp4 -c copy uotput.mkv                        # 转换视频容器格式为 mkv
+ffmpeg -i input.mp4 -c copy uotput.mkv                      # 转换视频容器格式为 mkv
 
 
 ##############################################################################
@@ -87,7 +87,7 @@ ffmpeg -i input.mp4 -vf "crop=400:300:10:10" output.mp4     # 视频尺寸裁剪
 
 ffmpeg -i sub.srt sub.ass                                   # 字幕格式转换
 ffmpeg -i input.mp4 -vf ass=sub.ass out.mp4                 # 烧录字幕进视频
-ffmpeg -i "<url>" -c copy out.mp4                                   # 下载视频（不加 -c copy 的话视频会被重新编码）
+ffmpeg -i "<url>" -c copy out.mp4                           # 下载视频（不加 -c copy 的话视频会被重新编码）
 
 
 ##############################################################################
