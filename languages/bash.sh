@@ -830,6 +830,46 @@ function ccat() {
     fi
 }
 
+# getopt模板                                                                                                   
+
+funtion get_template(){
+usage(){
+    cat << EOT
+Usage :  ${__ScriptName} [OPTION] ...
+  ......
+
+Options:
+  -h, --help                    Display this message
+  -V, --version                 Display script version
+  -v, --verbose
+
+Exit status:
+  0   if OK,
+  !=0 if serious problems.
+
+Example:
+  ......
+EOT
+}
+
+RET=`getopt -o hVv:o:    \
+    --long help,version,verbose: \
+    -n ' * ERROR' -- "$@"`
+
+eval set -- "$RET"
+
+while true; do
+    case "$1" in
+        -h | --help ) usage; exit 1;; 
+        -v | --verbose ) fn; shift ;;
+        -V | --version ) echo "$(basename $0) -- version"; exit 1;; 
+        -- ) shift; break ;;
+        * ) echo "internal error!" ; exit 1 ;;
+     esac
+done
+
+}
+
 
 ##############################################################################
 # 好玩的配置
