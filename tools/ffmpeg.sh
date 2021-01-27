@@ -96,7 +96,8 @@ ffmpeg -i "<url>" out.mp4                                   # 下载视频
 ffmpeg -f lavfi -i anullsrc -i in.gif -c:v libx264 -c:a aac -shortest out.mp4
 
 # 给 gif 加上静音音轨并转换成 mp4，兼容手机播放
-ffmpeg -f lavfi -i anullsrc -i in.gif -c:v libx264 -c:a aac -shortest -pix_fmt yuv420p out.mp4
+ffmpeg -f lavfi -i anullsrc -i in.gif -c:v libx264 -c:a aac -shortest \
+       -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" out.mp4
 
 
 ##############################################################################
