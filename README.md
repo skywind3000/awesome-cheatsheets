@@ -36,7 +36,7 @@
 
 - [VIM](editors/vim.txt)
 - [Nano](editors/nano.txt)
-- [VS Code](editors/VS Code.txt)
+- [VS Code](editors/VS-Code.txt)
 
 ## :pray:感谢贡献
 
