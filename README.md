@@ -23,6 +23,7 @@
 - [Php](languages/php.php)
 - [VimScript](languages/vimscript.md)
 - [Python](languages/python.md)
+- [Lua](languages/lua.lua)
 
 ### :wrench:开发工具
 
