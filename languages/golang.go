@@ -149,6 +149,11 @@ if i == 10 {
 } else {
     println("i != 10")
 }
+// if with init 
+m := map[int]int{1:1}
+if v, ok := m[1]; ok {
+    println(v)
+}
 // switch
 switch i {
 case 10:
