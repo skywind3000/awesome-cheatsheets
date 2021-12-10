@@ -54,8 +54,8 @@ tmux kill-ses -a -t myses # kill 所有 session, 除了 myses
 # pane 操作 
 ##############################################################################
 
-<prefix> + %              # 纵向分裂 
-<prefix> + "              # 横向分裂 
+<prefix> + %              # 横向分裂 
+<prefix> + "              # 纵向分裂 
 <prefix> + 方向键         # 在一个 window 中切换 pane 
 <prefix> + ctrl-方向键    # 调整 pane 大小
 <prefix> + z              # 全屏化当前 pane, 再次执行退出全屏 
@@ -145,10 +145,7 @@ Enter          M-w        # 确认选择内容, 并退出
 # mouse-mode 
 ##############################################################################
 
-:setw -g mode-mouse on           # 打开鼠标模式
-:set -g mouse-select-pane on     # 通过鼠标选择 pane
-:set -g mouse-resize-pane on     # 通过鼠标更改 pane 大小
-:set -g mouse-select-window on   # 通过鼠标选择 window
+:set -g mouse on           # 打开鼠标模式
 
 
 ##############################################################################
