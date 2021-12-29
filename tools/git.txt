@@ -115,6 +115,7 @@ git reset --hard HEAD^      撤销git commit：误将文件提交（一旦提交
 git rm/add <file>
 git commit -m "remove <file>"   删除版本库中的<file>：删除工作区文件后，继续删除版本库中相应的文件
 git checkout -- <file>          根据版本库中的<file>恢复工作区<file>
+git restore <file>              对于 checkout -- <file> 的新写法 (2.23 引入)
 
 ##############################################################################
 # 清理工作区未track也未ignore的文件或文件夹(如各种临时.swp, .patch文件等)
@@ -148,11 +149,12 @@ git clone <remote address>    git协议速度更快但通常公司内网不允�
 ##############################################################################
 git branch <branch name>            创建<branch name>分支
 git checkout <branch name>          切换至<branch name>分支
-git switch <branch name>            切换至<branch name>分支
+git switch <branch name>            切换至<branch name>分支 (2.23 引入)
 git checkout -b <branch name>       创建并切换至<branch name>分支
 git switch -c <branch name>         创建并切换至<branch name>分支
 git branch                          查看已有分支（* 表示当前分支）
 git merge <branch name>             合并<branch name>到当前分支（通常在master分支下操作）
+git merge --no-commit <branch name> 合并<branch name>到当前分支，但不提交
 git branch -d <branch name>         删除分支
 git branch -m oldbranchname newname 删除分支
 
