@@ -1,32 +1,55 @@
 ##############################################################################
 # GIT CHEATSHEET (中文速查表)  -  by albertwang21 (created on 2019/09/16)
-# Version: 1, Last Modified: 2019/09/16 18:00
+# Version: 1.1, Last Modified: 2022/02/25 20:00
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
+
+##############################################################################
+# 一般 git 工作流程例子
+##############################################################################
+1、产生SSH Key并在 Github 或 Gitee 等自己的账户上经过验证
+2、配置本地 git 的用户名和邮箱：
+    git config --global user.name "Staok"
+    git config --global user.email "superxhy@qq.com"
+3、在 Github 或 Gitee 上面创建新仓库（同时选择开源协议），然后 clone 或 pull 到本地，方法如下：
+    clone法：
+        git clone <remote address>
+    pull法：
+        git init                                                          #在本目录初始化仓库
+        git remote add origin <remote address>   #添加远程库
+        git pull origin                                              #从远程库拉取最新
+4、在本地添加、修改自己的文件
+5、add/commit/push：
+    git add .                                                          #提交所有更改
+    git commit -am 'commit'                                #对本次更改添加说明信息
+    git push origin                                                #推送到远程库
+6、历史回溯，分支管理，处理合并，Fork + PullRequest 等操作另处去学
 
 ##############################################################################
 # 配置
 ##############################################################################
 git config --global "Your Name"
 git config --global "Email Address"
-git config --global credential.helper store    保存密码(每次要输密码/重复输密码)
-
+git config --global credential.helper store    #保存密码(每次要输密码/重复输密码)
+git config --global gui.encoding utf-8          #使用 utf-8 编码显示
+git config --list                                             #显示当前的 git 配置信息
 
 ##############################################################################
 # 初始化
 ##############################################################################
-git init
-
+git init                  #在当前目录初始化 git 仓库
+git init newrepo   #指定新建并在目录 newrepo 中初始化 git 仓库
 
 ##############################################################################
 # 提交修改
 ##############################################################################
 git add <file>
-git add -u 提交work directory中所有已track的文件至staging area
+git add -u    #提交work directory中所有已track的文件至staging area
+git add .      #添加所有修改到暂存区
 git commit -m "descriptions"
-git commit --amend 对最近一次的提交做内容修改
-git commit --amend --author "user_name <user_email>" 修改最近提交用户名和邮箱
+git commit --amend   #对最近一次的提交做内容修改
+git commit --amend --author "user_name <user_email>"   #修改最近提交用户名和邮箱
 
 
 ##############################################################################
