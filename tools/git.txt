@@ -21,8 +21,9 @@
         git pull origin                                              #从远程库拉取最新
 4、在本地添加、修改自己的文件
 5、add/commit/push：
+    git status                                                         #
     git add .                                                          #提交所有更改
-    git commit -am 'commit'                                #对本次更改添加说明信息
+    git commit -m "提交说明"                               #对本次更改添加说明信息
     git push origin                                                #推送到远程库
 6、历史回溯，分支管理，处理合并，Fork + PullRequest 等操作另处去学
 
@@ -63,7 +64,7 @@ git diff --check <file>                 检查是否有空白错误(regex:' \{1,
 git diff --cached <file>                查看已add的内容(绿M)
 git diff branch1 branch2 --stat         查看两个分支差异
 git diff branch1 branch2 <file...>      查看分支文件具体差异
-
+gitk                                                #调出 git GUI 来以图形化界面查看仓库分支状况
 ##############################################################################
 # 查看历史版本、历史操作
 ##############################################################################
