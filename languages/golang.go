@@ -252,7 +252,39 @@ func (b Bs) Reading() {}      // 也实现了Reader接口
 func (b Bs) Closing() {}
 
 
+/*******************************************************************************
+ * 泛型（v1.18）
+ ******************************************************************************/
+func Sum[T int | float32 | float64](x, y T) T {
+	return x + y
+}
 
+type Number interface {
+	int | int32 | int64 | float64 | float32
+}
+
+type SliceAdditon[T Number] struct {
+	data []T
+}
+
+func (sa *SliceAdditon[T]) Sum() T {
+	var sum T
+	for _, v := range sa.data {
+		sum += v
+	}
+	return sum
+}
+
+func Caller() {
+	sInt := Sum(1, 2)       // Sum[int]
+	sFloat := Sum(1.1, 2.2) // Sum[float64]
+	println(sInt, sFloat)
+
+	saInt := SliceAdditon[int]{data: []int{1, 2, 3, 4, 5}}
+	saFloat64 := SliceAdditon[float64]{data: []float64{1.1, 2.2, 3.3, 4.4, 5.5}}
+	println(saInt.Sum())
+	println(saFloat64.Sum())
+}
 
 /*******************************************************************************
  * 一些推荐
