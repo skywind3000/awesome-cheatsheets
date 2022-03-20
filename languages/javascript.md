@@ -8,39 +8,40 @@ JavaScript速查表
 
 
 ## 目录
-
-- [JavaScript速查表](#javascript速查表)
-  - [目录](#目录)
-  - [类型](#类型)
-  - [引用](#引用)
-  - [对象](#对象)
-  - [数组](#数组)
-  - [解构](#解构)
-  - [字符串](#字符串)
-  - [函数](#函数)
-  - [箭头函数](#箭头函数)
-  - [类与构造函数](#类与构造函数)
-  - [模块](#模块)
-  - [迭代器与生成器](#迭代器与生成器)
-  - [属性](#属性)
-  - [变量](#变量)
-  - [提升](#提升)
-  - [比较运算符与相等](#比较运算符与相等)
-  - [注释](#注释)
-  - [分号](#分号)
-  - [类型转换与强制转换](#类型转换与强制转换)
-  - [命名规范](#命名规范)
-  - [事件](#事件)
-  - [标准库](#标准库)
-  - [测试](#测试)
-
-
+  - [基础知识](#基础知识)
+    - [类型](#类型)
+    - [引用](#引用)
+    - [对象](#对象)
+    - [数组](#数组)
+    - [解构](#解构)
+    - [字符串](#字符串)
+    - [变量](#变量)
+    - [属性](#属性)
+  - [公共约束](#公共约束)
+    - [注释](#注释)
+    - [分号](#分号)
+    - [命名规范](#命名规范)
+  - [类与函数](#类与函数)
+    - [函数](#函数)
+    - [箭头函数](#箭头函数)
+    - [类与构造函数](#类与构造函数)
+    - [模块](#模块)
+    - [迭代器与生成器](#迭代器与生成器)
+    - [提升](#提升)
+    - [比较运算符与相等](#比较运算符与相等)
+    - [事件](#事件)
+    - [类型转换与强制转换](#类型转换与强制转换)
+    - [标准库](#标准库)
+    - [测试](#测试)
 
 
 
 
 
-## 类型
+## 基础知识
+
+
+### 类型
 
 - 基本类型
   **最新的 ECMAScript 标准定义了 8 种数据类型,分别是**
@@ -70,7 +71,7 @@ Object：typeof instance === "object"
 
 
 
-## 引用
+### 引用
 
 推荐常量赋值都使用`const`, 值可能会发生改变的变量赋值都使用 `let`。
 
@@ -94,7 +95,7 @@ if (true) {
 
 
 
-## 对象
+### 对象
 
 - 使用字面语法创建对象：
 
@@ -211,7 +212,7 @@ if (true) {
 
 
 
-## 数组
+### 数组
 
 - 用扩展运算符做数组浅拷贝，类似上面的对象浅拷贝：
 
@@ -279,7 +280,7 @@ if (true) {
 
   
 
-## 解构
+### 解构
 
 - 用对象的解构赋值来获取和使用对象某个或多个属性值:
 
@@ -345,7 +346,7 @@ if (true) {
 
 
 
-## 字符串
+### 字符串
 
 - 当需要动态生成字符串时，使用模板字符串而不是字符串拼接：
 
@@ -372,10 +373,328 @@ if (true) {
 - 永远不要使用 `eval()`，该方法有太多漏洞。
 
 
+### 变量
+
+-  不要使用链式变量赋值
+
+> 因为会产生隐式的全局变量
+
+```javascript
+// bad
+(function example() {
+  // JavaScript interprets this as
+  // let a = ( b = ( c = 1 ) );
+  // The let keyword only applies to variable a; variables b and c become
+  // global variables.
+  let a = b = c = 1;
+}());
+
+console.log(a); // throws ReferenceError
+// 在块的外层也访问到了，代表这是一个全局变量。
+console.log(b); // 1 
+console.log(c); // 1
+
+// good
+(function example() {
+  let a = 1;
+  let b = a;
+  let c = a;
+}());
+
+console.log(a); // throws ReferenceError
+console.log(b); // throws ReferenceError
+console.log(c); // throws ReferenceError
+
+// the same applies for `const`
+```
 
 
 
-## 函数
+- 不要使用一元自增自减运算符（`++`， `--`）
+
+  > 根据 eslint 文档，一元增量和减量语句受到自动分号插入的影响，并且可能会导致应用程序中的值递增或递减的静默错误。 使用 `num + = 1` 而不是 `num ++` 或 `num ++` 语句也是含义清晰的。
+
+```javascript
+  // bad
+
+  const array = [1, 2, 3];
+  let num = 1;
+  num++;
+  --num;
+
+  let sum = 0;
+  let truthyCount = 0;
+  for (let i = 0; i < array.length; i++) {
+    let value = array[i];
+    sum += value;
+    if (value) {
+      truthyCount++;
+    }
+  }
+
+  // good
+
+  const array = [1, 2, 3];
+  let num = 1;
+  num += 1;
+  num -= 1;
+
+  const sum = array.reduce((a, b) => a + b, 0);
+  const truthyCount = array.filter(Boolean).length;
+
+```
+
+
+### 属性
+
+- 访问属性时使用点符号
+
+```javascript
+const luke = {
+  jedi: true,
+  age: 28,
+};
+
+// bad
+const isJedi = luke['jedi'];
+
+// good
+const isJedi = luke.jedi;
+```
+
+- 根据表达式访问属性时使用`[]`
+
+```javascript
+const luke = {
+  jedi: true,
+  age: 28,
+};
+
+function getProp(prop) {
+  return luke[prop];
+}
+
+const isJedi = getProp('je'+'di');
+```
+
+
+
+### 测试
+
+- 无论用哪个测试框架，都需要写测试。
+- 尽量去写很多小而美的函数，减少突变的发生
+- 小心 stub 和 mock —— 这会让你的测试变得容易出现问题。
+- 100% 测试覆盖率是我们努力的目标，即便实际上很少达到。
+- 每当你修了一个 bug， 都要尽量写一个回归测试。 如果一个 bug 修复了，没有回归测试，很可能以后会再次出问题。
+
+
+
+
+## 公共约束
+
+### 注释
+
+- 多行注释用 `/** ... */`
+
+```javascript
+// bad
+// make() returns a new element
+// based on the passed in tag name
+//
+// @param {String} tag
+// @return {Element} element
+function make(tag) {
+
+  // ...
+
+  return element;
+}
+
+// good
+/**
+ * make() returns a new element
+ * based on the passed-in tag name
+ */
+function make(tag) {
+
+  // ...
+
+  return element;
+}
+```
+
+- 单行注释用 `//`
+
+```javascript
+// bad
+const active = true;  // is current tab
+
+// good
+// is current tab
+const active = true;
+
+// bad
+function getType() {
+  console.log('fetching type...');
+  // set the default type to 'no type'
+  const type = this._type || 'no type';
+
+  return type;
+}
+
+// good
+function getType() {
+  console.log('fetching type...');
+
+  // set the default type to 'no type'
+  const type = this._type || 'no type';
+
+  return type;
+}
+
+// also good
+function getType() {
+  // set the default type to 'no type'
+  const type = this._type || 'no type';
+
+  return type;
+}
+```
+
+- 用 `// FIXME:` 给问题注释,用 `// TODO:` 去注释待办
+
+### 分号
+
+> 为什么？当 JavaScript 遇到没有分号结尾的一行，它会执行 [自动插入分号](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion) 这一规则来决定行末是否加分号。如果 JavaScript 在你的断行里错误的插入了分号，就会出现一些古怪的行为。显式配置代码检查去检查没有带分号的地方可以帮助你防止这种错误。
+
+```javascript
+// bad - raises exception
+const luke = {}
+const leia = {}
+[luke, leia].forEach((jedi) => jedi.father = 'vader')
+
+// bad - raises exception
+const reaction = "No! That’s impossible!"
+(async function meanwhileOnTheFalcon() {
+  // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
+  // ...
+}())
+
+// bad - returns `undefined` instead of the value on the next line - always happens when `return` is on a line by itself because of ASI!
+function foo() {
+  return
+    'search your feelings, you know it to be foo'
+}
+
+// good
+const luke = {};
+const leia = {};
+[luke, leia].forEach((jedi) => {
+  jedi.father = 'vader';
+});
+
+// good
+const reaction = "No! That’s impossible!";
+(async function meanwhileOnTheFalcon() {
+  // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
+  // ...
+}());
+
+// good
+function foo() {
+  return 'search your feelings, you know it to be foo';
+}
+```
+
+
+### 命名规范
+
+- `export default` 导出模块A，则这个文件名也叫 `A.*`， `import` 时候的参数也叫 `A` :
+
+```javascript
+// file 1 contents
+class CheckBox {
+  // ...
+}
+export default CheckBox;
+
+// file 2 contents
+export default function fortyTwo() { return 42; }
+
+// file 3 contents
+export default function insideDirectory() {}
+
+// in some other file
+// bad
+import CheckBox from './checkBox'; // PascalCase import/export, camelCase filename
+import FortyTwo from './FortyTwo'; // PascalCase import/filename, camelCase export
+import InsideDirectory from './InsideDirectory'; // PascalCase import/filename, camelCase export
+
+// bad
+import CheckBox from './check_box'; // PascalCase import/export, snake_case filename
+import forty_two from './forty_two'; // snake_case import/filename, camelCase export
+import inside_directory from './inside_directory'; // snake_case import, camelCase export
+import index from './inside_directory/index'; // requiring the index file explicitly
+import insideDirectory from './insideDirectory/index'; // requiring the index file explicitly
+
+// good
+import CheckBox from './CheckBox'; // PascalCase export/import/filename
+import fortyTwo from './fortyTwo'; // camelCase export/import/filename
+import insideDirectory from './insideDirectory'; // camelCase export/import/directory name/implicit "index"
+// ^ supports both insideDirectory.js and insideDirectory/index.js
+```
+
+- 当你`export default`一个函数时，函数名用小驼峰，文件名和函数名一致, export 一个结构体/类/单例/函数库/对象 时用大驼峰。
+
+```javascript
+function makeStyleGuide() {
+  // ...
+}
+
+export default makeStyleGuide;
+
+
+
+const AirbnbStyleGuide = {
+  es6: {
+  }
+};
+
+export default AirbnbStyleGuide;
+```
+
+
+### 标准库
+
+> [标准库](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)中包含一些由于历史原因遗留的工具类
+
+- 用 `Number.isNaN` 代替全局的 `isNaN`:
+
+  ```javascript
+  // bad
+  isNaN('1.2'); // false
+  isNaN('1.2.3'); // true
+  
+  // good
+  Number.isNaN('1.2.3'); // false
+  Number.isNaN(Number('1.2.3')); // true
+  ```
+
+- 用 `Number.isFinite` 代替 `isFinite`
+
+```javascript
+// bad
+isFinite('2e3'); // true
+
+// good
+Number.isFinite('2e3'); // false
+Number.isFinite(parseInt('2e3', 10)); // true
+```
+
+
+## 类与函数
+
+### 函数
 
 - 使用命名函数表达式而不是函数声明
 
@@ -497,7 +816,7 @@ if (true) {
 
 
 
-## 箭头函数
+### 箭头函数
 
 - 当需要使用箭头函数的时候，使用它，但是不要滥用
 
@@ -538,7 +857,7 @@ if (true) {
 
   
 
-## 类与构造函数
+### 类与构造函数
 
 - 使用`class` 语法。避免直接操作 `prototype`
 
@@ -677,7 +996,7 @@ class Rey extends Jedi {
 
 
 
-## 模块
+### 模块
 
 - 使用（`import`/`export`）模块
 
@@ -725,7 +1044,7 @@ import baz from './baz';
 
 
 
-## 迭代器与生成器
+### 迭代器与生成器
 
 - 不要用迭代器。使用 JavaScript 高级函数代替 `for-in`、 `for-of`
 
@@ -766,112 +1085,8 @@ import baz from './baz';
   const increasedByOne = numbers.map((num) => num + 1);
   ```
 
-## 属性
 
-- 访问属性时使用点符号
-
-```javascript
-const luke = {
-  jedi: true,
-  age: 28,
-};
-
-// bad
-const isJedi = luke['jedi'];
-
-// good
-const isJedi = luke.jedi;
-```
-
-- 根据表达式访问属性时使用`[]`
-
-```javascript
-const luke = {
-  jedi: true,
-  age: 28,
-};
-
-function getProp(prop) {
-  return luke[prop];
-}
-
-const isJedi = getProp('je'+'di');
-```
-
-## 变量
-
--  不要使用链式变量赋值
-
-> 因为会产生隐式的全局变量
-
-```javascript
-// bad
-(function example() {
-  // JavaScript interprets this as
-  // let a = ( b = ( c = 1 ) );
-  // The let keyword only applies to variable a; variables b and c become
-  // global variables.
-  let a = b = c = 1;
-}());
-
-console.log(a); // throws ReferenceError
-// 在块的外层也访问到了，代表这是一个全局变量。
-console.log(b); // 1 
-console.log(c); // 1
-
-// good
-(function example() {
-  let a = 1;
-  let b = a;
-  let c = a;
-}());
-
-console.log(a); // throws ReferenceError
-console.log(b); // throws ReferenceError
-console.log(c); // throws ReferenceError
-
-// the same applies for `const`
-```
-
-
-
-- 不要使用一元自增自减运算符（`++`， `--`）
-
-  > 根据 eslint 文档，一元增量和减量语句受到自动分号插入的影响，并且可能会导致应用程序中的值递增或递减的静默错误。 使用 `num + = 1` 而不是 `num ++` 或 `num ++` 语句也是含义清晰的。
-
-```javascript
-  // bad
-
-  const array = [1, 2, 3];
-  let num = 1;
-  num++;
-  --num;
-
-  let sum = 0;
-  let truthyCount = 0;
-  for (let i = 0; i < array.length; i++) {
-    let value = array[i];
-    sum += value;
-    if (value) {
-      truthyCount++;
-    }
-  }
-
-  // good
-
-  const array = [1, 2, 3];
-  let num = 1;
-  num += 1;
-  num -= 1;
-
-  const sum = array.reduce((a, b) => a + b, 0);
-  const truthyCount = array.filter(Boolean).length;
-
-```
-
-
-
-## 提升
+### 提升
 
 - `var` 声明会被提前到离他最近的作用域的最前面，但是它的赋值语句并没有提前。`const` 和 `let` 被赋予了新的概念 [暂时性死区 (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz)。 重要的是要知道为什么 [typeof 不再安全](https://web.archive.org/web/20200121061528/http://es-discourse.com/t/why-typeof-is-no-longer-safe/15)。
 
@@ -930,7 +1145,7 @@ function example() {
 }
 ```
 
-## 比较运算符与相等
+### 比较运算符与相等
 
 - 用 `===` 和 `!==` 严格比较而不是 `==` 和 `!=`
 
@@ -970,123 +1185,23 @@ const maybeNull = value1 > value2 ? 'baz' : null;
 const foo = maybe1 > maybe2 ? 'bar' : maybeNull;
 ```
 
-## 注释
+### 事件
 
-- 多行注释用 `/** ... */`
-
-```javascript
-// bad
-// make() returns a new element
-// based on the passed in tag name
-//
-// @param {String} tag
-// @return {Element} element
-function make(tag) {
-
-  // ...
-
-  return element;
-}
-
-// good
-/**
- * make() returns a new element
- * based on the passed-in tag name
- */
-function make(tag) {
-
-  // ...
-
-  return element;
-}
-```
-
-- 单行注释用 `//`
+- 当把数据载荷传递给事件时（例如是 DOM 还是像 Backbone 这样有很多属性的事件）。这使得后续的贡献者（程序员）向这个事件添加更多的数据时不用去找或者更新每个处理器。
 
 ```javascript
 // bad
-const active = true;  // is current tab
+$(this).trigger('listingUpdated', listing.id);
 
-// good
-// is current tab
-const active = true;
+// ...
 
-// bad
-function getType() {
-  console.log('fetching type...');
-  // set the default type to 'no type'
-  const type = this._type || 'no type';
-
-  return type;
-}
-
-// good
-function getType() {
-  console.log('fetching type...');
-
-  // set the default type to 'no type'
-  const type = this._type || 'no type';
-
-  return type;
-}
-
-// also good
-function getType() {
-  // set the default type to 'no type'
-  const type = this._type || 'no type';
-
-  return type;
-}
-```
-
-- 用 `// FIXME:` 给问题注释,用 `// TODO:` 去注释待办
-
-## 分号
-
-> 为什么？当 JavaScript 遇到没有分号结尾的一行，它会执行 [自动插入分号](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion) 这一规则来决定行末是否加分号。如果 JavaScript 在你的断行里错误的插入了分号，就会出现一些古怪的行为。显式配置代码检查去检查没有带分号的地方可以帮助你防止这种错误。
-
-```javascript
-// bad - raises exception
-const luke = {}
-const leia = {}
-[luke, leia].forEach((jedi) => jedi.father = 'vader')
-
-// bad - raises exception
-const reaction = "No! That’s impossible!"
-(async function meanwhileOnTheFalcon() {
-  // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
-  // ...
-}())
-
-// bad - returns `undefined` instead of the value on the next line - always happens when `return` is on a line by itself because of ASI!
-function foo() {
-  return
-    'search your feelings, you know it to be foo'
-}
-
-// good
-const luke = {};
-const leia = {};
-[luke, leia].forEach((jedi) => {
-  jedi.father = 'vader';
+$(this).on('listingUpdated', (e, listingID) => {
+  // do something with listingID
 });
-
-// good
-const reaction = "No! That’s impossible!";
-(async function meanwhileOnTheFalcon() {
-  // handle `leia`, `lando`, `chewie`, `r2`, `c3p0`
-  // ...
-}());
-
-// good
-function foo() {
-  return 'search your feelings, you know it to be foo';
-}
 ```
 
 
-
-## 类型转换与强制转换
+### 类型转换与强制转换
 
 - 字符串
 
@@ -1139,116 +1254,6 @@ const val = parseInt(inputValue, 10);
 2147483648 >> 0 //=> -2147483648
 2147483649 >> 0 //=> -2147483647
 ```
-
-## 命名规范
-
-- `export default` 导出模块A，则这个文件名也叫 `A.*`， `import` 时候的参数也叫 `A` :
-
-```javascript
-// file 1 contents
-class CheckBox {
-  // ...
-}
-export default CheckBox;
-
-// file 2 contents
-export default function fortyTwo() { return 42; }
-
-// file 3 contents
-export default function insideDirectory() {}
-
-// in some other file
-// bad
-import CheckBox from './checkBox'; // PascalCase import/export, camelCase filename
-import FortyTwo from './FortyTwo'; // PascalCase import/filename, camelCase export
-import InsideDirectory from './InsideDirectory'; // PascalCase import/filename, camelCase export
-
-// bad
-import CheckBox from './check_box'; // PascalCase import/export, snake_case filename
-import forty_two from './forty_two'; // snake_case import/filename, camelCase export
-import inside_directory from './inside_directory'; // snake_case import, camelCase export
-import index from './inside_directory/index'; // requiring the index file explicitly
-import insideDirectory from './insideDirectory/index'; // requiring the index file explicitly
-
-// good
-import CheckBox from './CheckBox'; // PascalCase export/import/filename
-import fortyTwo from './fortyTwo'; // camelCase export/import/filename
-import insideDirectory from './insideDirectory'; // camelCase export/import/directory name/implicit "index"
-// ^ supports both insideDirectory.js and insideDirectory/index.js
-```
-
-- 当你`export default`一个函数时，函数名用小驼峰，文件名和函数名一致, export 一个结构体/类/单例/函数库/对象 时用大驼峰。
-
-```javascript
-function makeStyleGuide() {
-  // ...
-}
-
-export default makeStyleGuide;
-
-
-
-const AirbnbStyleGuide = {
-  es6: {
-  }
-};
-
-export default AirbnbStyleGuide;
-```
-
-
-
-## 事件
-
-- 当把数据载荷传递给事件时（例如是 DOM 还是像 Backbone 这样有很多属性的事件）。这使得后续的贡献者（程序员）向这个事件添加更多的数据时不用去找或者更新每个处理器。
-
-```javascript
-// bad
-$(this).trigger('listingUpdated', listing.id);
-
-// ...
-
-$(this).on('listingUpdated', (e, listingID) => {
-  // do something with listingID
-});
-```
-
-## 标准库
-
-> [标准库](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)中包含一些由于历史原因遗留的工具类
-
-- 用 `Number.isNaN` 代替全局的 `isNaN`:
-
-  ```javascript
-  // bad
-  isNaN('1.2'); // false
-  isNaN('1.2.3'); // true
-  
-  // good
-  Number.isNaN('1.2.3'); // false
-  Number.isNaN(Number('1.2.3')); // true
-  ```
-
-- 用 `Number.isFinite` 代替 `isFinite`
-
-```javascript
-// bad
-isFinite('2e3'); // true
-
-// good
-Number.isFinite('2e3'); // false
-Number.isFinite(parseInt('2e3', 10)); // true
-```
-
-
-
-## 测试
-
-- 无论用哪个测试框架，都需要写测试。
-- 尽量去写很多小而美的函数，减少突变的发生
-- 小心 stub 和 mock —— 这会让你的测试变得容易出现问题。
-- 100% 测试覆盖率是我们努力的目标，即便实际上很少达到。
-- 每当你修了一个 bug， 都要尽量写一个回归测试。 如果一个 bug 修复了，没有回归测试，很可能以后会再次出问题。
 
 
 
