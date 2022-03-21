@@ -6,7 +6,7 @@
  */
 class NormalClass extends AbstractClassName implements InterfaceName
 {
-
+    // 引用 Trait (为 PHP 提供多继承的能力，可理解为代码复制)
     use TraitName;
 
     // --> 类属性类型 <--
@@ -247,3 +247,26 @@ abstract class AbstractClassName
     abstract function abstractFunction(Type $var = null): Type;
 
 }
+
+/**
+ * Trait
+ * 提供代码复用能力、多继承能力
+ */
+trait Logger
+{
+	public function log($message)
+	{
+		return $message;
+	}
+}
+
+class WriteLog
+{
+    use Logger;
+    
+    public function main()
+    {
+        return $this->log();
+    }
+}
+

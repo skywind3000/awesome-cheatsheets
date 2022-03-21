@@ -21,7 +21,7 @@
 - [Bash](languages/bash.sh)
 - [JavaScript](languages/javascript.md)
 - [Go](languages/golang.go)
-- [Php](languages/php.php)
+- [PHP](languages/php.php)
 - [VimScript](languages/vimscript.md)
 - [Python](languages/python.md)
 - [Lua](languages/lua.lua)
