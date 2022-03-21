@@ -8,8 +8,7 @@ JavaScript速查表
 
 
 ## 目录
-
- - [基础知识](#基础知识)
+  - [基础知识](#基础知识)
     - [类型](#类型)
     - [引用](#引用)
     - [对象](#对象)
@@ -34,7 +33,7 @@ JavaScript速查表
     - [比较运算符与相等](#比较运算符与相等)
     - [事件](#事件)
     - [类型转换与强制转换](#类型转换与强制转换)
-
+  - [推荐资源](#推荐资源)
 
 
 
@@ -1255,3 +1254,14 @@ const val = parseInt(inputValue, 10);
 2147483648 >> 0 //=> -2147483648
 2147483649 >> 0 //=> -2147483647
 ```
+
+## 推荐资源
+- 网站：
+  - [MDN](https://developer.mozilla.org/zh-CN/docs/Web/): 不管你是仅仅开始入门、学过一点基础或者是个网站开发老手，你都能在这里找到有用的资源。
+  - [JS周刊](https://javascriptweekly.com/) : 你可以在这里，接收到JS社区里最新的动态，其他开发者编写的优秀工具，阅读优秀的文章。
+  - [印记中文](https://docschina.org/) : JS及其前端领域的文档集合。
+
+- 书籍(为了尊重作者的版权，下列书籍仅开源书籍提供链接)：
+  - JavaScript权威指南（原书第7版）
+  - [你不知道的JS](https://github.com/getify/You-Dont-Know-JS)
+  - [Eloquent JavaScript](https://eloquentjavascript.net/)
