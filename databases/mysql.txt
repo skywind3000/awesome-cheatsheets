@@ -1,0 +1,65 @@
+##############################################################################
+# MySQL CHEATSHEET（中文速查表） - by kirarasmile (create on 2022/03/23)
+##############################################################################
+
+
+##############################################################################
+# MySQL备份与还原
+##############################################################################
+
+mysqldump -h hostname -u username -p db_name -P port 	> filename.sql # 导出数据
+mysql -uusername -pdb_name < filename.sql  # 导入数据
+
+##############################################################################
+# MySQL服务器状态
+##############################################################################
+
+SHOW [FULL] PROCESSLIST;  # 显示用户运行线程
+
+# 查看客户端连接数（按客户端IP分组）
+SELECT client_ip,count(client_ip) AS client_num FROM (SELECT substring_index(host,':' ,1) AS client_ip FROM information_schema.processlist ) AS connect_info GROUP BY client_ip ORDER BY client_num DESC;
+
+# 查看正在执行的线程（按Time倒序）
+SELECT * FROM information_schema.processlist WHERE Command != 'Sleep' ORDER BY Time DESC;
+
+# 查询出所有执行时间超过5分钟的线程，并输出对应的kill语句
+SELECT concat('kill ', id, ';') FROM information_schema.processlist WHERE Command != 'Sleep' AND Time > 300 ORDER BY Time DESC;
+
+SHOW STATUS WHERE `variable_name` = 'Threads_connected'; # 查看当前打开的连接数
+SHOW STATUS WHERE variable_name='Threads_cached';  # 查看线程缓存内的线程数
+SHOW VARIABLES LIKE 'max_connections'; # 查看最大连接数
+SET GLOBAL max_connections = 250; # 设置最大连接数（重启后会失效，永久更改需要修改 my.ini或my.cnf）
+SHOW BINARY LOGS; # 列出服务器上的二进制日志文件
+
+##############################################################################
+# MySQL用户与权限
+##############################################################################
+
+GRANT ALL PRIVILEGES ON prospectwith.* TO 'user'@'%' WITH GRANT OPTION; # 给予user全部数据库下面的所有表的所有权限，且不限制登录IP
+FLUSH PRIVILEGES; # 刷新权限列表
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'pwd'; # 创建用户名为user的账户，密码为pwd
+mysqld_safe –user=mysql –skip-grant-tables –skip-networking & # 跳过权限表登入MySQL（用于重置密码）
+
+##############################################################################
+# MySQL增删改查
+##############################################################################
+
+mysql -uuser -ppwd -e "MY SQL QUERY" &>> query.log & disown # 静默执行SQL查询语句并输出到query.log中
+
+SHOW DATABASES; # 查询所有数据库
+CREATE DATABASE db_name; # 创建数据库
+DROP DATABASE db_name; # 删除数据库
+USE db_name; # 切换当前数据库
+
+SHOW TABLES; # 查询当前数据库下所有的表
+DESC tb_name; # 查询表结构
+SHOW CREATE TABLE tb_name; # 查看创建表的SQL语句
+DROP TABLE tb_name; # 删除表
+
+SELECT * FROM <表名>; # 查询数据
+INSERT INTO <表名> (字段1,字段2....字段N) VALUES (值1,值2....值N); # 查询数据
+UPDATE <表名> SET 字段1=值1, 字段2=值2 ..... WHERE ....; # 更新表中记录
+DELETE FROM <表名> WHERE ....; # 删除表中记录
+
+
+
