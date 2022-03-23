@@ -7,7 +7,7 @@
 # MySQL备份与还原
 ##############################################################################
 
-mysqldump -h hostname -u username -p db_name -P port 	> filename.sql # 导出数据
+mysqldump -h hostname -u username -p db_name -P port > filename.sql # 导出数据
 mysql -uusername -pdb_name < filename.sql  # 导入数据
 
 ##############################################################################
@@ -44,22 +44,16 @@ mysqld_safe –user=mysql –skip-grant-tables –skip-networking & # 跳过权�
 # MySQL增删改查
 ##############################################################################
 
-mysql -uuser -ppwd -e "MY SQL QUERY" &>> query.log & disown # 静默执行SQL查询语句并输出到query.log中
-
+mysql -uuser -ppwd -e "SQL QUERY" &>> query.log & disown # 静默执行SQL查询语句并输出到query.log中
 SHOW DATABASES; # 查询所有数据库
 CREATE DATABASE db_name; # 创建数据库
 DROP DATABASE db_name; # 删除数据库
 USE db_name; # 切换当前数据库
-
 SHOW TABLES; # 查询当前数据库下所有的表
 DESC tb_name; # 查询表结构
 SHOW CREATE TABLE tb_name; # 查看创建表的SQL语句
 DROP TABLE tb_name; # 删除表
-
 SELECT * FROM <表名>; # 查询数据
-INSERT INTO <表名> (字段1,字段2....字段N) VALUES (值1,值2....值N); # 查询数据
+INSERT INTO <表名> (字段1,字段2....字段N) VALUES (值1,值2....值N); # 插入数据
 UPDATE <表名> SET 字段1=值1, 字段2=值2 ..... WHERE ....; # 更新表中记录
 DELETE FROM <表名> WHERE ....; # 删除表中记录
-
-
-
