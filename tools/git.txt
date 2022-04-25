@@ -156,7 +156,7 @@ git branch                          查看已有分支（* 表示当前分支）
 git merge <branch name>             合并<branch name>到当前分支（通常在master分支下操作）
 git merge --no-commit <branch name> 合并<branch name>到当前分支，但不提交
 git branch -d <branch name>         删除分支
-git branch -m oldbranchname newname 删除分支
+git branch -m oldbranchname newname 重命名分支
 
 
 ##############################################################################
