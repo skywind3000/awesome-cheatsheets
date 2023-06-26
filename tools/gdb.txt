@@ -1,6 +1,6 @@
 ##############################################################################
 # GDB CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/20)
-# Version: 8, Last Modified: 2018/02/28 17:13
+# Version: 9, Last Modified: 2023/06/26 14:31
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -71,17 +71,17 @@ run < <(cmd)              # 以某命令的输出作为标准输入运行程序
 run <<< $(cmd)            # 以某命令的输出作为标准输入运行程序
 set args {args} ...       # 设置运行的参数
 show args                 # 显示当前的运行参数
-cont                      # 继续运行，可简写为 c
-step                      # 单步进入，碰到函数会进去
+continue                  # 继续运行，可简写为 c 或 cont
+step                      # 单步进入，碰到函数会进去（Step in）
 step {count}              # 单步多少次
-next                      # 单步跳过，碰到函数不会进入
+next                      # 单步跳过，碰到函数不会进入（Step Over）
 next {count}              # 单步多少次
+finish                    # 运行到当前函数结束（Step Out）
+until                     # 持续执行直到代码行号大于当前行号（跳出循环）
+until {line}              # 持续执行直到执行到某行
 CTRL+C                    # 发送 SIGINT 信号，中止当前运行的程序
 attach {process-id}       # 链接上当前正在运行的进程，开始调试
 detach                    # 断开进程链接
-finish                    # 结束当前函数的运行
-until                     # 持续执行直到代码行号大于当前行号（跳出循环）
-until {line}              # 持续执行直到执行到某行
 kill                      # 杀死当前运行的函数
 
 
@@ -89,7 +89,7 @@ kill                      # 杀死当前运行的函数
 # 栈帧
 ##############################################################################
 
-bt                        # 打印 backtrace 
+bt                        # 打印 backtrace （命令 where 是 bt 的别名）
 frame                     # 显示当前运行的栈帧
 up                        # 向上移动栈帧（向着 main 函数）
 down                      # 向下移动栈帧（远离 main 函数）
