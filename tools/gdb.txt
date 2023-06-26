@@ -251,6 +251,8 @@ gdb-tui                   使用 gdb -tui 启动（或 ctrl-x ctrl-a 更换 CLI/
 cgdb                      http://cgdb.github.io/
 emacs                     http://gnu.org/software/emacs
 gdbgui                    https://github.com/cs01/gdbgui
+vimspector                https://github.com/puremourning/vimspector
+termdebug                 https://github.com/vim/vim
 
 GDB 图形化前端评测        http://www.skywind.me/blog/archives/2036
 
