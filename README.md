@@ -38,6 +38,8 @@
 
 - [VIM](editors/vim.txt)
 - [Nano](editors/nano.txt)
+- [Emacs](editors/emacs.txt)
+- [Org Mode](editors/org.org)
 
 ## :pray:感谢贡献
 
