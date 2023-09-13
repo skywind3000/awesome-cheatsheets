@@ -11,6 +11,8 @@
 git config --global "Your Name"
 git config --global "Email Address"
 git config --global credential.helper store    保存密码(每次要输密码/重复输密码)
+git config user.name "Your Name" 配置当前仓库用户名
+git config user.email "Email Address" 配置当前仓库邮箱地址
 
 
 ##############################################################################
@@ -152,6 +154,7 @@ git checkout <branch name>          切换至<branch name>分支
 git switch <branch name>            切换至<branch name>分支 (2.23 引入)
 git checkout -b <branch name>       创建并切换至<branch name>分支
 git switch -c <branch name>         创建并切换至<branch name>分支
+git checkout origin/master -b <branch name> 基于远程仓库<origin>下的<master>分支创建一个新的分支
 git branch                          查看已有分支（* 表示当前分支）
 git merge <branch name>             合并<branch name>到当前分支（通常在master分支下操作）
 git merge --no-commit <branch name> 合并<branch name>到当前分支，但不提交
