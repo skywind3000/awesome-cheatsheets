@@ -1,6 +1,6 @@
 ##############################################################################
 # NANO CHEATSHEET (中文速查表)  -  by skywind (created on 2018/02/13)
-# Version: 6, Last Modified: 2018/02/24 02:37
+# Version: 7, Last Modified: 2023/12/15 18:01
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -12,9 +12,10 @@
 CTRL-o <Enter>      保存文件
 CTRL-r ALT-f        在 Nano 中打开新文件
 CTRL-r CTRL-t       使用文件管理器寻找并打开文件
+CTRL-r ALT-f CTRL-t 使用文件管理器寻找并打开到新文件
 ALT-<               切换到前一个文件，同 ALT-,
 ALT->               切换到后一个文件，同 ALT-.
-CTRL-q              退出 Nano
+CTRL-x              退出 Nano （或者关闭当前文件，多个的话）
 CTRL-g              显示帮助
 
 
@@ -52,7 +53,7 @@ CTRL-Right          向右跳一个单词（v2.7.4 至少）
 ALT-a               开始选择文本用于复制或者剪贴，再次按 ALT-a 会取消选择
 CTRL-^              开始选择文本用于复制或者剪贴，同 ALT-a，CTRL 和 6一起按下
 ALT-a ALT-^         复制高亮的选中文本到剪贴板
-ALT-a ALT-k         剪贴高亮的选中文本到剪贴板
+ALT-a CTRL-k        剪贴高亮的选中文本到剪贴板
 ALT-^               复制当前行到剪贴板
 CTRL-k              剪贴从光标处到行末的文本
 CTRL-u              粘贴剪贴板里的文本到光标处
@@ -106,7 +107,7 @@ ALT-#               是否显示行号（需要较新版本）
 set tabsize 4       设置制表符宽度
 set autoindent      允许自动缩进
 set cut             设置 CTRL-K 可以剪贴到行末
-set noconvert       不要转换 DOS/UNIX 换行符
+set noconvert       不要转换 DOS/UNIX 换行符（一般不设置）
 set nowrap          不要自动换行
 set nohelp          不显示下面两行帮助
 set morespace       隐藏标题下的空白行，换取更多编辑空间
