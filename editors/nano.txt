@@ -9,133 +9,134 @@
 # 文件操作
 ##############################################################################
 
-CTRL-o <Enter>      保存文件
-CTRL-r ALT-f        在 Nano 中打开新文件
-CTRL-r CTRL-t       使用文件管理器寻找并打开文件
-CTRL-r ALT-f CTRL-t 使用文件管理器寻找并打开到新文件
-ALT-<               切换到前一个文件，同 ALT-,
-ALT->               切换到后一个文件，同 ALT-.
-CTRL-x              退出 Nano （或者关闭当前文件，多个的话）
-CTRL-g              显示帮助
+CTRL-o <Enter>        保存文件
+CTRL-r ALT-f          在 Nano 中打开新文件
+CTRL-r CTRL-t         使用文件管理器寻找并打开文件
+CTRL-r ALT-f CTRL-t   使用文件管理器寻找并打开到新文件
+ALT-<                 切换到前一个文件，同 ALT-,
+ALT->                 切换到后一个文件，同 ALT-.
+CTRL-x                退出 Nano （或者关闭当前文件，多个的话）
+CTRL-g                显示帮助
 
 
 ##############################################################################
 # 光标移动
 ##############################################################################
 
-CTRL-b              向左移动，同 <Left>   
-CTRL-f              向右移动，同 <Right> 
-CTRL-p              向上移动，同 <Up>   
-CTRL-n              向下移动，同 <Down>
-CTRL-a              移动到行首，同 <Home>
-CTRL-e              移动到行末，同 <End>
-CTRL-v              下翻页，同 <PageDown>
-CTRL-y              上翻页，同 <PageUp>
-ALT-\               跳到文件开头
-ALT-/               跳到文件末尾
-ALT-g               跳到指定行号
-ALT-]               跳到匹配的括号或者 tag
-ALT-a ALT-}         选择一个块并缩进
-ALT-a ALT-{         选择一个块并反缩进
-ALT-(               跳转到上一个段落
-ALT-)               跳转到下一个段落
-CTRL-d              删除光标下字符
-CTRL-h              删除光标左边字符
-CTRL-j              调整段落
-CTRL-Left           向左跳一个单词（v2.7.4 至少）
-CTRL-Right          向右跳一个单词（v2.7.4 至少）
+CTRL-b                向左移动，同 <Left>   
+CTRL-f                向右移动，同 <Right> 
+CTRL-p                向上移动，同 <Up>   
+CTRL-n                向下移动，同 <Down>
+CTRL-a                移动到行首，同 <Home>
+CTRL-e                移动到行末，同 <End>
+CTRL-v                下翻页，同 <PageDown>
+CTRL-y                上翻页，同 <PageUp>
+ALT-\                 跳到文件开头
+ALT-/                 跳到文件末尾
+ALT-g                 跳到指定行号
+ALT-]                 跳到匹配的括号或者 tag
+ALT-a ALT-}           选择一个块并缩进
+ALT-a ALT-{           选择一个块并反缩进
+ALT-(                 跳转到上一个段落
+ALT-)                 跳转到下一个段落
+CTRL-d                删除光标下字符
+CTRL-h                删除光标左边字符
+CTRL-j                调整段落
+CTRL-Left             向左跳一个单词（v2.7.4 至少）
+CTRL-Right            向右跳一个单词（v2.7.4 至少）
 
 
 ##############################################################################
 # 复制粘贴
 ##############################################################################
 
-ALT-a               开始选择文本用于复制或者剪贴，再次按 ALT-a 会取消选择
-CTRL-^              开始选择文本用于复制或者剪贴，同 ALT-a，CTRL 和 6一起按下
-ALT-a ALT-^         复制高亮的选中文本到剪贴板
-ALT-a CTRL-k        剪贴高亮的选中文本到剪贴板
-ALT-^               复制当前行到剪贴板
-CTRL-k              剪贴从光标处到行末的文本
-CTRL-u              粘贴剪贴板里的文本到光标处
-SHIFT-方向键        另外一种标记法（v2.7.4）
+ALT-a                 开始选择文本用于复制或剪贴，再次按 ALT-a 会取消选择
+CTRL-^                开始选择文本用于复制或剪贴，同 ALT-a，CTRL 和 6一起按下
+ALT-a ALT-^           复制高亮的选中文本到剪贴板，ALT 同 6 一起按
+ALT-a CTRL-k          剪贴高亮的选中文本到剪贴板
+ALT-^                 复制当前行到剪贴板
+CTRL-k                剪贴从光标处到行末的文本
+CTRL-u                粘贴剪贴板里的文本到光标处
+SHIFT-方向键          另外一种标记法（v2.7.4）
 
 
 ##############################################################################
 # 搜索替换
 ##############################################################################
 
-CTRL-w              查找字符串
-ALT-w               重复上次查找
-CTRL-\              查找替换
-ALT-r               查找替换，同 CTRL-\
+CTRL-w                查找字符串
+ALT-w                 重复上次查找
+CTRL-\                查找替换
+ALT-r                 查找替换，同 CTRL-\
 
 
 ##############################################################################
 # 撤销重复
 ##############################################################################
 
-ALT-u               撤销
-ALT-e               重复
+ALT-u                 撤销
+ALT-e                 重复
 
 
 ##############################################################################
 # 状态切换
 ##############################################################################
 
-ALT-x               是否允许显示底部帮助信息
-ALT-c               是否显示光标位置
-ALT-o               是否允许多行编辑
-ALT-s               是否允许平滑卷屏
-ALT-$               是否允许自动换行
-ALT-p               是否显示空格和制表符
-ALT-y               是否允许语法高亮
-ALT-h               是否允许智能 Home 键
-ALT-i               是否允许自动缩进
-ALT-k               是否允许剪贴到行末
-ALT-l               是否允许硬性自动换行
-ALT-q               是否允许展开制表符为空格
-ALT-b               是否允许备份文件
-ALT-f               是否允许加载文件到新的缓存
-ALT-m               是否允许鼠标
-ALT-#               是否显示行号（需要较新版本）
+ALT-x                 是否允许显示底部帮助信息
+ALT-c                 是否显示光标位置
+ALT-o                 是否允许多行编辑
+ALT-s                 是否允许平滑卷屏
+ALT-$                 是否允许自动换行
+ALT-p                 是否显示空格和制表符
+ALT-y                 是否允许语法高亮
+ALT-h                 是否允许智能 Home 键
+ALT-i                 是否允许自动缩进
+ALT-k                 是否允许剪贴到行末
+ALT-l                 是否允许硬性自动换行
+ALT-q                 是否允许展开制表符为空格
+ALT-b                 是否允许备份文件
+ALT-f                 是否允许加载文件到新的缓存
+ALT-m                 是否允许鼠标
+ALT-#                 是否显示行号（需要较新版本）
 
 
 ##############################################################################
 # 配置：~/.nanorc, /etc/nanorc
 ##############################################################################
 
-set tabsize 4       设置制表符宽度
-set autoindent      允许自动缩进
-set cut             设置 CTRL-K 可以剪贴到行末
-set noconvert       不要转换 DOS/UNIX 换行符（一般不设置）
-set nowrap          不要自动换行
-set nohelp          不显示下面两行帮助
-set morespace       隐藏标题下的空白行，换取更多编辑空间
-set smooth          平滑卷屏
-set suspend         允许 ctrl-z 将 nano 置于后台
-set smarthome       第一次 Home 跳到行首非空字符，第二次到行首
-set tabstospaces    展开制表符为空格（如果需要的话）
-set mouse           允许鼠标
-set linenumbers     显示行号（可以在编辑时 ALT-# 切换）
-set backupdir path  设置备份路径
-set backup          允许保存备份
-set casesensitive   搜索使用大小写敏感
-set multibuffer     使用 CTRL-r 读取文件时，默认读取到新缓存
-set nonewlines      不在文件末尾添加新行
-set numbercolor f,b 设置行号颜色
-set titlecolor f,b  设置标题颜色
-include <filename>  加载额外配置，通常是 /usr/share/nano 下的各种语法文件
+set tabsize 4         设置制表符宽度
+set autoindent        允许自动缩进
+set cut               设置 CTRL-K 可以剪贴到行末
+set noconvert         不要转换 DOS/UNIX 换行符（一般不设置）
+set nowrap            不要自动换行
+set nohelp            不显示下面两行帮助（不熟练别设置）
+set morespace         隐藏标题下的空白行，换取更多编辑空间
+set smooth            平滑卷屏
+set suspend           允许 ctrl-z 将 nano 置于后台
+set smarthome         第一次 Home 跳到行首非空字符，第二次到行首
+set tabstospaces      展开制表符为空格（如果需要的话）
+set mouse             允许鼠标
+set linenumbers       显示行号（可以在编辑时 ALT-# 切换）
+set backupdir path    设置备份路径
+set backup            允许保存备份
+set casesensitive     搜索使用大小写敏感
+set multibuffer       使用 CTRL-r 读取文件时，默认读取到新缓存
+set nonewlines        不在文件末尾添加新行
+set numbercolor a,b   设置行号颜色，a 为文字颜色，b 为背景 （版本 5.4+）
+set titlecolor a,b    设置标题颜色，a 为文字颜色，b 为背景 （版本 5.4+）
+include <filename>    加载额外配置，通常是 /usr/share/nano 下的各种语法文件
 
 
 ##############################################################################
 # 网络资源
 ##############################################################################
 
-最新下载            https://www.nano-editor.org/
-官方手册            https://www.nano-editor.org/dist/v2.9/nano.html
-nano-win            https://github.com/lhmouse/nano-win
-中文帮助            http://blog.sina.com.cn/s/blog_5d9f545101010b1y.html
-正确设置 ALT 键     http://www.skywind.me/blog/archives/2021
+最新下载              https://www.nano-editor.org/
+官方手册              https://www.nano-editor.org/dist/v2.9/nano.html
+配置帮助              https://www.nano-editor.org/dist/latest/nanorc.5.html
+nano-win              https://github.com/lhmouse/nano-win
+中文帮助              http://blog.sina.com.cn/s/blog_5d9f545101010b1y.html
+正确设置 ALT 键       http://www.skywind.me/blog/archives/2021
 
 
 ##############################################################################
@@ -147,5 +148,6 @@ http://www.codexpedia.com/text-editor/nano-text-editor-command-cheatsheet/
 https://thecustomizewindows.com/2015/02/nano-text-editor-tips-tricks/
 https://www.lifewire.com/beginners-guide-to-nano-editor-3859002
 https://www.geoffreybrown.com/blog/nano-keystroke-configuration/
+https://www.linux.org/threads/how-to-change-the-colors-of-nano.40658/
 
 
