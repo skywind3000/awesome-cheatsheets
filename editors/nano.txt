@@ -149,5 +149,5 @@ https://thecustomizewindows.com/2015/02/nano-text-editor-tips-tricks/
 https://www.lifewire.com/beginners-guide-to-nano-editor-3859002
 https://www.geoffreybrown.com/blog/nano-keystroke-configuration/
 https://www.linux.org/threads/how-to-change-the-colors-of-nano.40658/
-
+https://www.nano-editor.org/dist/latest/cheatsheet.html
 
