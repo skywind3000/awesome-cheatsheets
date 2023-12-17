@@ -122,6 +122,8 @@ set backup          允许保存备份
 set casesensitive   搜索使用大小写敏感
 set multibuffer     使用 CTRL-r 读取文件时，默认读取到新缓存
 set nonewlines      不在文件末尾添加新行
+set numbercolor f,b 设置行号颜色
+set titlecolor f,b  设置标题颜色
 include <filename>  加载额外配置，通常是 /usr/share/nano 下的各种语法文件
 
 
