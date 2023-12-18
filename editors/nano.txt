@@ -106,13 +106,13 @@ ALT-#                 是否显示行号（需要较新版本）
 
 set tabsize 4         设置制表符宽度
 set autoindent        允许自动缩进
-set cut               设置 CTRL-K 可以剪贴到行末
+set cut               设置 CTRL-K 可以剪贴到行末（only for nano 2.x）
 set noconvert         不要转换 DOS/UNIX 换行符（一般不设置）
 set nowrap            不要自动换行
 set nohelp            不显示下面两行帮助（不熟练别设置）
-set morespace         隐藏标题下的空白行，换取更多编辑空间
-set smooth            平滑卷屏
-set suspend           允许 ctrl-z 将 nano 置于后台
+set morespace         隐藏标题下的空白行，换取更多编辑空间（only for 2.x）
+set smooth            平滑卷屏（新版本已经移除）
+set suspend           允许 ctrl-z 将 nano 置于后台（仅老版本有效）
 set smarthome         第一次 Home 跳到行首非空字符，第二次到行首
 set tabstospaces      展开制表符为空格（如果需要的话）
 set mouse             允许鼠标
