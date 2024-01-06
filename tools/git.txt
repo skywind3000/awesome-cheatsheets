@@ -8,8 +8,8 @@
 ##############################################################################
 # 配置
 ##############################################################################
-git config --global "Your Name"
-git config --global "Email Address"
+git config --global user.name "Your Name" 配置全局用户名
+git config --global user.email "Email Address" 配置全局邮箱地址
 git config --global credential.helper store    保存密码(每次要输密码/重复输密码)
 git config user.name "Your Name" 配置当前仓库用户名
 git config user.email "Email Address" 配置当前仓库邮箱地址
