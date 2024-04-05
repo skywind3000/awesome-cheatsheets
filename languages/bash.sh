@@ -47,7 +47,7 @@ CTRL+X CTRL+E       # 用你指定的编辑器，编辑当前命令
 # BASH 基本操作
 ##############################################################################
 
-exit                # 退出当前登陆
+exit                # 退出当前登录
 env                 # 显示环境变量
 echo $SHELL         # 显示你在使用什么 SHELL
 
@@ -116,26 +116,26 @@ stat {fn}           # 显示文件的详细信息
 ##############################################################################
 
 whoami              # 显示我的用户名
-who                 # 显示已登陆用户信息，w / who / users 内容略有不同
-w                   # 显示已登陆用户信息，w / who / users 内容略有不同
-users               # 显示已登陆用户信息，w / who / users 内容略有不同
+who                 # 显示已登录用户信息，w / who / users 内容略有不同
+w                   # 显示已登录用户信息，w / who / users 内容略有不同
+users               # 显示已登录用户信息，w / who / users 内容略有不同
 passwd              # 修改密码，passwd {user} 可以用于 root 修改别人密码
-finger {user}       # 显示某用户信息，包括 id, 名字, 登陆状态等
+finger {user}       # 显示某用户信息，包括 id, 名字, 登录状态等
 adduser {user}      # 添加用户
 deluser {user}      # 删除用户
 w                   # 查看谁在线
 su                  # 切换到 root 用户
-su -                # 切换到 root 用户并登陆（执行登陆脚本）
+su -                # 切换到 root 用户并登录（执行登录脚本）
 su {user}           # 切换到某用户
-su -{user}          # 切换到某用户并登陆（执行登陆脚本）
+su -{user}          # 切换到某用户并登录（执行登录脚本）
 id {user}           # 查看用户的 uid，gid 以及所属其他用户组
 id -u {user}        # 打印用户 uid
 id -g {user}        # 打印用户 gid
 write {user}        # 向某用户发送一句消息
-last                # 显示最近用户登陆列表
-last {user}         # 显示登陆记录
-lastb               # 显示失败登陆记录
-lastlog             # 显示所有用户的最近登陆记录
+last                # 显示最近用户登录列表
+last {user}         # 显示登录记录
+lastb               # 显示失败登录记录
+lastlog             # 显示所有用户的最近登录记录
 sudo {command}      # 以 root 权限执行某命令
 
 
@@ -179,7 +179,7 @@ trap cmd sig1 sig2        # 在脚本中设置信号处理命令
 trap "" sig1 sig2         # 在脚本中屏蔽某信号
 trap - sig1 sig2          # 恢复默认信号处理行为
 
-nohup {command}           # 长期运行某程序，在你退出登陆都保持它运行
+nohup {command}           # 长期运行某程序，在你退出登录都保持它运行
 nohup {command} &         # 在后台长期运行某程序
 disown {PID|JID}          # 将进程从后台任务列表（jobs）移除
 
@@ -190,8 +190,8 @@ wait                      # 等待所有后台进程任务结束
 # 常用命令：SSH / 系统信息 / 网络
 ##############################################################################
 
-ssh user@host             # 以用户 user 登陆到远程主机 host
-ssh -p {port} user@host   # 指定端口登陆主机
+ssh user@host             # 以用户 user 登录到远程主机 host
+ssh -p {port} user@host   # 指定端口登录主机
 ssh-copy-id user@host     # 拷贝你的 ssh key 到远程主机，避免重复输入密码
 scp {fn} user@host:path   # 拷贝文件到远程主机
 scp user@host:path dest   # 从远程主机拷贝文件回来
