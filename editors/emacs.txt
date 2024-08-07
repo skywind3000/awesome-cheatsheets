@@ -71,7 +71,7 @@ M-y                 从删除环中拉回更早期内容
 # 搜索替换
 ##############################################################################
 
-C-s                 搜索，出现 mini buffer 输入要查找的东西
+C-s                 搜索，出现 minibuffer 输入要查找的东西
 C-s                 搜索模式下向前搜索
 C-r                 搜索模式下向后搜索
 RET                 退出搜索模式
@@ -87,7 +87,8 @@ M-s w C-r RET       向后搜索单词（空格和标点分隔）
 
 C-h t               快速指南
 C-h k               按键帮助
-C-h f               行数帮助
+C-h f               函数帮助
+C-h v               变量帮助
 C-h r               Emacs 手册
 
 
@@ -97,5 +98,7 @@ C-h r               Emacs 手册
 
 http://blog.csdn.net/garfielder007/article/details/49557441
 http://blog.csdn.net/ryuali2010/article/details/7887776
+https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf
+https://www.gnu.org/software/emacs/refcards/pdf/survival.pdf
 
 
