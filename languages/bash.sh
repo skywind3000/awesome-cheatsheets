@@ -248,7 +248,7 @@ rz                        # 接收终端发送过来的文件
 
 varname=value             # 定义变量
 varname=value command     # 定义子进程变量并执行子进程
-echo $varname             # 查看变量内容
+echo "$varname"           # 查看变量内容
 echo $$                   # 查看当前 shell 的进程号
 echo $!                   # 查看最近调用的后台任务进程号
 echo $?                   # 查看最近一条命令的返回码
@@ -306,21 +306,22 @@ echo "${B[1]}"            # a  b c
 echo "${C[@]}"            # bar a  b c 42
 echo "${C[@]: -2:2}"      # a  b c 42  减号前的空格是必须的
 
-$(UNIX command)           # 运行命令，并将标准输出内容捕获并返回
+$(UNIX command)           # 在 subshell 中运行命令 (不会改变当前 shell 的环境)，并将标准输出内容捕获并返回
 varname=$(id -u user)     # 将用户名为 user 的 uid 赋值给 varname 变量
 
 num=$(expr 1 + 2)         # 兼容 posix sh 的计算，使用 expr 命令计算结果
 num=$(expr $num + 1)      # 数字自增
 expr 2 \* \( 2 + 3 \)     # 兼容 posix sh 的复杂计算，输出 10
 
-num=$((1 + 2))            # 计算 1+2 赋值给 num，使用 bash 独有的 $((..)) 计算
+num=$[1 + 2]              # 计算 1+2 赋值给 num，使用 bash 独有的 $[..] 计算
+num=$((1 + 2))            # 同上, 但该语法由 POSIX shell 指定
 num=$(($num + 1))         # 变量递增
 num=$((num + 1))          # 变量递增，双括号内的 $ 可以省略
 num=$((1 + (2 + 3) * 2))  # 复杂计算
 
 
 ##############################################################################
-# 事件指示符
+# 事件指示符 (仅在交互式 shell 生效)
 ##############################################################################
 
 !!                  # 上一条命令
@@ -508,7 +509,7 @@ for ((i = 0; i < 10; i++)); do echo $i; done
 
 # case 判断
 case expression in 
-    pattern1 )
+    pattern1a | pattern1b | ... )
         statements ;;
     pattern2 )
         statements ;;
@@ -879,6 +880,7 @@ https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
 https://devhints.io/bash
 https://github.com/jlevy/the-art-of-command-line
 https://yq.aliyun.com/articles/68541
+https://tiswww.case.edu/php/chet/bash/article.pdf
 
 # vim: set ts=4 sw=4 tw=0 et :
 
