@@ -41,6 +41,7 @@
 - [Emacs](editors/emacs.txt)
 - [Org Mode](editors/org.org)
 
+
 ## :pray:感谢贡献
 
 本项目的存在，离不开参与贡献的网友们，感谢：
@@ -72,4 +73,9 @@
 <a href="https://opencollective.com/awesome-cheatsheets/sponsor/8/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/awesome-cheatsheets/sponsor/9/website" target="_blank"><img src="https://opencollective.com/awesome-cheatsheets/sponsor/9/avatar.svg"></a>
 
+
+## :star:欢迎关注
+
+- 我的博客：https://skywind.me/blog
+- 个人推特：https://x.com/skywind3000
 
