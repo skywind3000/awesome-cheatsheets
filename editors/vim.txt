@@ -735,11 +735,11 @@ yaa                 复制函数参数（包括逗号分隔）
 Windows 最新版      https://github.com/vim/vim-win32-installer/releases
 插件浏览            http://vimawesome.com
 reddit              https://www.reddit.com/r/vim/
-正确设置 ALT/BS 键  http://www.skywind.me/blog/archives/2021
+正确设置 ALT/BS 键  https://skywind.me/blog/archives/2021
 视频教程            http://vimcasts.org/
 中文帮助            http://vimcdoc.sourceforge.net/doc/help.html
 中文版入门到精通    https://github.com/wsdjeg/vim-galore-zh_cn
-五分钟脚本入门      http://www.skywind.me/blog/archives/2193
+五分钟脚本入门      https://skywind.me/blog/archives/2193
 脚本精通            http://learnvimscriptthehardway.stevelosh.com/
 中文脚本帮助        vimcdoc.sourceforge.net/doc/eval.html
 十六年使用经验      http://zzapper.co.uk/vimtips.html
