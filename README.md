@@ -33,7 +33,7 @@
 - [Tmux](tools/tmux.txt)
 - [Git](tools/git.txt)
 - [FFmpeg](tools/ffmpeg.sh)
-- [Linux ip command](tools/ip.sh)
+- [Linux ip command](tools/ip.txt)
 
 ### :pencil:文本编辑
 
