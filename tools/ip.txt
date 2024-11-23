@@ -1,6 +1,6 @@
 ##############################################################################
 # IP CHEATSHEET (中文速查表)  -  by skywind (created on 2024/11/12)
-# Version: 4, Last Modified: 2024/11/24 00:41:13
+# Version: 5, Last Modified: 2024/11/24 00:41:13
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -101,6 +101,7 @@ ip netns add s1                               # 创建一个网络命名空间
 ip netns del s1                               # 删除一个网络命名空间
 ip netns attach NAME PID                      # 改变进程网络命名空间
 ip netns exec s1 command                      # 在网络命名空间中执行命令
+ip netns exec s1 ip link set lo up            # 在网络命名空间中设置 lo 设备
 ip netns identify                             # 查看当前进程的网络命名空间
 ip netns identify PID                         # 查看指定进程的网络命名空间
 ip netns pids NAME                            # 查看网络命名空间中的进程
