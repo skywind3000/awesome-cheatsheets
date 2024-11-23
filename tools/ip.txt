@@ -60,7 +60,7 @@ ip route get 8.8.8.8 mark 666                 # 查询经过的路由（带标�
 ip route add default via 10.8.1.1 dev eth0    # 添加默认路由
 ip route add 10.8.1.0/24 via 10.8.1.1         # 添加静态路由
 ip route add 10.8.1.0/24 dev eth0             # 添加直连路由
-ip route add 10.8.1.1/24 dev eth0 metric 10   # 添加带有 metric 的直连路由
+ip route add 10.8.1.0/24 dev eth0 metric 10   # 添加带有 metric 的直连路由
 ip route add 10.8.1.0/24 dev eth0 table 520   # 添加路由到编号 520 的路由表
 ip route add table 520 10.8.1.0/24 dev eth0   # 另一种写法，突出表名
 ip route delete 10.8.1.0/24 via 10.8.1.1      # 删除静态路由
