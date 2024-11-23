@@ -1,6 +1,6 @@
 ##############################################################################
 # IP CHEATSHEET (中文速查表)  -  by skywind (created on 2024/11/12)
-# Version: 6, Last Modified: 2024/11/24 01:58:30
+# Version: 7, Last Modified: 2024/11/24 02:56:27
 # https://github.com/skywind3000/awesome-cheatsheets
 ##############################################################################
 
@@ -112,9 +112,6 @@ ip -n s1 addr add 192.168.64.1/24 dev veth0   # 在网络命名空间中添加�
 # quick reference (busybox ip)
 ##############################################################################
 
-# Usage: ip [OPTIONS] address|route|link|tunnel|neigh|rule [ARGS]
-# OPTIONS := -f[amily] inet|inet6|link | -o[neline]
-# 
 # ip addr add|del IFADDR dev IFACE | show|flush [dev IFACE] [to PREFIX]
 # ip route list|flush|add|del|change|append|replace|test ROUTE
 # ip link set IFACE [up|down] [arp on|off] [multicast on|off]
