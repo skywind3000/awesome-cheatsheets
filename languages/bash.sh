@@ -88,7 +88,7 @@ ln -s {fn} {link}   # 给指定文件创建一个软链接
 cp {src} {dest}     # 拷贝文件，cp -r dir1 dir2 可以递归拷贝（目录）
 rm {fn}             # 删除文件，rm -r 递归删除目录，rm -f 强制删除
 mv {src} {dest}     # 移动文件，如果 dest 是目录，则移动，是文件名则覆盖
-touch {fn}          # 创建或者更新一下制定文件
+touch {fn}          # 创建或者更新一下指定文件
 cat {fn}            # 输出文件原始内容
 any_cmd > {fn}      # 执行任意命令并将标准输出重定向到指定文件
 more {fn}           # 逐屏显示某文件内容，空格翻页，q 退出
