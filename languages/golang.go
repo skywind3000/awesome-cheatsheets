@@ -296,8 +296,6 @@ func Caller() {
 https://github.com/astaxie/build-web-application-with-golang    // 谢大的
 https://github.com/Unknwon/the-way-to-go_ZH_CN                  // 无闻
 https://github.com/Unknwon/go-fundamental-programming           // 无闻教学视频
-// 第三方类库
-https://golanglibs.com/
 // 大杂烩
 https://github.com/avelino/awesome-go
 
