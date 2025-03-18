@@ -6,25 +6,17 @@
 
 
 ##############################################################################
-# session
+# session 管理
 ##############################################################################
 
-tmux                      # 创建新的 session
-tmux new -S name          # 创建新的 session 并指定一个name
-tmux ls                   # 查看多少个后台工作的 session
-tmux a/at/attach          # 重新连接 session 
-tmux a/at/attach -t num   # 如果有多个 session, 指定 session num 连接
-tmux kill-ses -t myses    # kill 某个 session
-tmux kill-ses -a          # kill 所有 session, 除了当前的 session
-tmux kill-ses -a -t myses # kill 所有 session, 除了 myses
-
-
-##############################################################################
-# 操作方式 
-##############################################################################
-
-<prefix> + key            # <prefix> 默认为 ctrl + b
-<prefix> + c              # 表示先按 ctrl + b 再按 c 键
+tmux                      # 创建新的 session（默认名称为编号）
+tmux new -s <name>        # 创建新的 session 并指定一个名称
+tmux ls                   # 列出所有 session
+tmux attach               # 重新连接 session 
+tmux attach -t <name>     # 重新连接指定名称或编号的 seesio
+tmux detach               # 断开 session
+tmux kill-session -t <name>    # 杀死指定名称的 session
+tmux kill-session -a           # 杀死其他所有 session
 
 
 ##############################################################################
@@ -41,6 +33,7 @@ tmux kill-ses -a -t myses # kill 所有 session, 除了 myses
 <prefix> + c              # 新建一个 window
 <prefix> + n              # 下一个 window
 <prefix> + p              # 上一个 window
+<prefix> + l              # 最近一个 window
 <prefix> + w              # 列出 window
 <prefix> + &              # 关闭当前 window
 <prefix> + num[1-9]       # 选定特定 num 的 window
@@ -97,11 +90,14 @@ tmux kill-ses -a -t myses # kill 所有 session, 除了 myses
 # 复制模式 (copy-mode) 
 ##############################################################################
 
-添加下面一行到 $HOME/.tmux.conf, 通过 vim 的快捷键实现浏览, 复制等操作;
+C-b PageUp                # 向上翻页
+C-b PageDown              # 向下翻页
+
+添加下面一行到 ~/.tmux.conf, 然后 tmux source ~/.tmux.conf，开启 vi 模式
 
 setw -g mode-keys vi 
 
-更多 vim 快捷键可参考 ../editors/vim.txt, 以下列出一些常用快捷键. 
+以下列出 vi 模型下的常用快捷键
 
 <prefix> + [              # 进入 copy mode 
 
