@@ -2,7 +2,7 @@
 #+author: 谢骐 <https://github.com/shynur>
 
 (由于 GitHub 对 Org 的支持不完整, 你可以在 Emacs 或 VS Code 中阅读本文件, \\
-更好的做法是[[https://shynur.github.io/CheatSheets/Org.html][阅读导出的 HTML 版本]].)
+还可以[[https://shynur.github.io/CheatSheets/OrgMode][阅读导出的 HTML 版本]].)
 
 * 关于文档自身
 
