@@ -14,6 +14,7 @@
 最近看 LeCoupa 的 [LeCoupa/awesome-cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets) 项目有所启发，感于网上中文资料匮乏，且质量参差不齐，决定做一个中文的 Cheatsheet 项目，收集整理常用的：编程语言、框架和开发工具的 Cheatsheet 进行收集和整理。数量不求多，但每个表都得做好做透，让你不用再网上漫无目标的搜索文章，一个简单的 Cheatsheet 文件就彻底满足你。
 
 
+- [Gitstar](https://dev.gitstar.ai?utm_medium=github_readme&utm_source=awesome_list&utm_campaign=skywind3000_awesome-cheatsheets) - Follow developers on GitHub and see what repos they star. Like a social feed for repo discovery.
 ## :zap:内容索引
 
 ### :page_with_curl:编程语言
