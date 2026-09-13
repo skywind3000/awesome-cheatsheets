@@ -42,7 +42,7 @@ GOSSAFUNC                                             // 生成SSA.html文件，
 go mod init                                           // 初始化当前文件夹，创建go.mod文件
 go mod download                                       // 下载依赖的module到本地
 go mod tidy                                           // 增加缺少的module，删除无用的module
-go mod vendor 					                              // 将依赖复制到vendor下
+go mod vendor 					                              // 将依赖的包复制到vendor文件夹下
 文件go.mod                                             // 依赖列表和版本约束
 文件go.sum                                             // 记录module文件hash值，用于安全校验
 
@@ -115,6 +115,42 @@ a = 2
 const d = 1                                         // 常量
 
 
+
+/*******************************************************************************
+ * 测试
+ ******************************************************************************/
+// 要测试的接口
+package testdemo
+
+func Adder(a int, b int) int {
+	return a + b
+}
+
+// 编写test
+package testdemo
+
+import "testing"
+
+func TestPass(t *testing.T) {
+	expected := 3
+	if observed := Adder(1, 2); observed != expected {
+		t.Fatalf("Adder(1, 2) = %v, want %v", observed, expected)
+	}
+}
+
+func TestSkip(t *testing.T) {
+	t.Skip("Skipping test")
+}
+
+func TestFail(t *testing.T) {
+	expected := 3
+	if observed := Adder(2, 2); observed != expected {
+		t.Fatalf("Adder(2, 2) = %v, want %v", observed, expected)
+	}
+}
+
+// 运行命令
+go test -v mod/{package_name}
 
 
 /*******************************************************************************
@@ -306,3 +342,4 @@ https://github.com/avelino/awesome-go
  ******************************************************************************/
 https://github.com/a8m/go-lang-cheat-sheet
 https://github.com/LeCoupa/awesome-cheatsheets
+https://github.com/jonasbn/go-test-demo
