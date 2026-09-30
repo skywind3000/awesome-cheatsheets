@@ -213,9 +213,15 @@ stepi                     # 指令级别单步进入，可以简写为 si
 nexti                     # 指令级别单步跳过，可以简写为 ni
 display/i $pc             # 监控寄存器（每条单步完以后会自动打印值）
 x/x &gx                   # 十六进制打印变量
+x/ni {addr}               # 打印地址处接下来的n条指令
 info line 22              # 打印行号为 22 的内存地址信息
 info line *0x2c4e         # 打印给定内存地址对应的源代码和行号信息
 disassemble {addr}        # 对地址进行反汇编，比如 disassemble 0x2c4e
+disassemble {addr},{end}  # 对地址指定范围内进行反汇编，比如 disassemble 0x2c4e, 0x2c5e
+disassemble {addr},+len   # 对地址指定范围内进行反汇编，比如 disassemble 0x2c4e, +0x10
+disassemble /m {addr}     # 对地址进行反汇编，同时显示源码对应的反汇编代码(如果可以根据符号表找到源码)
+disassemble /r {addr}     # 对地址进行反汇编，同时显示汇编指令对应的机器码, 如mov rsp,rbp会显示为: 48 89 e5 mov %rsp,%rbp
+disassemble /mr {addr}    # 对地址进行反汇编，同时显示源码以及机器码
 
 
 ##############################################################################
