@@ -34,6 +34,7 @@
 - [Git](tools/git.txt)
 - [FFmpeg](tools/ffmpeg.sh)
 - [Linux ip command](tools/ip.txt)
+- [H3C](tools/h3c.md)
 
 ### :pencil:文本编辑
 
